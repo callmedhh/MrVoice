@@ -44,7 +44,6 @@ class RecordListTableViewController: UITableViewController {
         let cell = button.superview?.superview as! UITableViewCell
         let tableView = cell.superview?.superview as! UITableView
         let indexPath = tableView.indexPathForCell(cell)
-        let path = recordList[(indexPath?.row)!].recordUrl
         recordTool.startPlaying(recordList[(indexPath?.row)!].recordUrl)
     }
     
