@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vbc-Zx-R7L">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="9Fa-RL-c0z">
+            <objects>
+                <navigationController id="vbc-Zx-R7L" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="1Mj-hU-IRh">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="xuJ-KC-3cV" kind="relationship" relationship="rootViewController" id="ZCb-Zk-YHD"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SK8-7T-hmw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="256" y="285"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="vwG-Pf-6CY">
+            <objects>
+                <viewController id="xuJ-KC-3cV" customClass="ViewController" customModule="VoiceDiary" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fcb-L4-d9W"/>
+                        <viewControllerLayoutGuide type="bottom" id="clw-CP-eww"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tVI-3F-JgO">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HJF-pA-LXh">
+                                <rect key="frame" x="255" y="470" width="90" height="30"/>
+                                <state key="normal" title="点击开始录音"/>
+                                <connections>
+                                    <action selector="recordTapped:" destination="xuJ-KC-3cV" eventType="touchUpInside" id="DhR-Xd-Rfi"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OwS-pI-iBh">
+                                <rect key="frame" x="255" y="164" width="90" height="30"/>
+                                <state key="normal" title="查看所有录音"/>
+                                <connections>
+                                    <segue destination="kyF-z1-00R" kind="show" id="Gbt-pz-OBG"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="clw-CP-eww" firstAttribute="top" secondItem="HJF-pA-LXh" secondAttribute="bottom" constant="100" id="ZmI-5n-Bf6"/>
+                            <constraint firstItem="OwS-pI-iBh" firstAttribute="top" secondItem="fcb-L4-d9W" secondAttribute="bottom" constant="100" id="ebM-F8-OG3"/>
+                            <constraint firstItem="HJF-pA-LXh" firstAttribute="centerX" secondItem="tVI-3F-JgO" secondAttribute="centerX" id="qkJ-UD-GNb"/>
+                            <constraint firstItem="OwS-pI-iBh" firstAttribute="centerX" secondItem="tVI-3F-JgO" secondAttribute="centerX" id="uJh-Ac-MN3"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="KiW-Ls-dPO"/>
+                    <connections>
+                        <outlet property="recordBtn" destination="HJF-pA-LXh" id="yxR-96-f2S"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="50a-rQ-o7O" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="915" y="285"/>
+        </scene>
+        <!--Record List Table View Controller-->
+        <scene sceneID="3qm-sm-HYw">
+            <objects>
+                <tableViewController id="kyF-z1-00R" customClass="RecordListTableViewController" customModule="VoiceDiary" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="ipV-Ib-Vok">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="recordCell" rowHeight="100" id="694-nL-JYb" userLabel="RecordCell">
+                                <rect key="frame" x="0.0" y="92" width="600" height="100"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="694-nL-JYb" id="RJF-Ft-pa7">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="99.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="11" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8H8-Wf-dNu">
+                                            <rect key="frame" x="28" y="8" width="42" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="42" id="Kzp-oZ-Sab"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="Kzp-oZ-Sab"/>
+                                                </mask>
+                                            </variation>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ucu-6G-WM2">
+                                            <rect key="frame" x="285" y="61.5" width="30" height="30"/>
+                                            <state key="normal" title="播放"/>
+                                            <connections>
+                                                <action selector="playRecordBtn:" destination="kyF-z1-00R" eventType="touchUpInside" id="v7k-nt-RVv"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="ucu-6G-WM2" firstAttribute="centerX" secondItem="RJF-Ft-pa7" secondAttribute="centerX" id="Apg-LP-h6B"/>
+                                        <constraint firstItem="8H8-Wf-dNu" firstAttribute="centerY" secondItem="RJF-Ft-pa7" secondAttribute="centerY" id="CyA-zg-yNk"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="ucu-6G-WM2" secondAttribute="bottom" id="FOh-My-PuI"/>
+                                        <constraint firstItem="8H8-Wf-dNu" firstAttribute="top" secondItem="RJF-Ft-pa7" secondAttribute="topMargin" id="TrG-jT-xyO"/>
+                                        <constraint firstItem="ucu-6G-WM2" firstAttribute="top" secondItem="RJF-Ft-pa7" secondAttribute="topMargin" id="cNs-C2-G8N"/>
+                                        <constraint firstItem="8H8-Wf-dNu" firstAttribute="leading" secondItem="RJF-Ft-pa7" secondAttribute="leadingMargin" constant="20" id="zFW-0Q-Bnq"/>
+                                    </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="CyA-zg-yNk"/>
+                                            <exclude reference="cNs-C2-G8N"/>
+                                        </mask>
+                                    </variation>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="kyF-z1-00R" id="Dfg-TU-raP"/>
+                            <outlet property="delegate" destination="kyF-z1-00R" id="uhU-Rl-Dgu"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cck-P4-gjv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1621" y="285"/>
+        </scene>
+    </scenes>
+</document>

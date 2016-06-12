@@ -1,0 +1,398 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		79E5D45D576D00E634596256 /* Pods_VoiceDiary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B07399BA037FD0C748958B1 /* Pods_VoiceDiary.framework */; };
+		A096DCF31D07F1630023CB0C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A096DCF21D07F1630023CB0C /* AppDelegate.swift */; };
+		A096DCF51D07F1630023CB0C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A096DCF41D07F1630023CB0C /* ViewController.swift */; };
+		A096DCF81D07F1630023CB0C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A096DCF61D07F1630023CB0C /* Main.storyboard */; };
+		A096DCFA1D07F1630023CB0C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A096DCF91D07F1630023CB0C /* Assets.xcassets */; };
+		A096DCFD1D07F1630023CB0C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A096DCFB1D07F1630023CB0C /* LaunchScreen.storyboard */; };
+		A096DD251D0838860023CB0C /* DatabaseTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = A096DD241D0838860023CB0C /* DatabaseTool.swift */; };
+		A096DD271D0851D40023CB0C /* DateTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = A096DD261D0851D40023CB0C /* DateTool.swift */; };
+		A096DD291D093DF30023CB0C /* RecordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A096DD281D093DF30023CB0C /* RecordModel.swift */; };
+		A096DD2B1D093F840023CB0C /* RecordTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = A096DD2A1D093F840023CB0C /* RecordTool.swift */; };
+		A096DD2D1D0940370023CB0C /* FilePathTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = A096DD2C1D0940370023CB0C /* FilePathTool.swift */; };
+		A096DD311D0962F80023CB0C /* RecordListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A096DD301D0962F80023CB0C /* RecordListTableViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0B07399BA037FD0C748958B1 /* Pods_VoiceDiary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VoiceDiary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		97FE544F589D7F987FD8FADE /* Pods-VoiceDiary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VoiceDiary.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VoiceDiary/Pods-VoiceDiary.debug.xcconfig"; sourceTree = "<group>"; };
+		A096DCEF1D07F1630023CB0C /* VoiceDiary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VoiceDiary.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A096DCF21D07F1630023CB0C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A096DCF41D07F1630023CB0C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A096DCF71D07F1630023CB0C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A096DCF91D07F1630023CB0C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A096DCFC1D07F1630023CB0C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A096DCFE1D07F1630023CB0C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A096DD241D0838860023CB0C /* DatabaseTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseTool.swift; sourceTree = "<group>"; };
+		A096DD261D0851D40023CB0C /* DateTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateTool.swift; sourceTree = "<group>"; };
+		A096DD281D093DF30023CB0C /* RecordModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordModel.swift; sourceTree = "<group>"; };
+		A096DD2A1D093F840023CB0C /* RecordTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordTool.swift; sourceTree = "<group>"; };
+		A096DD2C1D0940370023CB0C /* FilePathTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilePathTool.swift; sourceTree = "<group>"; };
+		A096DD301D0962F80023CB0C /* RecordListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordListTableViewController.swift; sourceTree = "<group>"; };
+		D5E4760629628DF3DD8BA77C /* Pods-VoiceDiary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VoiceDiary.release.xcconfig"; path = "Pods/Target Support Files/Pods-VoiceDiary/Pods-VoiceDiary.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A096DCEC1D07F1630023CB0C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				79E5D45D576D00E634596256 /* Pods_VoiceDiary.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0767EFC579BEC1309D8F32A8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				97FE544F589D7F987FD8FADE /* Pods-VoiceDiary.debug.xcconfig */,
+				D5E4760629628DF3DD8BA77C /* Pods-VoiceDiary.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		A096DCE61D07F1630023CB0C = {
+			isa = PBXGroup;
+			children = (
+				A096DCF11D07F1630023CB0C /* VoiceDiary */,
+				A096DCF01D07F1630023CB0C /* Products */,
+				0767EFC579BEC1309D8F32A8 /* Pods */,
+				D58D14F11505131423036BF3 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		A096DCF01D07F1630023CB0C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A096DCEF1D07F1630023CB0C /* VoiceDiary.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A096DCF11D07F1630023CB0C /* VoiceDiary */ = {
+			isa = PBXGroup;
+			children = (
+				A096DCF21D07F1630023CB0C /* AppDelegate.swift */,
+				A096DCF41D07F1630023CB0C /* ViewController.swift */,
+				A096DCF61D07F1630023CB0C /* Main.storyboard */,
+				A096DCF91D07F1630023CB0C /* Assets.xcassets */,
+				A096DCFB1D07F1630023CB0C /* LaunchScreen.storyboard */,
+				A096DCFE1D07F1630023CB0C /* Info.plist */,
+				A096DD241D0838860023CB0C /* DatabaseTool.swift */,
+				A096DD261D0851D40023CB0C /* DateTool.swift */,
+				A096DD281D093DF30023CB0C /* RecordModel.swift */,
+				A096DD2A1D093F840023CB0C /* RecordTool.swift */,
+				A096DD2C1D0940370023CB0C /* FilePathTool.swift */,
+				A096DD301D0962F80023CB0C /* RecordListTableViewController.swift */,
+			);
+			path = VoiceDiary;
+			sourceTree = "<group>";
+		};
+		D58D14F11505131423036BF3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0B07399BA037FD0C748958B1 /* Pods_VoiceDiary.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A096DCEE1D07F1630023CB0C /* VoiceDiary */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A096DD011D07F1630023CB0C /* Build configuration list for PBXNativeTarget "VoiceDiary" */;
+			buildPhases = (
+				B22F9D2ECD12D8472E55AA29 /* 📦 Check Pods Manifest.lock */,
+				A096DCEB1D07F1630023CB0C /* Sources */,
+				A096DCEC1D07F1630023CB0C /* Frameworks */,
+				A096DCED1D07F1630023CB0C /* Resources */,
+				1C7B6FC125BA00BBF61A0B85 /* 📦 Embed Pods Frameworks */,
+				AF5C3A9F0C036710FC252F3E /* 📦 Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = VoiceDiary;
+			productName = VoiceDiary;
+			productReference = A096DCEF1D07F1630023CB0C /* VoiceDiary.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A096DCE71D07F1630023CB0C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = Lemur;
+				TargetAttributes = {
+					A096DCEE1D07F1630023CB0C = {
+						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = 2V3AZZJGGG;
+					};
+				};
+			};
+			buildConfigurationList = A096DCEA1D07F1630023CB0C /* Build configuration list for PBXProject "VoiceDiary" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A096DCE61D07F1630023CB0C;
+			productRefGroup = A096DCF01D07F1630023CB0C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A096DCEE1D07F1630023CB0C /* VoiceDiary */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A096DCED1D07F1630023CB0C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A096DCFD1D07F1630023CB0C /* LaunchScreen.storyboard in Resources */,
+				A096DCFA1D07F1630023CB0C /* Assets.xcassets in Resources */,
+				A096DCF81D07F1630023CB0C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1C7B6FC125BA00BBF61A0B85 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VoiceDiary/Pods-VoiceDiary-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AF5C3A9F0C036710FC252F3E /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VoiceDiary/Pods-VoiceDiary-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B22F9D2ECD12D8472E55AA29 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A096DCEB1D07F1630023CB0C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A096DD311D0962F80023CB0C /* RecordListTableViewController.swift in Sources */,
+				A096DD2B1D093F840023CB0C /* RecordTool.swift in Sources */,
+				A096DD251D0838860023CB0C /* DatabaseTool.swift in Sources */,
+				A096DD271D0851D40023CB0C /* DateTool.swift in Sources */,
+				A096DD2D1D0940370023CB0C /* FilePathTool.swift in Sources */,
+				A096DCF51D07F1630023CB0C /* ViewController.swift in Sources */,
+				A096DD291D093DF30023CB0C /* RecordModel.swift in Sources */,
+				A096DCF31D07F1630023CB0C /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		A096DCF61D07F1630023CB0C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A096DCF71D07F1630023CB0C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A096DCFB1D07F1630023CB0C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A096DCFC1D07F1630023CB0C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A096DCFF1D07F1630023CB0C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A096DD001D07F1630023CB0C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A096DD021D07F1630023CB0C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 97FE544F589D7F987FD8FADE /* Pods-VoiceDiary.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = VoiceDiary/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = work.lemur.voicediary;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		A096DD031D07F1630023CB0C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D5E4760629628DF3DD8BA77C /* Pods-VoiceDiary.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = VoiceDiary/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = work.lemur.voicediary;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A096DCEA1D07F1630023CB0C /* Build configuration list for PBXProject "VoiceDiary" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A096DCFF1D07F1630023CB0C /* Debug */,
+				A096DD001D07F1630023CB0C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A096DD011D07F1630023CB0C /* Build configuration list for PBXNativeTarget "VoiceDiary" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A096DD021D07F1630023CB0C /* Debug */,
+				A096DD031D07F1630023CB0C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A096DCE71D07F1630023CB0C /* Project object */;
+}
