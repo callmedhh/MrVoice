@@ -9,7 +9,7 @@
 import UIKit
 import AVFoundation
 
-class ViewController: UIViewController {
+class MainViewController: UIViewController {
     let recordTool: RecordTool = RecordTool()
     let folderPath = FilePathTool.getDocumentsDirectory()
     var recordingSession: AVAudioSession!

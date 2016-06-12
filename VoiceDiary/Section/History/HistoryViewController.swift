@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RecordListTableViewController: UITableViewController {
+class HistoryViewControler: UIViewController, UITableViewDelegate, UITableViewDataSource {
     private let cellIdentifier = "recordCell"
     private var recordList: [RecordModel] = []
     private let dbTool  = Database()
@@ -27,13 +27,11 @@ class RecordListTableViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
-
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
-
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return recordList.count
     }
@@ -47,7 +45,7 @@ class RecordListTableViewController: UITableViewController {
         recordTool.startPlaying(recordList[(indexPath?.row)!].recordUrl)
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath)
         let textLabel = cell.viewWithTag(11) as! UILabel
         textLabel.text = recordList[indexPath.row].recordUrl
@@ -58,12 +56,12 @@ class RecordListTableViewController: UITableViewController {
 
     
     // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
         return true
     }
  
-    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 100
     }
 
