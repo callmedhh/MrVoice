@@ -3,4 +3,5 @@ use_frameworks!
 
 target 'VoiceDiary' do
     pod 'SQLite.swift'
+    pod 'SwiftyBeaver'
 end

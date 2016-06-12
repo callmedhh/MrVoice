@@ -22,13 +22,18 @@ class MainViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         dbTool.createTable()
         recordingSession = AVAudioSession.sharedInstance()
-        do{
+        do {
             try recordingSession.setCategory(AVAudioSessionCategoryPlayAndRecord)
             try recordingSession.setActive(true)
-            recordingSession.requestRecordPermission { _ in
+            recordingSession.requestRecordPermission { result in
+                if (result) {
+                    log.verbose("Record Permission ALLOWED")
+                } else {
+                    log.verbose("Record Permission NOT ALLOWED")
+                }
             }
-        }catch{
-            
+        } catch {
+            log.error("Catch recordingSession error")
         }
     }
 

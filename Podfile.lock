@@ -1,12 +1,15 @@
 PODS:
   - SQLite.swift (0.10.1)
+  - SwiftyBeaver (0.5.1)
 
 DEPENDENCIES:
   - SQLite.swift
+  - SwiftyBeaver
 
 SPEC CHECKSUMS:
   SQLite.swift: 6a6e4b034efc317ce4e203b6af2d3024fee2b570
+  SwiftyBeaver: 35438d71982a8d569be3d8b79332e2fd17991cbf
 
-PODFILE CHECKSUM: 2aa05ed2c1ba2223fb7dd4ec8dea5a0045e9f4d1
+PODFILE CHECKSUM: e1de83a82e8e34090bf4124fe60b47e544bdd7f6
 
 COCOAPODS: 1.0.0
