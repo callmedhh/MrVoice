@@ -16,6 +16,7 @@
 		96D1FED41D0D3E4C00CFD119 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D1FED11D0D3E4C00CFD119 /* HistoryViewController.swift */; };
 		96D1FED51D0D3E4C00CFD119 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D1FED31D0D3E4C00CFD119 /* MainViewController.swift */; };
 		96D1FED81D0D41B800CFD119 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D1FED71D0D41B800CFD119 /* Log.swift */; };
+		96D1FEDA1D0D466500CFD119 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D1FED91D0D466500CFD119 /* StringExtension.swift */; };
 		A096DCF31D07F1630023CB0C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A096DCF21D07F1630023CB0C /* AppDelegate.swift */; };
 		A096DCF81D07F1630023CB0C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A096DCF61D07F1630023CB0C /* Main.storyboard */; };
 		A096DCFA1D07F1630023CB0C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A096DCF91D07F1630023CB0C /* Assets.xcassets */; };
@@ -32,6 +33,7 @@
 		96D1FED11D0D3E4C00CFD119 /* HistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		96D1FED31D0D3E4C00CFD119 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		96D1FED71D0D41B800CFD119 /* Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
+		96D1FED91D0D466500CFD119 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		97FE544F589D7F987FD8FADE /* Pods-VoiceDiary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VoiceDiary.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VoiceDiary/Pods-VoiceDiary.debug.xcconfig"; sourceTree = "<group>"; };
 		A096DCEF1D07F1630023CB0C /* VoiceDiary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VoiceDiary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A096DCF21D07F1630023CB0C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 		96D1FEBE1D0D3DB500CFD119 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				96D1FED91D0D466500CFD119 /* StringExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -298,6 +301,7 @@
 			files = (
 				96D1FECD1D0D3DB500CFD119 /* RecordTool.swift in Sources */,
 				96D1FECA1D0D3DB500CFD119 /* DatabaseTool.swift in Sources */,
+				96D1FEDA1D0D466500CFD119 /* StringExtension.swift in Sources */,
 				96D1FED81D0D41B800CFD119 /* Log.swift in Sources */,
 				96D1FECB1D0D3DB500CFD119 /* DateTool.swift in Sources */,
 				96D1FEC91D0D3DB500CFD119 /* RecordModel.swift in Sources */,

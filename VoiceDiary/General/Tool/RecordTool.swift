@@ -9,17 +9,29 @@
 import Foundation
 import AVFoundation
 class RecordTool: NSObject, AVAudioRecorderDelegate{
-   
     var audioRecorder: AVAudioRecorder!
     var audioPlayer: AVAudioPlayer!
     var dbTool: Database = Database()
     var filePath: String? = nil
-   
-    
-    func startRecording(filePath:String){
-        self.filePath = filePath
-        let fileURL = NSURL(fileURLWithPath: filePath)
-        //audio settings
+}
+
+// MARK: - Private
+extension RecordTool {
+    private func buildFilePath() -> String {
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd-HH:mm:ss:SSS"
+        let dateString = dateFormatter.stringFromDate(NSDate())
+        let folderPath = FilePathTool.getDocumentsDirectory()
+        return folderPath.stringByAppendingPathComponent("\(dateString).m4a")
+    }
+}
+
+// MARK: - Record
+extension RecordTool {
+    func startRecording(){
+        let path = buildFilePath()
+        self.filePath = path
+        let fileURL = NSURL(fileURLWithPath: path)
         let settings = [
             AVFormatIDKey: Int(kAudioFormatMPEG4AAC),
             AVSampleRateKey: 12000.0,
@@ -36,7 +48,6 @@ class RecordTool: NSObject, AVAudioRecorderDelegate{
         }
     }
     
-    
     func finishRecording(success success: Bool){
         if audioRecorder == nil {
             print("error")
@@ -48,6 +59,11 @@ class RecordTool: NSObject, AVAudioRecorderDelegate{
         self.filePath = nil
     }
     
+    
+}
+
+// MARK: - Play
+extension RecordTool {
     func startPlaying(recordurl: String){
         let url = NSURL(fileURLWithPath: recordurl)
         do{
@@ -59,22 +75,10 @@ class RecordTool: NSObject, AVAudioRecorderDelegate{
             
         }
     }
-    
     func stopPlaying(){
         if audioPlayer != nil{
             audioPlayer.stop()
             audioPlayer = nil
         }
-    }
-    
-}
-
-extension String {
-    
-    func stringByAppendingPathComponent(path: String) -> String {
-        
-        let nsSt = self as NSString
-        
-        return nsSt.stringByAppendingPathComponent(path)
     }
 }

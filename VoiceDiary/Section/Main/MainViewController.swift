@@ -11,7 +11,6 @@ import AVFoundation
 
 class MainViewController: UIViewController {
     let recordTool: RecordTool = RecordTool()
-    let folderPath = FilePathTool.getDocumentsDirectory()
     var recordingSession: AVAudioSession!
     let dbTool = Database()
     
@@ -37,30 +36,14 @@ class MainViewController: UIViewController {
         }
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
     @IBAction func recordTapped(sender: AnyObject) {
-        let nowDate = NSDate()
-        let dateString = dateToString(nowDate)
-        let filePath = folderPath.stringByAppendingPathComponent("\(dateString).m4a")
         if(recordTool.audioRecorder == nil){
-            recordTool.startRecording(filePath)
+            recordTool.startRecording()
             recordBtn.setTitle("点击停止录音", forState: .Normal)
         }else{
             recordTool.finishRecording(success: true)
             recordBtn.setTitle("点击开始录音", forState: .Normal)
         }
     }
-    
-    func dateToString(date: NSDate) -> String{
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd-HH:mm:ss:SSS"
-        let dateString = dateFormatter.stringFromDate(date)
-        return dateString
-    }
-
 }
 
