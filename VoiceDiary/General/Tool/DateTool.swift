@@ -16,18 +16,18 @@ class DateTool{
         let newDate = cal.dateFromComponents(component)!
         return newDate
     }
-    class func getMonth() -> Int {
+    class func getMonth() -> String {
         let date = NSDate()
         let cal = NSCalendar.currentCalendar()
         let component = cal.components([.Month], fromDate: date)
         let month = component.month
-        return month
+        return month.getTwobitNumber(month)
     }
-    class func getDay() -> Int {
+    class func getDay() -> String {
         let date = NSDate()
         let cal = NSCalendar.currentCalendar()
         let component = cal.components([.Day], fromDate: date)
         let day = component.day
-        return day
+        return day.getTwobitNumber(day)
     }
 }

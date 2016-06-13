@@ -8,6 +8,7 @@
 
 import UIKit
 import AVFoundation
+import QuartzCore
 
 class MainViewController: UIViewController {
     let recordTool: RecordTool = RecordTool()
@@ -16,7 +17,8 @@ class MainViewController: UIViewController {
     
     @IBOutlet weak var recordBtn: UIButton!
     
-    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var monthLabel: UILabel!
+    @IBOutlet weak var dayLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,8 +40,11 @@ class MainViewController: UIViewController {
         }
         let month = DateTool.getMonth()
         let day = DateTool.getDay()
-        dateLabel.text = "\(month) \(day)"
+        monthLabel.text = month
+        dayLabel.text = day
+        recordBtn.setToRounded()
         self.navigationController?.navigationBarHidden = true
+        
     }
 
     @IBAction func recordTapped(sender: AnyObject) {
