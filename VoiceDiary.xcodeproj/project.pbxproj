@@ -17,6 +17,7 @@
 		96D1FED51D0D3E4C00CFD119 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D1FED31D0D3E4C00CFD119 /* MainViewController.swift */; };
 		96D1FED81D0D41B800CFD119 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D1FED71D0D41B800CFD119 /* Log.swift */; };
 		96D1FEDA1D0D466500CFD119 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D1FED91D0D466500CFD119 /* StringExtension.swift */; };
+		A08E69801D0EBD040056F8B4 /* RecordButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08E697F1D0EBD040056F8B4 /* RecordButton.swift */; };
 		A096DCF31D07F1630023CB0C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A096DCF21D07F1630023CB0C /* AppDelegate.swift */; };
 		A096DCF81D07F1630023CB0C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A096DCF61D07F1630023CB0C /* Main.storyboard */; };
 		A096DCFA1D07F1630023CB0C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A096DCF91D07F1630023CB0C /* Assets.xcassets */; };
@@ -37,6 +38,7 @@
 		96D1FED71D0D41B800CFD119 /* Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		96D1FED91D0D466500CFD119 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		97FE544F589D7F987FD8FADE /* Pods-VoiceDiary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VoiceDiary.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VoiceDiary/Pods-VoiceDiary.debug.xcconfig"; sourceTree = "<group>"; };
+		A08E697F1D0EBD040056F8B4 /* RecordButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordButton.swift; sourceTree = "<group>"; };
 		A096DCEF1D07F1630023CB0C /* VoiceDiary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VoiceDiary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A096DCF21D07F1630023CB0C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A096DCF71D07F1630023CB0C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -73,6 +75,7 @@
 			isa = PBXGroup;
 			children = (
 				96D1FED61D0D41A400CFD119 /* Macro */,
+				A08E697E1D0EBC8D0056F8B4 /* View */,
 				96D1FEBE1D0D3DB500CFD119 /* Extension */,
 				96D1FEBF1D0D3DB500CFD119 /* Model */,
 				96D1FEC11D0D3DB500CFD119 /* Tool */,
@@ -140,6 +143,14 @@
 				96D1FED71D0D41B800CFD119 /* Log.swift */,
 			);
 			path = Macro;
+			sourceTree = "<group>";
+		};
+		A08E697E1D0EBC8D0056F8B4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A08E697F1D0EBD040056F8B4 /* RecordButton.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		A096DCE61D07F1630023CB0C = {
@@ -309,6 +320,7 @@
 				96D1FECA1D0D3DB500CFD119 /* DatabaseTool.swift in Sources */,
 				96D1FEDA1D0D466500CFD119 /* StringExtension.swift in Sources */,
 				96D1FED81D0D41B800CFD119 /* Log.swift in Sources */,
+				A08E69801D0EBD040056F8B4 /* RecordButton.swift in Sources */,
 				96D1FECB1D0D3DB500CFD119 /* DateTool.swift in Sources */,
 				A0E794871D0EA7C400EDC49C /* UIButtonExtension.swift in Sources */,
 				A0E794851D0E9F3B00EDC49C /* IntExtension.swift in Sources */,

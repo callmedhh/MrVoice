@@ -56,5 +56,6 @@ class MainViewController: UIViewController {
             recordBtn.setTitle("点击开始录音", forState: .Normal)
         }
     }
+    
 }
 

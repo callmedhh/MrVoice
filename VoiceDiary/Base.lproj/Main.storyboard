@@ -65,7 +65,7 @@
                                 <color key="textColor" red="0.47450980392156861" green="0.47450980392156861" blue="0.47450980392156861" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HJF-pA-LXh">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HJF-pA-LXh" customClass="RecordButton" customModule="VoiceDiary" customModuleProvider="target">
                                 <rect key="frame" x="250" y="450" width="100" height="100"/>
                                 <color key="backgroundColor" red="0.99607843139999996" green="0.88235294119999996" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
