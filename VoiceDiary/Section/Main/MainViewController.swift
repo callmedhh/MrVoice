@@ -16,6 +16,8 @@ class MainViewController: UIViewController {
     
     @IBOutlet weak var recordBtn: UIButton!
     
+    @IBOutlet weak var dateLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -34,6 +36,10 @@ class MainViewController: UIViewController {
         } catch {
             log.error("Catch recordingSession error")
         }
+        let month = DateTool.getMonth()
+        let day = DateTool.getDay()
+        dateLabel.text = "\(month) \(day)"
+        self.navigationController?.navigationBarHidden = true
     }
 
     @IBAction func recordTapped(sender: AnyObject) {

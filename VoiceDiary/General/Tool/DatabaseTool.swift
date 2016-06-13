@@ -39,6 +39,7 @@ class Database{
         let nowDate = NSDate()
         let newDate = DateTool.convertDate(nowDate)
         let insert = record.insert(date <- newDate ,recordUrl <- fileUrl)
+        print("newDate\(newDate)")
         try! db.run(insert)
     }
     

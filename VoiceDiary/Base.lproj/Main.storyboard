@@ -41,8 +41,26 @@
                                     <action selector="recordTapped:" destination="xuJ-KC-3cV" eventType="touchUpInside" id="DhR-Xd-Rfi"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HWy-dq-47d">
+                                <rect key="frame" x="50" y="94" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello,WW :)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SbG-AT-LHc">
+                                <rect key="frame" x="50" y="254" width="89" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What happened today?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0qk-1Y-PMC">
+                                <rect key="frame" x="50" y="289" width="178" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OwS-pI-iBh">
-                                <rect key="frame" x="255" y="164" width="90" height="30"/>
+                                <rect key="frame" x="470" y="94" width="90" height="30"/>
                                 <state key="normal" title="查看所有录音"/>
                                 <connections>
                                     <segue destination="uBl-gh-DDS" kind="show" id="zBQ-Ti-sE7"/>
@@ -51,14 +69,33 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="SbG-AT-LHc" firstAttribute="leading" secondItem="tVI-3F-JgO" secondAttribute="leading" constant="50" id="0zo-m5-Qjx"/>
+                            <constraint firstItem="clw-CP-eww" firstAttribute="top" secondItem="HJF-pA-LXh" secondAttribute="bottom" constant="100" id="HPt-7S-qzk"/>
+                            <constraint firstItem="OwS-pI-iBh" firstAttribute="top" secondItem="fcb-L4-d9W" secondAttribute="bottom" constant="30" id="KCg-7N-NPh"/>
+                            <constraint firstAttribute="trailing" secondItem="OwS-pI-iBh" secondAttribute="trailing" constant="40" id="LX0-ZU-zBV"/>
+                            <constraint firstItem="SbG-AT-LHc" firstAttribute="top" secondItem="fcb-L4-d9W" secondAttribute="bottom" constant="190" id="Qet-sA-xIJ"/>
+                            <constraint firstItem="HWy-dq-47d" firstAttribute="top" secondItem="fcb-L4-d9W" secondAttribute="bottom" constant="30" id="Xr9-F1-Vom"/>
                             <constraint firstItem="clw-CP-eww" firstAttribute="top" secondItem="HJF-pA-LXh" secondAttribute="bottom" constant="100" id="ZmI-5n-Bf6"/>
+                            <constraint firstItem="0qk-1Y-PMC" firstAttribute="top" secondItem="fcb-L4-d9W" secondAttribute="bottom" constant="225" id="bUd-5X-Uz4"/>
                             <constraint firstItem="OwS-pI-iBh" firstAttribute="top" secondItem="fcb-L4-d9W" secondAttribute="bottom" constant="100" id="ebM-F8-OG3"/>
+                            <constraint firstItem="0qk-1Y-PMC" firstAttribute="leading" secondItem="tVI-3F-JgO" secondAttribute="leading" constant="50" id="gIi-vW-cHe"/>
+                            <constraint firstItem="HWy-dq-47d" firstAttribute="leading" secondItem="tVI-3F-JgO" secondAttribute="leading" constant="50" id="pXW-V6-vU4"/>
                             <constraint firstItem="HJF-pA-LXh" firstAttribute="centerX" secondItem="tVI-3F-JgO" secondAttribute="centerX" id="qkJ-UD-GNb"/>
+                            <constraint firstItem="HJF-pA-LXh" firstAttribute="centerX" secondItem="tVI-3F-JgO" secondAttribute="centerX" id="quh-jY-WeU"/>
                             <constraint firstItem="OwS-pI-iBh" firstAttribute="centerX" secondItem="tVI-3F-JgO" secondAttribute="centerX" id="uJh-Ac-MN3"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="ebM-F8-OG3"/>
+                                <exclude reference="uJh-Ac-MN3"/>
+                                <exclude reference="qkJ-UD-GNb"/>
+                                <exclude reference="ZmI-5n-Bf6"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="KiW-Ls-dPO"/>
                     <connections>
+                        <outlet property="dateLabel" destination="HWy-dq-47d" id="mN8-eE-FjA"/>
                         <outlet property="recordBtn" destination="HJF-pA-LXh" id="yxR-96-f2S"/>
                     </connections>
                 </viewController>
