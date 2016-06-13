@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -66,11 +67,11 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HJF-pA-LXh" customClass="RecordButton" customModule="VoiceDiary" customModuleProvider="target">
-                                <rect key="frame" x="250" y="450" width="100" height="100"/>
+                                <rect key="frame" x="200" y="380" width="200" height="200"/>
                                 <color key="backgroundColor" red="0.99607843139999996" green="0.88235294119999996" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="KWK-x0-o2K"/>
-                                    <constraint firstAttribute="width" constant="100" id="Zrk-9h-6iW"/>
+                                    <constraint firstAttribute="height" constant="200" id="KWK-x0-o2K"/>
+                                    <constraint firstAttribute="width" secondItem="HJF-pA-LXh" secondAttribute="height" id="giX-FY-edk"/>
                                 </constraints>
                                 <connections>
                                     <action selector="recordTapped:" destination="xuJ-KC-3cV" eventType="touchUpInside" id="DhR-Xd-Rfi"/>
@@ -93,7 +94,7 @@
                             <constraint firstItem="OwS-pI-iBh" firstAttribute="top" secondItem="fcb-L4-d9W" secondAttribute="bottom" constant="100" id="ebM-F8-OG3"/>
                             <constraint firstItem="0qk-1Y-PMC" firstAttribute="leading" secondItem="tVI-3F-JgO" secondAttribute="leading" constant="50" id="gIi-vW-cHe"/>
                             <constraint firstItem="E95-R8-KbK" firstAttribute="top" secondItem="fcb-L4-d9W" secondAttribute="bottom" constant="71" id="hiz-sc-exi"/>
-                            <constraint firstItem="clw-CP-eww" firstAttribute="top" secondItem="HJF-pA-LXh" secondAttribute="bottom" constant="50" id="itj-ok-hTT"/>
+                            <constraint firstItem="clw-CP-eww" firstAttribute="top" secondItem="HJF-pA-LXh" secondAttribute="bottom" constant="20" id="itj-ok-hTT"/>
                             <constraint firstItem="E95-R8-KbK" firstAttribute="leading" secondItem="tVI-3F-JgO" secondAttribute="leading" constant="50" id="jj5-Nh-4Qs"/>
                             <constraint firstItem="HWy-dq-47d" firstAttribute="leading" secondItem="tVI-3F-JgO" secondAttribute="leading" constant="50" id="ns1-Wn-lgi"/>
                             <constraint firstItem="HWy-dq-47d" firstAttribute="leading" secondItem="tVI-3F-JgO" secondAttribute="leading" constant="50" id="pXW-V6-vU4"/>

@@ -42,7 +42,7 @@ class MainViewController: UIViewController {
         let day = DateTool.getDay()
         monthLabel.text = month
         dayLabel.text = day
-        recordBtn.setToRounded()
+        recordBtn.backgroundColor = UIColor.clearColor()
         self.navigationController?.navigationBarHidden = true
         
     }
