@@ -15,7 +15,7 @@ class MainViewController: UIViewController {
     var recordingSession: AVAudioSession!
     let dbTool = Database()
     
-    @IBOutlet weak var recordBtn: UIButton!
+    @IBOutlet weak var recordBtn: RecordButton!
     
     @IBOutlet weak var monthLabel: UILabel!
     @IBOutlet weak var dayLabel: UILabel!
@@ -50,11 +50,12 @@ class MainViewController: UIViewController {
     @IBAction func recordTapped(sender: AnyObject) {
         if(recordTool.audioRecorder == nil){
             recordTool.startRecording()
-            recordBtn.setTitle("点击停止录音", forState: .Normal)
+            recordBtn.currentState = .Recording
         }else{
             recordTool.finishRecording(success: true)
-            recordBtn.setTitle("点击开始录音", forState: .Normal)
+            recordBtn.currentState = .Idle
         }
+        recordBtn.setNeedsDisplay()
     }
     
 }
