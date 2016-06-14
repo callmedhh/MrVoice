@@ -15,6 +15,7 @@ class MainViewController: UIViewController {
     var recordingSession: AVAudioSession!
     let dbTool = Database()
     
+    @IBOutlet weak var borderView: BorderView!
     @IBOutlet weak var recordBtn: RecordButton!
     
     @IBOutlet weak var monthLabel: UILabel!
@@ -22,6 +23,7 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+                
         // Do any additional setup after loading the view, typically from a nib.
         dbTool.createTable()
         recordingSession = AVAudioSession.sharedInstance()
@@ -45,15 +47,18 @@ class MainViewController: UIViewController {
         recordBtn.backgroundColor = UIColor.clearColor()
         self.navigationController?.navigationBarHidden = true
         
+        
     }
 
     @IBAction func recordTapped(sender: AnyObject) {
         if(recordTool.audioRecorder == nil){
             recordTool.startRecording()
             recordBtn.currentState = .Recording
+            borderView.animate()
         }else{
             recordTool.finishRecording(success: true)
             recordBtn.currentState = .Idle
+            borderView.cancelAnimate()
         }
         recordBtn.setNeedsDisplay()
     }
