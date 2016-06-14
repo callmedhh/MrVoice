@@ -25,6 +25,9 @@ class MainViewController: UIViewController {
     @IBOutlet weak var emojiView: UIView!
     @IBOutlet weak var mainpageGreetingView: UIView!
     @IBOutlet weak var emojiGreetingView: UIView!
+    @IBOutlet weak var happyBtn: UIButton!
+    @IBOutlet weak var nofeelBtn: UIButton!
+    @IBOutlet weak var sadBtn: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
                 
@@ -61,9 +64,8 @@ class MainViewController: UIViewController {
             recordBtn.currentState = .Recording
             borderView.animate()
         }else{
-//            recordTool.finishRecording(success: true)
-//            recordBtn.currentState = .Idle
             borderView.cancelAnimate()
+            
             recordView.hidden = true
             emojiView.hidden = false
             mainpageGreetingView.hidden = true
@@ -73,16 +75,27 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func happyMood(sender: AnyObject) {
+        happyBtn.setTitle("我今天很开心", forState: .Normal)
     }
     
     @IBAction func noMood(sender: AnyObject) {
-        
+        nofeelBtn.setTitle("我今天不好也不坏", forState: .Normal)
     }
     
     @IBAction func badMood(sender: AnyObject) {
+        sadBtn.setTitle("我今天不开心", forState: .Normal)
     }
     
     @IBAction func finishRecordBtnPressed(sender: AnyObject) {
+        recordTool.finishRecording(success: true)
+        recordBtn.currentState = .Idle
+        
+        recordView.hidden = false
+        emojiView.hidden = true
+        mainpageGreetingView.hidden = false
+        emojiGreetingView.hidden = true
+        
+        recordBtn.setNeedsDisplay()
     }
     
 }

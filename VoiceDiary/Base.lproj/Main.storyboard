@@ -176,7 +176,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aWu-DY-5YR">
-                                        <rect key="frame" x="450" y="70" width="30" height="30"/>
+                                        <rect key="frame" x="520" y="70" width="30" height="30"/>
                                         <state key="normal" title="难过"/>
                                         <connections>
                                             <action selector="badMood:" destination="xuJ-KC-3cV" eventType="touchUpInside" id="RHT-qi-mwl"/>
@@ -190,7 +190,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0C8-z0-JsE" userLabel="开心">
-                                        <rect key="frame" x="80" y="70" width="30" height="30"/>
+                                        <rect key="frame" x="10" y="70" width="30" height="30"/>
                                         <state key="normal" title="开心"/>
                                         <connections>
                                             <action selector="happyMood:" destination="xuJ-KC-3cV" eventType="touchUpInside" id="WiV-tk-ERJ"/>
@@ -200,14 +200,14 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="0C8-z0-JsE" firstAttribute="top" secondItem="FKK-D8-A9e" secondAttribute="top" constant="70" id="Df5-AY-KC3"/>
-                                    <constraint firstItem="0C8-z0-JsE" firstAttribute="leading" secondItem="FKK-D8-A9e" secondAttribute="leading" constant="80" id="Lbb-W3-VI0"/>
+                                    <constraint firstItem="0C8-z0-JsE" firstAttribute="leading" secondItem="FKK-D8-A9e" secondAttribute="leading" constant="10" id="Lbb-W3-VI0"/>
                                     <constraint firstItem="biP-3f-tAI" firstAttribute="centerX" secondItem="FKK-D8-A9e" secondAttribute="centerX" id="OkZ-Wv-HgX"/>
                                     <constraint firstItem="biP-3f-tAI" firstAttribute="top" secondItem="FKK-D8-A9e" secondAttribute="top" constant="70" id="VrT-Ez-k85"/>
                                     <constraint firstItem="aWu-DY-5YR" firstAttribute="top" secondItem="FKK-D8-A9e" secondAttribute="top" constant="70" id="Y2z-iw-W4h"/>
                                     <constraint firstItem="geX-cT-gfH" firstAttribute="centerX" secondItem="FKK-D8-A9e" secondAttribute="centerX" id="YFk-bK-R9T"/>
                                     <constraint firstAttribute="bottom" secondItem="geX-cT-gfH" secondAttribute="bottom" constant="30" id="bLE-rG-TID"/>
                                     <constraint firstAttribute="height" constant="200" id="rVf-7P-Dcc"/>
-                                    <constraint firstAttribute="trailing" secondItem="aWu-DY-5YR" secondAttribute="trailing" constant="80" id="vao-yp-1Ht"/>
+                                    <constraint firstAttribute="trailing" secondItem="aWu-DY-5YR" secondAttribute="trailing" constant="10" id="vao-yp-1Ht"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -244,10 +244,13 @@
                         <outlet property="dayLabel" destination="E95-R8-KbK" id="ptr-L0-sSi"/>
                         <outlet property="emojiGreetingView" destination="bXb-C7-jcQ" id="P9M-SJ-MAf"/>
                         <outlet property="emojiView" destination="FKK-D8-A9e" id="6tD-eZ-8Tz"/>
+                        <outlet property="happyBtn" destination="0C8-z0-JsE" id="7A9-nF-hdD"/>
                         <outlet property="mainpageGreetingView" destination="dcw-bH-Nos" id="VN0-hu-qP2"/>
                         <outlet property="monthLabel" destination="HWy-dq-47d" id="sWE-kC-BUb"/>
+                        <outlet property="nofeelBtn" destination="biP-3f-tAI" id="NY7-Lq-xYj"/>
                         <outlet property="recordBtn" destination="HJF-pA-LXh" id="yxR-96-f2S"/>
                         <outlet property="recordView" destination="SLB-Mg-9iC" id="INZ-Hc-o9J"/>
+                        <outlet property="sadBtn" destination="aWu-DY-5YR" id="3by-uo-Mfd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="50a-rQ-o7O" userLabel="First Responder" sceneMemberID="firstResponder"/>
