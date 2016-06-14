@@ -21,6 +21,10 @@ class MainViewController: UIViewController {
     @IBOutlet weak var monthLabel: UILabel!
     @IBOutlet weak var dayLabel: UILabel!
     
+    @IBOutlet weak var recordView: UIView!
+    @IBOutlet weak var emojiView: UIView!
+    @IBOutlet weak var mainpageGreetingView: UIView!
+    @IBOutlet weak var emojiGreetingView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
                 
@@ -46,7 +50,8 @@ class MainViewController: UIViewController {
         dayLabel.text = day
         recordBtn.backgroundColor = UIColor.clearColor()
         self.navigationController?.navigationBarHidden = true
-        
+        emojiView.hidden = true
+        emojiGreetingView.hidden = true
         
     }
 
@@ -56,11 +61,28 @@ class MainViewController: UIViewController {
             recordBtn.currentState = .Recording
             borderView.animate()
         }else{
-            recordTool.finishRecording(success: true)
-            recordBtn.currentState = .Idle
+//            recordTool.finishRecording(success: true)
+//            recordBtn.currentState = .Idle
             borderView.cancelAnimate()
+            recordView.hidden = true
+            emojiView.hidden = false
+            mainpageGreetingView.hidden = true
+            emojiGreetingView.hidden = false
         }
         recordBtn.setNeedsDisplay()
+    }
+    
+    @IBAction func happyMood(sender: AnyObject) {
+    }
+    
+    @IBAction func noMood(sender: AnyObject) {
+        
+    }
+    
+    @IBAction func badMood(sender: AnyObject) {
+    }
+    
+    @IBAction func finishRecordBtnPressed(sender: AnyObject) {
     }
     
 }
