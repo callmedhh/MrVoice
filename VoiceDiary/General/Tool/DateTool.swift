@@ -30,4 +30,17 @@ class DateTool{
         let day = component.day
         return day.getTwobitNumber(day)
     }
+    class func getDayOfTheWeek(date: NSDate) -> Int {
+        let cal = NSCalendar.currentCalendar()
+        let component = cal.components(.Weekday, fromDate: date)
+        let weekday = component.weekday
+        return weekday
+    }
+    class func getWeekOfTheMonth(date: NSDate) -> Int {
+        let cal = NSCalendar.currentCalendar()
+        let component = cal.components(.WeekOfMonth, fromDate: date)
+        let weekOfMonth = component.weekOfMonth
+        return weekOfMonth
+    }
+    
 }
