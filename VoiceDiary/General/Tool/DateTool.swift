@@ -42,5 +42,19 @@ class DateTool{
         let weekOfMonth = component.weekOfMonth
         return weekOfMonth
     }
-    
+    class func generateDateFromYearAndMonth(year: Int, month: Int, day: Int) -> NSDate {
+        let cal = NSCalendar.currentCalendar()
+        let components = NSDateComponents()
+        components.year = year
+        components.month = month
+        components.day = day
+        let date =  cal.dateFromComponents(components)
+        return date!
+    }
+    class func getDayCountOfMonth(date: NSDate) -> Int {
+        let endOfMonth = date.endOfMonth()
+        let calendar = NSCalendar.currentCalendar()
+        let component = calendar.components(.Day, fromDate: endOfMonth!)
+        return component.day
+    }
 }

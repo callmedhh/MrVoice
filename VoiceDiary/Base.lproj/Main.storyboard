@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -210,6 +211,13 @@
                                     <constraint firstAttribute="trailing" secondItem="aWu-DY-5YR" secondAttribute="trailing" constant="10" id="vao-yp-1Ht"/>
                                 </constraints>
                             </view>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8g4-uz-Hrn" customClass="CalenderView" customModule="VoiceDiary" customModuleProvider="target">
+                                <rect key="frame" x="270" y="50" width="300" height="120"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <segue destination="orH-Vn-dQd" kind="embed" id="Qla-po-1Mw"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" red="0.10196078431372549" green="0.10980392156862745" blue="0.11372549019607843" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -219,6 +227,8 @@
                             <constraint firstItem="dcw-bH-Nos" firstAttribute="top" secondItem="fcb-L4-d9W" secondAttribute="bottom" constant="180" id="6vY-4z-VKW"/>
                             <constraint firstAttribute="leadingMargin" secondItem="FKK-D8-A9e" secondAttribute="leading" id="Abr-cT-BLR"/>
                             <constraint firstItem="clw-CP-eww" firstAttribute="top" secondItem="FKK-D8-A9e" secondAttribute="bottom" constant="20" id="Ayb-ez-a5e"/>
+                            <constraint firstItem="8g4-uz-Hrn" firstAttribute="top" secondItem="fcb-L4-d9W" secondAttribute="bottom" constant="30" id="Bwx-i3-hGL"/>
+                            <constraint firstAttribute="trailing" secondItem="8g4-uz-Hrn" secondAttribute="trailing" constant="30" id="Dor-Oq-KnV"/>
                             <constraint firstAttribute="trailingMargin" secondItem="SLB-Mg-9iC" secondAttribute="trailing" id="Du6-9K-q3d"/>
                             <constraint firstItem="E95-R8-KbK" firstAttribute="top" secondItem="HWy-dq-47d" secondAttribute="bottom" id="Fbp-Cd-lxJ"/>
                             <constraint firstItem="clw-CP-eww" firstAttribute="top" secondItem="I6T-yh-XVa" secondAttribute="bottom" id="IcK-jH-Ny2"/>
@@ -226,10 +236,12 @@
                             <constraint firstAttribute="trailing" secondItem="OwS-pI-iBh" secondAttribute="trailing" constant="40" id="LX0-ZU-zBV"/>
                             <constraint firstItem="clw-CP-eww" firstAttribute="top" secondItem="SLB-Mg-9iC" secondAttribute="bottom" constant="20" id="Sv3-ta-xGH"/>
                             <constraint firstItem="I6T-yh-XVa" firstAttribute="leading" secondItem="tVI-3F-JgO" secondAttribute="leading" id="TRT-Mn-ZbZ"/>
+                            <constraint firstItem="8g4-uz-Hrn" firstAttribute="bottom" secondItem="E95-R8-KbK" secondAttribute="bottom" id="Tmd-ZN-m3p"/>
                             <constraint firstAttribute="trailing" secondItem="dcw-bH-Nos" secondAttribute="trailing" constant="20" id="UXG-ID-Jmu"/>
                             <constraint firstAttribute="trailingMargin" secondItem="FKK-D8-A9e" secondAttribute="trailing" id="c6o-Aa-Ztz"/>
                             <constraint firstAttribute="trailing" secondItem="I6T-yh-XVa" secondAttribute="trailing" id="ech-Hf-Iei"/>
                             <constraint firstItem="E95-R8-KbK" firstAttribute="leading" secondItem="tVI-3F-JgO" secondAttribute="leading" constant="50" id="jj5-Nh-4Qs"/>
+                            <constraint firstItem="8g4-uz-Hrn" firstAttribute="width" secondItem="tVI-3F-JgO" secondAttribute="width" multiplier="0.5" id="md6-xe-NKe"/>
                             <constraint firstItem="HWy-dq-47d" firstAttribute="leading" secondItem="tVI-3F-JgO" secondAttribute="leading" constant="50" id="ns1-Wn-lgi"/>
                             <constraint firstAttribute="trailingMargin" secondItem="bXb-C7-jcQ" secondAttribute="trailing" constant="20" id="pnm-be-0vq"/>
                             <constraint firstItem="HWy-dq-47d" firstAttribute="top" secondItem="fcb-L4-d9W" secondAttribute="bottom" constant="30" id="rWL-vY-Bu2"/>
@@ -260,6 +272,7 @@
         <!--History View Controler-->
         <scene sceneID="oJ9-Na-JLe">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Ka-CK-64W" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="uBl-gh-DDS" customClass="HistoryViewControler" customModule="VoiceDiary" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2r3-JQ-Osk"/>
@@ -331,9 +344,71 @@
                         </constraints>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2Ka-CK-64W" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1585" y="285"/>
+        </scene>
+        <!--Calander View Controller-->
+        <scene sceneID="KCM-rN-P2d">
+            <objects>
+                <viewController id="orH-Vn-dQd" customClass="CalanderViewController" customModule="VoiceDiary" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4E8-Ps-Nv8">
+                        <rect key="frame" x="0.0" y="0.0" width="300" height="120"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="0bC-zX-cik">
+                                <rect key="frame" x="16" y="0.0" width="268" height="120"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="vHU-nX-H5r">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="calendarIdentifier" id="PA3-ez-qmm" customClass="CalenderViewCell" customModule="VoiceDiary" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CKu-x6-TcT" customClass="CircleView" customModule="VoiceDiary" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </view>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="CKu-x6-TcT" secondAttribute="trailing" id="JL7-Lt-Cwc"/>
+                                            <constraint firstAttribute="bottom" secondItem="CKu-x6-TcT" secondAttribute="bottom" id="MTl-M8-mdK"/>
+                                            <constraint firstItem="CKu-x6-TcT" firstAttribute="top" secondItem="PA3-ez-qmm" secondAttribute="top" id="OsI-dQ-Iml"/>
+                                            <constraint firstItem="CKu-x6-TcT" firstAttribute="leading" secondItem="PA3-ez-qmm" secondAttribute="leading" id="iGR-rp-mfv"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="circleView" destination="CKu-x6-TcT" id="2wf-k8-ZSg"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="orH-Vn-dQd" id="8uS-OF-9Gl"/>
+                                    <outlet property="delegate" destination="orH-Vn-dQd" id="Ho0-31-8s9"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="0bC-zX-cik" secondAttribute="trailing" id="4hu-d5-BFO"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="0bC-zX-cik" secondAttribute="bottom" id="I8f-jq-n90"/>
+                            <constraint firstItem="0bC-zX-cik" firstAttribute="top" secondItem="4E8-Ps-Nv8" secondAttribute="topMargin" id="ndM-WE-rl1"/>
+                            <constraint firstItem="0bC-zX-cik" firstAttribute="leading" secondItem="4E8-Ps-Nv8" secondAttribute="leadingMargin" id="y6B-6U-LQf"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qpA-iG-lMs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1450" y="-211"/>
         </scene>
     </scenes>
 </document>

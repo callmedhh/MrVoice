@@ -13,6 +13,7 @@ class RecordTool: NSObject, AVAudioRecorderDelegate{
     var audioPlayer: AVAudioPlayer!
     var dbTool: Database = Database()
     var filePath: String? = nil
+    var mood: Int? = nil
 }
 
 // MARK: - Private
@@ -51,10 +52,15 @@ extension RecordTool {
     func finishRecording(success success: Bool){
         if audioRecorder == nil {
             print("error")
-        } else if let filePath = self.filePath {
-            dbTool.addRecord(fileUrl: filePath)
+        } else {
             audioRecorder.stop()
             audioRecorder = nil
+        }
+    }
+    
+    func saveRecordingWithMood(mood mood: Int) {
+        if let filePath = self.filePath {
+            dbTool.addRecord(fileUrl: filePath, moodValue: mood)
         }
         self.filePath = nil
     }

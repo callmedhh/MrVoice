@@ -11,8 +11,10 @@ import Foundation
 class RecordModel{
     var date: NSDate
     var recordUrl: String
-    init(dateValue: NSDate, recordUrlValue: String){
+    var mood: Int
+    init(dateValue: NSDate, recordUrlValue: String, moodValue: Int){
         self.date = dateValue
         self.recordUrl = recordUrlValue
+        self.mood = moodValue
     }
 }

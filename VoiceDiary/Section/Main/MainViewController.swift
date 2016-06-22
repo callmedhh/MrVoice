@@ -13,7 +13,6 @@ import QuartzCore
 class MainViewController: UIViewController {
     let recordTool: RecordTool = RecordTool()
     var recordingSession: AVAudioSession!
-    let dbTool = Database()
     
     @IBOutlet weak var borderView: BorderView!
     @IBOutlet weak var recordBtn: RecordButton!
@@ -32,7 +31,6 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
                 
         // Do any additional setup after loading the view, typically from a nib.
-        dbTool.createTable()
         recordingSession = AVAudioSession.sharedInstance()
         do {
             try recordingSession.setCategory(AVAudioSessionCategoryPlayAndRecord)
