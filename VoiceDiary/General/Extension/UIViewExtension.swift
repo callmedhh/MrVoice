@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension UIButton {
+extension UIView {
     func setToRounded() {
         layer.cornerRadius = min(frame.size.width, frame.size.height) / 2;
         layer.masksToBounds = true;

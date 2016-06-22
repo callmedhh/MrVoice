@@ -14,13 +14,14 @@ class CalanderViewController: UIViewController,UICollectionViewDataSource,UIColl
     var recordModelList: [DailyRecord] = []
     var viewRecordTool: ViewRecordTool = ViewRecordTool()
     var weekdayOfMonthStart = 0
+    
+    @IBOutlet weak var collectionView: UICollectionView!
     override func viewDidLoad() {
         let date = NSDate()
         let month = date.getMonth()
         let year = date.getYear()
         weekdayOfMonthStart = DateTool.getDayOfTheWeek(date.startOfMonth()!)
         recordModelList = viewRecordTool.getAllDailyRecordList(month, year: year)
-        
     }
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(identifier, forIndexPath: indexPath) as! CalenderViewCell
@@ -31,7 +32,14 @@ class CalanderViewController: UIViewController,UICollectionViewDataSource,UIColl
         }else{
             cell.circleView.circleColor = UIColor.grayColor()
         }
+        cell.circleView.setNeedsDisplay()
         return cell
+    }
+    func reloadRecordModelList(){
+        let date = NSDate()
+        let month = date.getMonth()
+        let year = date.getYear()
+        recordModelList = viewRecordTool.getAllDailyRecordList(month, year: year)
     }
     
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
@@ -43,13 +51,13 @@ class CalanderViewController: UIViewController,UICollectionViewDataSource,UIColl
     }
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         let width = collectionView.frame.size.width
-        let cellWidth = width / 10.0
+        let cellWidth = width / 15.0
         return CGSize(width: cellWidth, height: cellWidth)
     }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
         let width = collectionView.frame.size.width
-        let insetSection = UIEdgeInsets(top: 10.0, left: width/30.0, bottom: 10.0, right: width/30.0)
+        let insetSection = UIEdgeInsets(top: 10.0, left: width/8.0, bottom: 10.0, right: width/8.0)
         return insetSection
     }
     

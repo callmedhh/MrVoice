@@ -13,7 +13,6 @@
 		96D1FECB1D0D3DB500CFD119 /* DateTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D1FEC31D0D3DB500CFD119 /* DateTool.swift */; };
 		96D1FECC1D0D3DB500CFD119 /* FilePathTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D1FEC41D0D3DB500CFD119 /* FilePathTool.swift */; };
 		96D1FECD1D0D3DB500CFD119 /* RecordTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D1FEC51D0D3DB500CFD119 /* RecordTool.swift */; };
-		96D1FED41D0D3E4C00CFD119 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D1FED11D0D3E4C00CFD119 /* HistoryViewController.swift */; };
 		96D1FED51D0D3E4C00CFD119 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D1FED31D0D3E4C00CFD119 /* MainViewController.swift */; };
 		96D1FED81D0D41B800CFD119 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D1FED71D0D41B800CFD119 /* Log.swift */; };
 		96D1FEDA1D0D466500CFD119 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D1FED91D0D466500CFD119 /* StringExtension.swift */; };
@@ -32,7 +31,7 @@
 		A0BAE0FB1D195A86000D144C /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BAE0FA1D195A86000D144C /* CircleView.swift */; };
 		A0BAE0FD1D195C51000D144C /* CalenderViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BAE0FC1D195C51000D144C /* CalenderViewCell.swift */; };
 		A0E794851D0E9F3B00EDC49C /* IntExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E794841D0E9F3B00EDC49C /* IntExtension.swift */; };
-		A0E794871D0EA7C400EDC49C /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E794861D0EA7C400EDC49C /* UIButtonExtension.swift */; };
+		A0E794871D0EA7C400EDC49C /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E794861D0EA7C400EDC49C /* UIViewExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,7 +41,6 @@
 		96D1FEC31D0D3DB500CFD119 /* DateTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateTool.swift; sourceTree = "<group>"; };
 		96D1FEC41D0D3DB500CFD119 /* FilePathTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilePathTool.swift; sourceTree = "<group>"; };
 		96D1FEC51D0D3DB500CFD119 /* RecordTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordTool.swift; sourceTree = "<group>"; };
-		96D1FED11D0D3E4C00CFD119 /* HistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		96D1FED31D0D3E4C00CFD119 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		96D1FED71D0D41B800CFD119 /* Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		96D1FED91D0D466500CFD119 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
@@ -64,7 +62,7 @@
 		A0BAE0FA1D195A86000D144C /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		A0BAE0FC1D195C51000D144C /* CalenderViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalenderViewCell.swift; sourceTree = "<group>"; };
 		A0E794841D0E9F3B00EDC49C /* IntExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntExtension.swift; sourceTree = "<group>"; };
-		A0E794861D0EA7C400EDC49C /* UIButtonExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
+		A0E794861D0EA7C400EDC49C /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		D5E4760629628DF3DD8BA77C /* Pods-VoiceDiary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VoiceDiary.release.xcconfig"; path = "Pods/Target Support Files/Pods-VoiceDiary/Pods-VoiceDiary.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -106,7 +104,7 @@
 			children = (
 				96D1FED91D0D466500CFD119 /* StringExtension.swift */,
 				A0E794841D0E9F3B00EDC49C /* IntExtension.swift */,
-				A0E794861D0EA7C400EDC49C /* UIButtonExtension.swift */,
+				A0E794861D0EA7C400EDC49C /* UIViewExtension.swift */,
 				A0BAE0F81D192F0F000D144C /* DateExtension.swift */,
 			);
 			path = Extension;
@@ -146,7 +144,6 @@
 		96D1FED01D0D3E4C00CFD119 /* History */ = {
 			isa = PBXGroup;
 			children = (
-				96D1FED11D0D3E4C00CFD119 /* HistoryViewController.swift */,
 				A0BAE0F01D182DE0000D144C /* CalanderViewController.swift */,
 			);
 			path = History;
@@ -353,14 +350,13 @@
 				96D1FECB1D0D3DB500CFD119 /* DateTool.swift in Sources */,
 				A0BAE0F51D18C922000D144C /* ViewRecordTool.swift in Sources */,
 				A08E69821D0FB38A0056F8B4 /* BorderView.swift in Sources */,
-				A0E794871D0EA7C400EDC49C /* UIButtonExtension.swift in Sources */,
+				A0E794871D0EA7C400EDC49C /* UIViewExtension.swift in Sources */,
 				A0BAE0C51D17A11B000D144C /* CalenderView.swift in Sources */,
 				A0BAE0FB1D195A86000D144C /* CircleView.swift in Sources */,
 				A0E794851D0E9F3B00EDC49C /* IntExtension.swift in Sources */,
 				A0BAE0F31D183098000D144C /* DailyRecord.swift in Sources */,
 				96D1FEC91D0D3DB500CFD119 /* RecordModel.swift in Sources */,
 				A096DCF31D07F1630023CB0C /* AppDelegate.swift in Sources */,
-				96D1FED41D0D3E4C00CFD119 /* HistoryViewController.swift in Sources */,
 				A0BAE0FD1D195C51000D144C /* CalenderViewCell.swift in Sources */,
 				96D1FECC1D0D3DB500CFD119 /* FilePathTool.swift in Sources */,
 				96D1FED51D0D3E4C00CFD119 /* MainViewController.swift in Sources */,

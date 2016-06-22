@@ -34,7 +34,7 @@ extension ViewRecordTool {
         let dayOfTMonth = DateTool.getDayCountOfMonth(startOfMonth)
         let count = weekdayOfmonthStart + dayOfTMonth
         for i in 0..<count{
-            if i < weekdayOfmonthStart {
+            if i < weekdayOfmonthStart-1 {
                 recordList.append(DailyRecord())
             }else{
                 let date = DateTool.generateDateFromYearAndMonth(year, month: month, day: i-weekdayOfmonthStart)

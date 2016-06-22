@@ -13,6 +13,10 @@ import QuartzCore
 class MainViewController: UIViewController {
     let recordTool: RecordTool = RecordTool()
     var recordingSession: AVAudioSession!
+    let dbTool = Database()
+    
+    @IBOutlet weak var calenderView: CalenderView!
+    var mood: Int = 0
     
     @IBOutlet weak var borderView: BorderView!
     @IBOutlet weak var recordBtn: RecordButton!
@@ -31,6 +35,7 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
                 
         // Do any additional setup after loading the view, typically from a nib.
+        dbTool.createTable()
         recordingSession = AVAudioSession.sharedInstance()
         do {
             try recordingSession.setCategory(AVAudioSessionCategoryPlayAndRecord)
@@ -63,7 +68,7 @@ class MainViewController: UIViewController {
             borderView.animate()
         }else{
             borderView.cancelAnimate()
-            
+            recordTool.finishRecording(success: true)
             recordView.hidden = true
             emojiView.hidden = false
             mainpageGreetingView.hidden = true
@@ -73,27 +78,34 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func happyMood(sender: AnyObject) {
+        mood = 0
         happyBtn.setTitle("我今天很开心", forState: .Normal)
     }
     
     @IBAction func noMood(sender: AnyObject) {
+        mood = 1
         nofeelBtn.setTitle("我今天不好也不坏", forState: .Normal)
     }
     
     @IBAction func badMood(sender: AnyObject) {
+        mood = 2
         sadBtn.setTitle("我今天不开心", forState: .Normal)
     }
     
     @IBAction func finishRecordBtnPressed(sender: AnyObject) {
-        recordTool.finishRecording(success: true)
         recordBtn.currentState = .Idle
-        
+        recordTool.saveRecordingWithMood(mood: mood)
         recordView.hidden = false
         emojiView.hidden = true
         mainpageGreetingView.hidden = false
         emojiGreetingView.hidden = true
         
         recordBtn.setNeedsDisplay()
+        
+        let calenderVC = self.childViewControllers[0] as! CalanderViewController
+        calenderVC.reloadRecordModelList()
+        calenderVC.collectionView.reloadData()
+        
     }
     
 }

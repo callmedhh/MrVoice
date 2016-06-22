@@ -40,7 +40,6 @@ extension RecordTool {
             AVEncoderAudioQualityKey: AVAudioQuality.High.rawValue
         ]
         do{
-            print(fileURL)
             audioRecorder = try AVAudioRecorder(URL: fileURL, settings: settings)
             audioRecorder.delegate = self
             audioRecorder.record()
