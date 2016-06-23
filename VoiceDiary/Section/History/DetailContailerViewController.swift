@@ -84,10 +84,11 @@ class DetailContailerViewController: UIViewController,UICollectionViewDataSource
         let recordModel = recordModelList[indexPath.row]
         if recordModel.isRecorded {
             let date = recordModel.date
-            let record = dbTool.selectRecordListByDate(<#T##dateValue: NSDate##NSDate#>)
+            let record = dbTool.selectRecordListByDate(date)
             let recordUrl = record.recordUrl
             let detailCalendarVC = self.parentViewController as! DetailCalendarViewController
             detailCalendarVC.playBtn.hidden = false
+            detailCalendarVC.recordUrl = recordUrl
             
         }
     }
