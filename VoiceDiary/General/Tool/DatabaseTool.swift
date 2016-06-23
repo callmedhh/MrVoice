@@ -56,7 +56,7 @@ class Database{
         try! db.run(recordRow.delete())
     }
     
-    func selectRecordListByDate(dateValue: NSDate) -> [RecordModel]{
+    func selectRecordListByDate(dateValue: NSDate) -> RecordModel{
         var recordList = [RecordModel]()
         let query = record.filter(date == dateValue)
         
@@ -64,7 +64,7 @@ class Database{
             let recordModel = RecordModel(dateValue: recordItem[date], recordUrlValue:recordItem[recordUrl]!, moodValue: recordItem[mood])
             recordList.append(recordModel)
         }
-        return recordList
+        return recordList[0]
     }
     
     func selectALLRecordList() -> [RecordModel]{

@@ -8,8 +8,9 @@
 //
 
 import Foundation
-
+let monthDes = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Agu","Sep","Oct","Mov","Dec"]
 class DateTool{
+    
     class func convertDate(date:NSDate) -> NSDate{
         let cal = NSCalendar.currentCalendar()
         let component = cal.components([.Year,.Month,.Day], fromDate: date)
@@ -22,6 +23,13 @@ class DateTool{
         let component = cal.components([.Month], fromDate: date)
         let month = component.month
         return month.getTwobitNumber(month)
+    }
+    class func getMonthDes() -> String {
+        let date = NSDate()
+        let cal = NSCalendar.currentCalendar()
+        let component = cal.components([.Month], fromDate: date)
+        let month = component.month
+        return monthDes[month-1]
     }
     class func getDay() -> String {
         let date = NSDate()

@@ -1,19 +1,21 @@
 //
-//  CalanderViewController.swift
+//  DetailContailerViewController.swift
 //  VoiceDiary
 //
-//  Created by dongyixuan on 16/6/20.
+//  Created by dongyixuan on 16/6/23.
 //  Copyright © 2016年 Lemur. All rights reserved.
 //
 
 import UIKit
 
-let identifier = "calendarIdentifier"
 
-class CalanderViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout{
+
+class DetailContailerViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout{
+    let identifier = "calendarIdentifier"
     var recordModelList: [DailyRecord] = []
     var viewRecordTool: ViewRecordTool = ViewRecordTool()
     var weekdayOfMonthStart = 0
+    var dbTool: Database = Database()
     
     @IBOutlet weak var collectionView: UICollectionView!
     override func viewDidLoad() {
@@ -28,11 +30,15 @@ class CalanderViewController: UIViewController,UICollectionViewDataSource,UIColl
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(identifier, forIndexPath: indexPath) as! CalenderViewCell
         if indexPath.row < weekdayOfMonthStart-1 {
             cell.circleView.circleColor = UIColor.clearColor()
-        }else if recordModelList[indexPath.row].isRecorded{
-            cell.circleView.circleColor = UIColor.yellowColor()
-        }else{
-            cell.circleView.circleColor = UIColor.grayColor()
+        }else {
+            if recordModelList[indexPath.row].isRecorded{
+                cell.circleView.circleColor = UIColor.yellowColor()
+            }else{
+                cell.circleView.circleColor = UIColor(hexString: "#3f4244")!
+            }
+            cell.numberLabel.text = "\(indexPath.row - weekdayOfMonthStart + 2)"
         }
+        
         cell.circleView.setNeedsDisplay()
         return cell
     }
@@ -52,13 +58,15 @@ class CalanderViewController: UIViewController,UICollectionViewDataSource,UIColl
     }
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         let width = collectionView.frame.size.width
-        let cellWidth = width / 15.0
-        return CGSize(width: cellWidth, height: cellWidth)
+        let cellWidth = width / 12.0
+        let cellHeight = cellWidth * 2
+        return CGSize(width: cellWidth, height: cellHeight)
     }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
         let width = collectionView.frame.size.width
-        let insetSection = UIEdgeInsets(top: 10.0, left: width/8.0, bottom: 10.0, right: width/8.0)
+        let height = collectionView.frame.size.height
+        let insetSection = UIEdgeInsets(top: height/10.0, left: width/15.0, bottom: 10.0, right: width/15.0)
         return insetSection
     }
     
@@ -72,8 +80,16 @@ class CalanderViewController: UIViewController,UICollectionViewDataSource,UIColl
         return width/30
     }
     
-    @IBAction func showHistoryBtnPressed(sender: AnyObject) {
-        self.parentViewController?.performSegueWithIdentifier("showHistory", sender: sender)
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        let recordModel = recordModelList[indexPath.row]
+        if recordModel.isRecorded {
+            let date = recordModel.date
+            let record = dbTool.selectRecordListByDate(<#T##dateValue: NSDate##NSDate#>)
+            let recordUrl = record.recordUrl
+            let detailCalendarVC = self.parentViewController as! DetailCalendarViewController
+            detailCalendarVC.playBtn.hidden = false
+            
+        }
     }
     
 }

@@ -103,9 +103,9 @@ class MainViewController: UIViewController {
         recordBtn.setNeedsDisplay()
         
         let calenderVC = self.childViewControllers[0] as! CalanderViewController
+
         calenderVC.reloadRecordModelList()
         calenderVC.collectionView.reloadData()
-        
     }
     
 }

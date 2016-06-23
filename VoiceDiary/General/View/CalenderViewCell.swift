@@ -10,4 +10,6 @@ import UIKit
 
 class CalenderViewCell: UICollectionViewCell {
     @IBOutlet weak var circleView: CircleView!
+    
+    @IBOutlet weak var numberLabel: UILabel!
 }
