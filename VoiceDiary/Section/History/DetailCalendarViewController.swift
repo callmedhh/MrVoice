@@ -25,8 +25,12 @@ class DetailCalendarViewController: UIViewController {
     @IBAction func playBtnPressed(sender: AnyObject) {
         playBtn.setTitle("点击暂停", forState: .Normal)
         if let recordPath = recordUrl {
-            print("play\(recordPath)")
             recordTool.startPlaying(recordPath)
         }
     }
+    
+    @IBAction func backgroundBtnPressed(sender: AnyObject) {
+        self.navigationController?.popViewControllerAnimated(true)
+    }
+    
 }

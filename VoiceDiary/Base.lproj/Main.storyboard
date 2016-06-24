@@ -354,6 +354,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A8A-o0-qBU">
+                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
+                                <connections>
+                                    <action selector="backgroundBtnPressed:" destination="OTt-Vz-htn" eventType="touchUpInside" id="sbr-XB-I6R"/>
+                                </connections>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VfI-MK-hTs" userLabel="monthNumberLabel">
                                 <rect key="frame" x="25" y="70" width="119.5" height="60"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
@@ -385,12 +391,16 @@
                             <constraint firstItem="Xw1-80-tEn" firstAttribute="leading" secondItem="VfI-MK-hTs" secondAttribute="trailing" constant="5" id="8W3-TD-ymY"/>
                             <constraint firstItem="WxW-J8-TAA" firstAttribute="top" secondItem="LxS-mP-3VI" secondAttribute="bottom" constant="150" id="8xB-Mp-6gk"/>
                             <constraint firstItem="Xw1-80-tEn" firstAttribute="baseline" secondItem="VfI-MK-hTs" secondAttribute="baseline" id="AFO-pp-Udh"/>
+                            <constraint firstItem="WxW-J8-TAA" firstAttribute="top" secondItem="A8A-o0-qBU" secondAttribute="bottom" id="Lr1-87-hIj"/>
                             <constraint firstItem="WxW-J8-TAA" firstAttribute="top" secondItem="oTl-bg-iiH" secondAttribute="bottom" constant="60" id="NyK-hN-7NH"/>
                             <constraint firstAttribute="trailing" secondItem="LxS-mP-3VI" secondAttribute="trailing" constant="20" id="QqA-Xk-u9R"/>
+                            <constraint firstItem="A8A-o0-qBU" firstAttribute="top" secondItem="HIN-1C-OvO" secondAttribute="bottom" id="Sls-PH-snd"/>
                             <constraint firstItem="VfI-MK-hTs" firstAttribute="top" secondItem="HIN-1C-OvO" secondAttribute="bottom" constant="50" id="YeE-QH-1O0"/>
                             <constraint firstItem="LxS-mP-3VI" firstAttribute="top" secondItem="VfI-MK-hTs" secondAttribute="bottom" constant="20" id="idJ-BO-sFb"/>
+                            <constraint firstItem="A8A-o0-qBU" firstAttribute="leading" secondItem="nEf-5N-0cr" secondAttribute="leading" id="lyy-gL-hDG"/>
                             <constraint firstItem="VfI-MK-hTs" firstAttribute="leading" secondItem="nEf-5N-0cr" secondAttribute="leading" constant="25" id="ojd-ie-pPO"/>
                             <constraint firstItem="oTl-bg-iiH" firstAttribute="centerX" secondItem="nEf-5N-0cr" secondAttribute="centerX" id="tEb-zE-83A"/>
+                            <constraint firstAttribute="trailing" secondItem="A8A-o0-qBU" secondAttribute="trailing" id="wCN-iv-IZ2"/>
                             <constraint firstItem="LxS-mP-3VI" firstAttribute="leading" secondItem="nEf-5N-0cr" secondAttribute="leading" constant="20" id="yFg-Yh-fdt"/>
                         </constraints>
                     </view>
@@ -408,6 +418,10 @@
         <scene sceneID="Vj9-d3-Qlp">
             <objects>
                 <viewController id="aFW-lk-Ebp" customClass="DetailContailerViewController" customModule="VoiceDiary" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="eBJ-AI-nkd"/>
+                        <viewControllerLayoutGuide type="bottom" id="95d-IC-XtB"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="iUn-ce-Yff">
                         <rect key="frame" x="0.0" y="0.0" width="560" height="300"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
