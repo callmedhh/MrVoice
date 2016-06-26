@@ -10,7 +10,7 @@ import UIKit
 import AVFoundation
 import QuartzCore
 
-class MainViewController: UIViewController {
+class MainViewController: UIViewController, UINavigationControllerDelegate{
     let recordTool: RecordTool = RecordTool()
     var recordingSession: AVAudioSession!
     let dbTool = Database()
@@ -59,6 +59,7 @@ class MainViewController: UIViewController {
         emojiView.hidden = true
         emojiGreetingView.hidden = true
         
+        navigationController?.delegate = self
     }
 
     @IBAction func recordTapped(sender: AnyObject) {
@@ -107,6 +108,12 @@ class MainViewController: UIViewController {
         calenderVC.reloadRecordModelList()
         calenderVC.collectionView.reloadData()
     }
+  
     
+    let animatedTransition = CustomerAnimatedTransitionController()
+   
+    func navigationController(navigationController: UINavigationController, animationControllerForOperation operation: UINavigationControllerOperation, fromViewController fromVC: UIViewController, toViewController toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return animatedTransition
+    }
 }
 

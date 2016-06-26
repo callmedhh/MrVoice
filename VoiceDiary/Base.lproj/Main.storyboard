@@ -208,7 +208,7 @@
                                 <rect key="frame" x="270" y="50" width="300" height="120"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <connections>
-                                    <segue destination="orH-Vn-dQd" kind="embed" id="Qla-po-1Mw"/>
+                                    <segue destination="orH-Vn-dQd" kind="embed" identifier="" id="Qla-po-1Mw"/>
                                 </connections>
                             </containerView>
                         </subviews>
@@ -255,7 +255,7 @@
                         <outlet property="recordBtn" destination="HJF-pA-LXh" id="yxR-96-f2S"/>
                         <outlet property="recordView" destination="SLB-Mg-9iC" id="INZ-Hc-o9J"/>
                         <outlet property="sadBtn" destination="aWu-DY-5YR" id="3by-uo-Mfd"/>
-                        <segue destination="OTt-Vz-htn" kind="show" identifier="showHistory" id="LSI-Ol-W8g"/>
+                        <segue destination="OTt-Vz-htn" kind="show" identifier="showHistory" id="I71-61-8aq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="50a-rQ-o7O" userLabel="First Responder" sceneMemberID="firstResponder"/>
