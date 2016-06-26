@@ -15,6 +15,7 @@ class DetailCalendarViewController: UIViewController {
     @IBOutlet weak var playBtn: UIButton!
     var recordTool: RecordTool = RecordTool()
 
+    @IBOutlet weak var calenderContainerView: UIView!
     var recordUrl: String?
     override func viewDidLoad() {
         monthNumberLabel.text =  DateTool.getMonth()

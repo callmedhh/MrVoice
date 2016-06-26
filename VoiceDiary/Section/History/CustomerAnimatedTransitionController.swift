@@ -10,24 +10,54 @@ import UIKit
 
 class CustomerAnimatedTransitionController: NSObject, UIViewControllerAnimatedTransitioning {
     func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval {
-        return 1.5
+        return 2
     }
     func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
         let fromViewController = transitionContext.viewControllerForKey(UITransitionContextFromViewControllerKey)!
         let toViewController = transitionContext.viewControllerForKey(UITransitionContextToViewControllerKey)!
         let finalFrame = transitionContext.finalFrameForViewController(toViewController)
-        let containerView = transitionContext.containerView()
         
+        let containerView = transitionContext.containerView()
         toViewController.view.frame = finalFrame
         containerView?.addSubview(toViewController.view)
         containerView?.sendSubviewToBack(toViewController.view)
         
-        UIView.animateWithDuration(transitionDuration(transitionContext), animations: {
-            fromViewController.view.alpha = 0
-            toViewController.view.alpha = 1.0
-        }, completion: {
-            finished in
-            transitionContext.completeTransition(true)
-        })
+        if fromViewController is MainViewController && toViewController is DetailCalendarViewController{
+            let mainVC = fromViewController as! MainViewController
+            let detailContainerVC = toViewController as! DetailCalendarViewController
+            let calenderViewFrame = mainVC.calenderView.frame
+            //隐藏calendarView
+            mainVC.calenderView.hidden = true
+            detailContainerVC.calenderContainerView.hidden = true
+            
+            let snapshotView = mainVC.calenderView.snapshotViewAfterScreenUpdates(false)
+            snapshotView.frame = calenderViewFrame
+            containerView?.addSubview(snapshotView)
+                        
+            UIView.animateWithDuration(transitionDuration(transitionContext), animations: {
+                detailContainerVC.calenderContainerView.setNeedsLayout()
+                detailContainerVC.calenderContainerView.layoutIfNeeded()
+                snapshotView.frame = detailContainerVC.calenderContainerView.frame
+                snapshotView.alpha = 0
+                fromViewController.view.alpha = 0
+            }, completion: { finished in
+                snapshotView.removeFromSuperview()
+                fromViewController.view.alpha = 1.0
+                transitionContext.completeTransition(true)
+                detailContainerVC.calenderContainerView.hidden = false
+                mainVC.calenderView.hidden = false
+            })
+        } else {
+            UIView.animateWithDuration(transitionDuration(transitionContext), animations: {
+                fromViewController.view.alpha = 0
+                }, completion: { finished in
+                    fromViewController.view.alpha = 1.0
+                    transitionContext.completeTransition(true)
+            })
+        }
+        
+        
+
+        
     }
 }

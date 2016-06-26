@@ -405,6 +405,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="calenderContainerView" destination="LxS-mP-3VI" id="9he-yo-cTN"/>
                         <outlet property="monthNumberLabel" destination="VfI-MK-hTs" id="fJd-VC-FKE"/>
                         <outlet property="monthTextLabel" destination="Xw1-80-tEn" id="eMa-Tg-aZ5"/>
                         <outlet property="playBtn" destination="oTl-bg-iiH" id="fSs-ro-8PX"/>
