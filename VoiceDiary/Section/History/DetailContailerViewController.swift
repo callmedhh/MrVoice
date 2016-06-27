@@ -71,8 +71,8 @@ class DetailContailerViewController: UIViewController,UICollectionViewDataSource
     }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAtIndex section: Int) -> CGFloat {
-        let width = collectionView.frame.size.width
-        return width/30
+        let height = collectionView.frame.size.height
+        return height/25
     }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAtIndex section: Int) -> CGFloat {

@@ -33,11 +33,12 @@ class CustomerAnimatedTransitionController: NSObject, UIViewControllerAnimatedTr
             let snapshotView = mainVC.calenderView.snapshotViewAfterScreenUpdates(false)
             snapshotView.frame = calenderViewFrame
             containerView?.addSubview(snapshotView)
-                        
+            
             UIView.animateWithDuration(transitionDuration(transitionContext), animations: {
                 detailContainerVC.calenderContainerView.setNeedsLayout()
                 detailContainerVC.calenderContainerView.layoutIfNeeded()
-                snapshotView.frame = detailContainerVC.calenderContainerView.frame
+                let calendarViewFrame = detailContainerVC.calenderContainerView.frame
+                snapshotView.frame = calendarViewFrame
                 snapshotView.alpha = 0
                 fromViewController.view.alpha = 0
             }, completion: { finished in

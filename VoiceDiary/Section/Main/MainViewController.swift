@@ -60,6 +60,8 @@ class MainViewController: UIViewController, UINavigationControllerDelegate{
         emojiGreetingView.hidden = true
         
         navigationController?.delegate = self
+        
+        
     }
 
     @IBAction func recordTapped(sender: AnyObject) {

@@ -31,10 +31,10 @@
 		A0BAE0F91D192F0F000D144C /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BAE0F81D192F0F000D144C /* DateExtension.swift */; };
 		A0BAE0FB1D195A86000D144C /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BAE0FA1D195A86000D144C /* CircleView.swift */; };
 		A0BAE0FD1D195C51000D144C /* CalenderViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BAE0FC1D195C51000D144C /* CalenderViewCell.swift */; };
-		A0BAE0FF1D1A7F90000D144C /* DetailCalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BAE0FE1D1A7F90000D144C /* DetailCalendarViewController.swift */; };
 		A0E794851D0E9F3B00EDC49C /* IntExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E794841D0E9F3B00EDC49C /* IntExtension.swift */; };
 		A0E794871D0EA7C400EDC49C /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E794861D0EA7C400EDC49C /* UIViewExtension.swift */; };
 		A0F51C3D1D2006D0002C93D1 /* CustomerAnimatedTransitionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F51C3C1D2006D0002C93D1 /* CustomerAnimatedTransitionController.swift */; };
+		A0F51C3F1D215D35002C93D1 /* DetailCalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F51C3E1D215D35002C93D1 /* DetailCalendarViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,10 +65,10 @@
 		A0BAE0F81D192F0F000D144C /* DateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		A0BAE0FA1D195A86000D144C /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		A0BAE0FC1D195C51000D144C /* CalenderViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalenderViewCell.swift; sourceTree = "<group>"; };
-		A0BAE0FE1D1A7F90000D144C /* DetailCalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailCalendarViewController.swift; sourceTree = "<group>"; };
 		A0E794841D0E9F3B00EDC49C /* IntExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntExtension.swift; sourceTree = "<group>"; };
 		A0E794861D0EA7C400EDC49C /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		A0F51C3C1D2006D0002C93D1 /* CustomerAnimatedTransitionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomerAnimatedTransitionController.swift; sourceTree = "<group>"; };
+		A0F51C3E1D215D35002C93D1 /* DetailCalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailCalendarViewController.swift; sourceTree = "<group>"; };
 		D5E4760629628DF3DD8BA77C /* Pods-VoiceDiary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VoiceDiary.release.xcconfig"; path = "Pods/Target Support Files/Pods-VoiceDiary/Pods-VoiceDiary.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -150,8 +150,8 @@
 		96D1FED01D0D3E4C00CFD119 /* History */ = {
 			isa = PBXGroup;
 			children = (
+				A0F51C3E1D215D35002C93D1 /* DetailCalendarViewController.swift */,
 				A0BAE0F01D182DE0000D144C /* CalanderViewController.swift */,
-				A0BAE0FE1D1A7F90000D144C /* DetailCalendarViewController.swift */,
 				A05127E11D1BE58700F2ECA1 /* DetailContailerViewController.swift */,
 				A0F51C3C1D2006D0002C93D1 /* CustomerAnimatedTransitionController.swift */,
 			);
@@ -356,7 +356,6 @@
 				96D1FEDA1D0D466500CFD119 /* StringExtension.swift in Sources */,
 				96D1FED81D0D41B800CFD119 /* Log.swift in Sources */,
 				A08E69801D0EBD040056F8B4 /* RecordButton.swift in Sources */,
-				A0BAE0FF1D1A7F90000D144C /* DetailCalendarViewController.swift in Sources */,
 				A05127E21D1BE58700F2ECA1 /* DetailContailerViewController.swift in Sources */,
 				A0F51C3D1D2006D0002C93D1 /* CustomerAnimatedTransitionController.swift in Sources */,
 				96D1FECB1D0D3DB500CFD119 /* DateTool.swift in Sources */,
@@ -371,6 +370,7 @@
 				A096DCF31D07F1630023CB0C /* AppDelegate.swift in Sources */,
 				A0BAE0FD1D195C51000D144C /* CalenderViewCell.swift in Sources */,
 				96D1FECC1D0D3DB500CFD119 /* FilePathTool.swift in Sources */,
+				A0F51C3F1D215D35002C93D1 /* DetailCalendarViewController.swift in Sources */,
 				96D1FED51D0D3E4C00CFD119 /* MainViewController.swift in Sources */,
 				A0BAE0F71D18CCD1000D144C /* MoodEnumModel.swift in Sources */,
 			);
