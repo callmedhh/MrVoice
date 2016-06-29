@@ -37,13 +37,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vIm-aX-Wr4" userLabel="CalandarView" customClass="CalenderView" customModule="VoiceDiary" customModuleProvider="target">
-                                <rect key="frame" x="310" y="40" width="270" height="120"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I6T-yh-XVa" customClass="BorderView" customModule="VoiceDiary" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="20" width="600" height="580"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vIm-aX-Wr4" userLabel="CalandarView" customClass="CalenderView" customModule="VoiceDiary" customModuleProvider="target">
+                                <rect key="frame" x="310" y="40" width="270" height="150"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HWy-dq-47d">
                                 <rect key="frame" x="50" y="50" width="120" height="60"/>
@@ -228,7 +228,7 @@
                             <constraint firstAttribute="trailing" secondItem="I6T-yh-XVa" secondAttribute="trailing" id="ech-Hf-Iei"/>
                             <constraint firstItem="vIm-aX-Wr4" firstAttribute="width" secondItem="tVI-3F-JgO" secondAttribute="width" multiplier="0.45" id="f7Z-nj-GMn"/>
                             <constraint firstItem="E95-R8-KbK" firstAttribute="leading" secondItem="tVI-3F-JgO" secondAttribute="leading" constant="50" id="jj5-Nh-4Qs"/>
-                            <constraint firstItem="vIm-aX-Wr4" firstAttribute="height" secondItem="tVI-3F-JgO" secondAttribute="height" multiplier="0.2" id="lcT-Gl-04H"/>
+                            <constraint firstItem="vIm-aX-Wr4" firstAttribute="height" secondItem="tVI-3F-JgO" secondAttribute="height" multiplier="0.25" id="lcT-Gl-04H"/>
                             <constraint firstItem="HWy-dq-47d" firstAttribute="leading" secondItem="tVI-3F-JgO" secondAttribute="leading" constant="50" id="ns1-Wn-lgi"/>
                             <constraint firstAttribute="trailingMargin" secondItem="bXb-C7-jcQ" secondAttribute="trailing" constant="20" id="pnm-be-0vq"/>
                             <constraint firstItem="HWy-dq-47d" firstAttribute="top" secondItem="fcb-L4-d9W" secondAttribute="bottom" constant="30" id="rWL-vY-Bu2"/>
