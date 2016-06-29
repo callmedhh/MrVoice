@@ -15,7 +15,7 @@ class HistoryViewController: UIViewController {
     @IBOutlet weak var playBtn: UIButton!
     var recordTool: RecordTool = RecordTool()
 
-    @IBOutlet weak var calenderContainerView: UIView!
+    @IBOutlet weak var calenderView: CalenderView!
     var recordUrl: String?
     override func viewDidLoad() {
         monthNumberLabel.text =  DateTool.getMonth()

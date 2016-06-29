@@ -18,11 +18,19 @@ class CalenderView: UIView {
         setup()
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        update()
+    }
+}
+
+// MARK: - Private
+extension CalenderView {
     func setup() {
-        self.backgroundColor = UIColor(white: 1, alpha: 0.2)
+        self.backgroundColor = UIColor.clearColor()
         for _ in 0..<size {
             let v = UIView()
-            v.backgroundColor = UIColor.yellowColor()
+            v.backgroundColor = UIColor.grayColor()
             addSubview(v)
             buttons.append(v)
         }
@@ -42,10 +50,4 @@ class CalenderView: UIView {
             button.frame = CGRectMake(x, y, itemWidth, itemHeight)
         }
     }
-
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        update()
-    }
-    
 }

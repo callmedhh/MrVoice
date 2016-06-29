@@ -10,43 +10,50 @@ import UIKit
 
 class CustomerAnimatedTransitionController: NSObject, UIViewControllerAnimatedTransitioning {
     func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval {
-        return 2
+        return 1.4
     }
     func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
         let fromViewController = transitionContext.viewControllerForKey(UITransitionContextFromViewControllerKey)!
         let toViewController = transitionContext.viewControllerForKey(UITransitionContextToViewControllerKey)!
         let finalFrame = transitionContext.finalFrameForViewController(toViewController)
         
-        let containerView = transitionContext.containerView()
+        let containerView = transitionContext.containerView()!
         toViewController.view.frame = finalFrame
-        containerView?.addSubview(toViewController.view)
-        containerView?.sendSubviewToBack(toViewController.view)
+        containerView.insertSubview(toViewController.view, atIndex: 0)
         
         if fromViewController is MainViewController && toViewController is HistoryViewController{
-            let mainVC = fromViewController as! MainViewController
-            let detailContainerVC = toViewController as! HistoryViewController
-            let calenderViewFrame = mainVC.calenderView.frame
-            //隐藏calendarView
-            mainVC.calenderView.hidden = true
-            detailContainerVC.calenderContainerView.hidden = true
+            let fromVC = fromViewController as! MainViewController
+            let toVC = toViewController as! HistoryViewController
+
+            toVC.calenderView.setNeedsLayout()
+            toVC.calenderView.layoutIfNeeded()
+            toVC.calenderView.hidden = true
             
-            let snapshotView = mainVC.calenderView.snapshotViewAfterScreenUpdates(false)
-            snapshotView.frame = calenderViewFrame
-            containerView?.addSubview(snapshotView)
+            let originFromVCBackgroundColor = fromVC.view.backgroundColor
             
             UIView.animateWithDuration(transitionDuration(transitionContext), animations: {
-                detailContainerVC.calenderContainerView.setNeedsLayout()
-                detailContainerVC.calenderContainerView.layoutIfNeeded()
-                let calendarViewFrame = detailContainerVC.calenderContainerView.frame
-                snapshotView.frame = calendarViewFrame
-                snapshotView.alpha = 0
-                fromViewController.view.alpha = 0
+                fromVC.calenderView.frame = toVC.calenderView.frame
+                fromVC.calenderView.update()
+                for v in fromViewController.view.subviews {
+                    if v is CalenderView {
+                        continue
+                    } else {
+                        v.alpha = 0
+                    }
+                }
+                fromViewController.view.backgroundColor = UIColor.clearColor()
             }, completion: { finished in
-                snapshotView.removeFromSuperview()
-                fromViewController.view.alpha = 1.0
+                for v in fromViewController.view.subviews {
+                    if v is CalenderView {
+                        continue
+                    } else {
+                        v.alpha = 1
+                    }
+                }
+                fromViewController.view.backgroundColor = originFromVCBackgroundColor
+                
+                toVC.calenderView.hidden = false
                 transitionContext.completeTransition(true)
-                detailContainerVC.calenderContainerView.hidden = false
-                mainVC.calenderView.hidden = false
             })
         } else {
             UIView.animateWithDuration(transitionDuration(transitionContext), animations: {

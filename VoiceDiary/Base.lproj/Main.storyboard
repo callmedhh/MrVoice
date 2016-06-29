@@ -45,6 +45,12 @@
                                 <rect key="frame" x="310" y="40" width="270" height="150"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5NO-d4-JlG" userLabel="CalandarViewButton">
+                                <rect key="frame" x="310" y="40" width="270" height="150"/>
+                                <connections>
+                                    <segue destination="OTt-Vz-htn" kind="show" identifier="showHistory" id="fyz-Z3-dnC"/>
+                                </connections>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HWy-dq-47d">
                                 <rect key="frame" x="50" y="50" width="120" height="60"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
@@ -212,7 +218,10 @@
                         <color key="backgroundColor" red="0.10196078431372549" green="0.10980392156862745" blue="0.11372549019607843" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="SLB-Mg-9iC" firstAttribute="leading" secondItem="tVI-3F-JgO" secondAttribute="leadingMargin" id="2qd-nv-Foe"/>
+                            <constraint firstItem="5NO-d4-JlG" firstAttribute="trailing" secondItem="vIm-aX-Wr4" secondAttribute="trailing" id="3aB-4m-cnI"/>
+                            <constraint firstItem="5NO-d4-JlG" firstAttribute="top" secondItem="vIm-aX-Wr4" secondAttribute="top" id="4bj-FI-QhO"/>
                             <constraint firstItem="I6T-yh-XVa" firstAttribute="top" secondItem="fcb-L4-d9W" secondAttribute="bottom" id="504-a5-Okr"/>
+                            <constraint firstItem="5NO-d4-JlG" firstAttribute="leading" secondItem="vIm-aX-Wr4" secondAttribute="leading" id="5GJ-yX-yyf"/>
                             <constraint firstItem="dcw-bH-Nos" firstAttribute="leading" secondItem="tVI-3F-JgO" secondAttribute="leading" constant="20" id="6MP-II-bMA"/>
                             <constraint firstItem="dcw-bH-Nos" firstAttribute="top" secondItem="fcb-L4-d9W" secondAttribute="bottom" constant="180" id="6vY-4z-VKW"/>
                             <constraint firstAttribute="leadingMargin" secondItem="FKK-D8-A9e" secondAttribute="leading" id="Abr-cT-BLR"/>
@@ -230,6 +239,7 @@
                             <constraint firstItem="E95-R8-KbK" firstAttribute="leading" secondItem="tVI-3F-JgO" secondAttribute="leading" constant="50" id="jj5-Nh-4Qs"/>
                             <constraint firstItem="vIm-aX-Wr4" firstAttribute="height" secondItem="tVI-3F-JgO" secondAttribute="height" multiplier="0.25" id="lcT-Gl-04H"/>
                             <constraint firstItem="HWy-dq-47d" firstAttribute="leading" secondItem="tVI-3F-JgO" secondAttribute="leading" constant="50" id="ns1-Wn-lgi"/>
+                            <constraint firstItem="5NO-d4-JlG" firstAttribute="bottom" secondItem="vIm-aX-Wr4" secondAttribute="bottom" id="ooM-ho-8KZ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="bXb-C7-jcQ" secondAttribute="trailing" constant="20" id="pnm-be-0vq"/>
                             <constraint firstItem="HWy-dq-47d" firstAttribute="top" secondItem="fcb-L4-d9W" secondAttribute="bottom" constant="30" id="rWL-vY-Bu2"/>
                             <constraint firstItem="bXb-C7-jcQ" firstAttribute="top" secondItem="fcb-L4-d9W" secondAttribute="bottom" constant="180" id="rhh-U1-BFS"/>
@@ -241,6 +251,7 @@
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <connections>
                         <outlet property="borderView" destination="I6T-yh-XVa" id="4nA-sw-kpl"/>
+                        <outlet property="calenderView" destination="vIm-aX-Wr4" id="5tR-J8-Jf4"/>
                         <outlet property="dayLabel" destination="E95-R8-KbK" id="ptr-L0-sSi"/>
                         <outlet property="emojiGreetingView" destination="bXb-C7-jcQ" id="P9M-SJ-MAf"/>
                         <outlet property="emojiView" destination="FKK-D8-A9e" id="6tD-eZ-8Tz"/>
@@ -251,7 +262,6 @@
                         <outlet property="recordBtn" destination="HJF-pA-LXh" id="yxR-96-f2S"/>
                         <outlet property="recordView" destination="SLB-Mg-9iC" id="INZ-Hc-o9J"/>
                         <outlet property="sadBtn" destination="aWu-DY-5YR" id="3by-uo-Mfd"/>
-                        <segue destination="OTt-Vz-htn" kind="show" identifier="showHistory" id="I71-61-8aq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="50a-rQ-o7O" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -295,22 +305,39 @@
                                     <action selector="playBtnPressed:" destination="OTt-Vz-htn" eventType="touchUpInside" id="yO4-mC-y5p"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UHm-CS-sXs" customClass="CalenderView" customModule="VoiceDiary" customModuleProvider="target">
+                                <rect key="frame" x="20" y="191" width="560" height="299"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="UHm-CS-sXs" secondAttribute="height" multiplier="15:8" id="d60-uQ-ZxE"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.098039215686274508" green="0.10980392156862745" blue="0.11764705882352941" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="Xw1-80-tEn" firstAttribute="leading" secondItem="VfI-MK-hTs" secondAttribute="trailing" constant="5" id="8W3-TD-ymY"/>
                             <constraint firstItem="Xw1-80-tEn" firstAttribute="baseline" secondItem="VfI-MK-hTs" secondAttribute="baseline" id="AFO-pp-Udh"/>
+                            <constraint firstItem="WxW-J8-TAA" firstAttribute="top" secondItem="UHm-CS-sXs" secondAttribute="bottom" constant="20" id="D0V-sz-r3z"/>
+                            <constraint firstItem="UHm-CS-sXs" firstAttribute="leading" secondItem="nEf-5N-0cr" secondAttribute="leading" constant="20" id="FqA-iR-fRU"/>
                             <constraint firstItem="WxW-J8-TAA" firstAttribute="top" secondItem="A8A-o0-qBU" secondAttribute="bottom" id="Lr1-87-hIj"/>
                             <constraint firstItem="WxW-J8-TAA" firstAttribute="top" secondItem="oTl-bg-iiH" secondAttribute="bottom" constant="60" id="NyK-hN-7NH"/>
                             <constraint firstItem="A8A-o0-qBU" firstAttribute="top" secondItem="HIN-1C-OvO" secondAttribute="bottom" id="Sls-PH-snd"/>
                             <constraint firstItem="VfI-MK-hTs" firstAttribute="top" secondItem="HIN-1C-OvO" secondAttribute="bottom" constant="50" id="YeE-QH-1O0"/>
                             <constraint firstItem="A8A-o0-qBU" firstAttribute="leading" secondItem="nEf-5N-0cr" secondAttribute="leading" id="lyy-gL-hDG"/>
+                            <constraint firstItem="UHm-CS-sXs" firstAttribute="centerX" secondItem="nEf-5N-0cr" secondAttribute="centerX" id="moL-Ws-5A5"/>
                             <constraint firstItem="VfI-MK-hTs" firstAttribute="leading" secondItem="nEf-5N-0cr" secondAttribute="leading" constant="25" id="ojd-ie-pPO"/>
                             <constraint firstItem="oTl-bg-iiH" firstAttribute="centerX" secondItem="nEf-5N-0cr" secondAttribute="centerX" id="tEb-zE-83A"/>
+                            <constraint firstItem="oTl-bg-iiH" firstAttribute="top" secondItem="UHm-CS-sXs" secondAttribute="bottom" constant="20" id="uBS-jN-huo"/>
                             <constraint firstAttribute="trailing" secondItem="A8A-o0-qBU" secondAttribute="trailing" id="wCN-iv-IZ2"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="D0V-sz-r3z"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
+                        <outlet property="calenderView" destination="UHm-CS-sXs" id="4ov-Gq-BAv"/>
                         <outlet property="monthNumberLabel" destination="VfI-MK-hTs" id="fJd-VC-FKE"/>
                         <outlet property="monthTextLabel" destination="Xw1-80-tEn" id="eMa-Tg-aZ5"/>
                         <outlet property="playBtn" destination="oTl-bg-iiH" id="fSs-ro-8PX"/>
