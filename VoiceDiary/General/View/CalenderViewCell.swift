@@ -12,4 +12,9 @@ class CalenderViewCell: UICollectionViewCell {
     @IBOutlet weak var circleView: CircleView!
     
     @IBOutlet weak var numberLabel: UILabel!
+    
+    let happyColor = UIColor(hexString: "#fda529")
+    let nomoodColor = UIColor(hexString: "#fee140")
+    let sadColor = UIColor(hexString: "#a09f8e")
+    
 }

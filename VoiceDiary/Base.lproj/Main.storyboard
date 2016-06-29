@@ -323,7 +323,6 @@
         <!--Calander View Controller-->
         <scene sceneID="Vj9-d3-Qlp">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="jKV-Q9-KLW" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="aFW-lk-Ebp" customClass="CalanderViewController" customModule="VoiceDiary" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="eBJ-AI-nkd"/>
@@ -395,6 +394,7 @@
                         </constraints>
                     </view>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jKV-Q9-KLW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2432" y="339"/>
         </scene>

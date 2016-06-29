@@ -35,6 +35,7 @@
 		A0E794871D0EA7C400EDC49C /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E794861D0EA7C400EDC49C /* UIViewExtension.swift */; };
 		A0F51C3D1D2006D0002C93D1 /* CustomerAnimatedTransitionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F51C3C1D2006D0002C93D1 /* CustomerAnimatedTransitionController.swift */; };
 		A0F51C3F1D215D35002C93D1 /* DetailCalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F51C3E1D215D35002C93D1 /* DetailCalendarViewController.swift */; };
+		A0F51C671D22B52D002C93D1 /* CalanderCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F51C661D22B52D002C93D1 /* CalanderCollectionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,6 +70,7 @@
 		A0E794861D0EA7C400EDC49C /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		A0F51C3C1D2006D0002C93D1 /* CustomerAnimatedTransitionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomerAnimatedTransitionController.swift; sourceTree = "<group>"; };
 		A0F51C3E1D215D35002C93D1 /* DetailCalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailCalendarViewController.swift; sourceTree = "<group>"; };
+		A0F51C661D22B52D002C93D1 /* CalanderCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalanderCollectionView.swift; sourceTree = "<group>"; };
 		D5E4760629628DF3DD8BA77C /* Pods-VoiceDiary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VoiceDiary.release.xcconfig"; path = "Pods/Target Support Files/Pods-VoiceDiary/Pods-VoiceDiary.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -182,6 +184,7 @@
 				A0BAE0C41D17A11B000D144C /* CalenderView.swift */,
 				A0BAE0FA1D195A86000D144C /* CircleView.swift */,
 				A0BAE0FC1D195C51000D144C /* CalenderViewCell.swift */,
+				A0F51C661D22B52D002C93D1 /* CalanderCollectionView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -359,6 +362,7 @@
 				A05127E21D1BE58700F2ECA1 /* DetailContailerViewController.swift in Sources */,
 				A0F51C3D1D2006D0002C93D1 /* CustomerAnimatedTransitionController.swift in Sources */,
 				96D1FECB1D0D3DB500CFD119 /* DateTool.swift in Sources */,
+				A0F51C671D22B52D002C93D1 /* CalanderCollectionView.swift in Sources */,
 				A0BAE0F51D18C922000D144C /* ViewRecordTool.swift in Sources */,
 				A08E69821D0FB38A0056F8B4 /* BorderView.swift in Sources */,
 				A0E794871D0EA7C400EDC49C /* UIViewExtension.swift in Sources */,
