@@ -1,5 +1,5 @@
 //
-//  DetailCalendarViewController.swift
+//  HistoryViewController.swift
 //  VoiceDiary
 //
 //  Created by dongyixuan on 16/6/22.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DetailCalendarViewController: UIViewController {
+class HistoryViewController: UIViewController {
     
     @IBOutlet weak var monthNumberLabel: UILabel!
     @IBOutlet weak var monthTextLabel: UILabel!

@@ -22,9 +22,9 @@ class CustomerAnimatedTransitionController: NSObject, UIViewControllerAnimatedTr
         containerView?.addSubview(toViewController.view)
         containerView?.sendSubviewToBack(toViewController.view)
         
-        if fromViewController is MainViewController && toViewController is DetailCalendarViewController{
+        if fromViewController is MainViewController && toViewController is HistoryViewController{
             let mainVC = fromViewController as! MainViewController
-            let detailContainerVC = toViewController as! DetailCalendarViewController
+            let detailContainerVC = toViewController as! HistoryViewController
             let calenderViewFrame = mainVC.calenderView.frame
             //隐藏calendarView
             mainVC.calenderView.hidden = true

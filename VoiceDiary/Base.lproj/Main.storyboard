@@ -258,10 +258,10 @@
             </objects>
             <point key="canvasLocation" x="915" y="285"/>
         </scene>
-        <!--Detail Calendar View Controller-->
+        <!--History View Controller-->
         <scene sceneID="Ml3-Cc-jGA">
             <objects>
-                <viewController id="OTt-Vz-htn" customClass="DetailCalendarViewController" customModule="VoiceDiary" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="OTt-Vz-htn" customClass="HistoryViewController" customModule="VoiceDiary" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="HIN-1C-OvO"/>
                         <viewControllerLayoutGuide type="bottom" id="WxW-J8-TAA"/>
@@ -318,85 +318,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="01N-Lj-QJV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1722" y="303"/>
-        </scene>
-        <!--Calander View Controller-->
-        <scene sceneID="Vj9-d3-Qlp">
-            <objects>
-                <viewController id="aFW-lk-Ebp" customClass="CalanderViewController" customModule="VoiceDiary" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="eBJ-AI-nkd"/>
-                        <viewControllerLayoutGuide type="bottom" id="95d-IC-XtB"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="iUn-ce-Yff">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="MBg-G9-CBc">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="sYm-jT-pIY">
-                                    <size key="itemSize" width="50" height="50"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="calendarIdentifier" id="mB3-3o-sX2" customClass="CalenderViewCell" customModule="VoiceDiary" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Iff-wa-IIs" customClass="CircleView" customModule="VoiceDiary" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="25"/>
-                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                </view>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hEn-5F-SI4" userLabel="numberLabel">
-                                                    <rect key="frame" x="0.0" y="25" width="50" height="25"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.30980392156862746" green="0.32549019607843138" blue="0.32941176470588235" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="hEn-5F-SI4" secondAttribute="trailing" id="06s-sa-Lfj"/>
-                                            <constraint firstItem="Iff-wa-IIs" firstAttribute="height" secondItem="mB3-3o-sX2" secondAttribute="height" multiplier="0.5" id="3PW-zo-vSa"/>
-                                            <constraint firstItem="Iff-wa-IIs" firstAttribute="leading" secondItem="mB3-3o-sX2" secondAttribute="leading" id="GB9-1O-YOl"/>
-                                            <constraint firstItem="Iff-wa-IIs" firstAttribute="top" secondItem="mB3-3o-sX2" secondAttribute="top" id="NrL-US-eJ0"/>
-                                            <constraint firstItem="hEn-5F-SI4" firstAttribute="top" secondItem="Iff-wa-IIs" secondAttribute="bottom" id="TrF-fg-EsX"/>
-                                            <constraint firstItem="hEn-5F-SI4" firstAttribute="leading" secondItem="mB3-3o-sX2" secondAttribute="leading" id="Uk9-FS-aYv"/>
-                                            <constraint firstAttribute="trailing" secondItem="Iff-wa-IIs" secondAttribute="trailing" id="dFf-I9-mfX"/>
-                                            <constraint firstAttribute="bottom" secondItem="hEn-5F-SI4" secondAttribute="bottom" id="lty-Hj-OaT"/>
-                                        </constraints>
-                                        <connections>
-                                            <outlet property="circleView" destination="Iff-wa-IIs" id="hKv-qG-6JD"/>
-                                            <outlet property="numberLabel" destination="hEn-5F-SI4" id="MJN-6g-O8w"/>
-                                        </connections>
-                                    </collectionViewCell>
-                                </cells>
-                                <connections>
-                                    <outlet property="dataSource" destination="aFW-lk-Ebp" id="90w-F2-bmJ"/>
-                                    <outlet property="delegate" destination="aFW-lk-Ebp" id="P0C-Wu-kPq"/>
-                                </connections>
-                            </collectionView>
-                        </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="bottomMargin" secondItem="MBg-G9-CBc" secondAttribute="bottom" id="1Kl-hb-YkB"/>
-                            <constraint firstItem="MBg-G9-CBc" firstAttribute="leading" secondItem="iUn-ce-Yff" secondAttribute="leading" id="CNq-n6-LP5"/>
-                            <constraint firstAttribute="trailing" secondItem="MBg-G9-CBc" secondAttribute="trailing" id="evy-fR-pTv"/>
-                            <constraint firstItem="MBg-G9-CBc" firstAttribute="top" secondItem="iUn-ce-Yff" secondAttribute="topMargin" id="vDx-88-DtX"/>
-                        </constraints>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="jKV-Q9-KLW" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2432" y="339"/>
+            <point key="canvasLocation" x="1682" y="285"/>
         </scene>
     </scenes>
 </document>

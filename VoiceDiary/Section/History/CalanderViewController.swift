@@ -139,7 +139,7 @@ class CalanderViewController: UIViewController,UICollectionViewDataSource,UIColl
                 let date = recordModel.date
                 let record = dbTool.selectRecordListByDate(date)
                 let recordUrl = record.recordUrl
-                let detailCalendarVC = self.parentViewController as! DetailCalendarViewController
+                let detailCalendarVC = self.parentViewController as! HistoryViewController
                 detailCalendarVC.playBtn.hidden = false
                 detailCalendarVC.recordUrl = recordUrl
             }
