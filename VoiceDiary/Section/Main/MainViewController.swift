@@ -104,11 +104,11 @@ class MainViewController: UIViewController, UINavigationControllerDelegate{
         emojiGreetingView.hidden = true
         
         recordBtn.setNeedsDisplay()
-        
-        let calenderVC = self.childViewControllers[0] as! CalanderViewController
 
-        calenderVC.reloadRecordModelList()
-        calenderVC.collectionView.reloadData()
+        // TODO: RELOAD DATA
+//        let calenderVC = self.childViewControllers[0] as! CalanderViewController
+//        calenderVC.reloadRecordModelList()
+//        calenderVC.collectionView.reloadData()
     }
   
     
