@@ -13,7 +13,7 @@ class CalenderView: UIView {
         case RoundedView = 101
         case Label = 102
     }
-    var progress = 0
+    private var progress: Float = 0
     let size = DateTool.getDayCountOfMonth(NSDate())
     let offset = DateTool.getDayOfTheWeek(NSDate().startOfMonth()!) - 1
     var items:[UIView] = []
@@ -33,22 +33,9 @@ class CalenderView: UIView {
 extension CalenderView {
     func setup() {
         self.backgroundColor = UIColor.clearColor()
-        for _ in 0..<offset{
-            let v = UIView()
-            
-            let roundedView = UIView()
-            roundedView.backgroundColor = UIColor.clearColor()
-            roundedView.tag = Tags.RoundedView.rawValue
-            v.addSubview(roundedView)
-            
-            let label = UILabel()
-            label.tag = Tags.Label.rawValue
-            v.addSubview(label)
-            addSubview(v)
-            items.append(v)
-        }
         for i in 0..<size {
             let v = UIView()
+            v.backgroundColor = UIColor(white: 1, alpha: CGFloat(Float(arc4random()) / Float(UINT32_MAX)))
             
             let roundedView = UIView()
             roundedView.backgroundColor = UIColor.yellowColor()
@@ -58,8 +45,8 @@ extension CalenderView {
             let label = UILabel()
             label.tag = Tags.Label.rawValue
             label.text = "\(i+1)"
-            label.textAlignment = .Center
-            label.textColor = UIColor(hexString: "#4f5354")
+            label.textAlignment = .Left
+            
             v.addSubview(label)
             addSubview(v)
             items.append(v)
@@ -76,29 +63,23 @@ extension CalenderView {
             let x = CGFloat(i % colNum) * (itemWidth)
             let y = CGFloat(i / colNum) * (itemHeight)
             v.frame = CGRectMake(x, y, itemWidth, itemHeight)
-            if progress == 0 {
-                let margin:CGFloat = min(self.bounds.width,self.bounds.height) / 40
-                let itemSize = min(itemWidth, itemHeight) - margin
-                
-                let roundedView = v.viewWithTag(Tags.RoundedView.rawValue)!
-                roundedView.frame = CGRectMake(margin, margin, itemSize, itemSize)
-                
-                roundedView.setToRounded()
-                
-                let label = v.viewWithTag(Tags.Label.rawValue)!
-                label.frame = CGRectMake(0, 0, 0, 0)
-            }else {
-                let margin:CGFloat = min(self.bounds.width,self.bounds.height) / 30
-                let itemSize = min(itemWidth, itemHeight) - margin
-                
-                let roundedView = v.viewWithTag(Tags.RoundedView.rawValue)!
-                roundedView.frame = CGRectMake(margin, 0, itemSize, itemSize)
-                roundedView.setToRounded()
-                
-                let label = v.viewWithTag(Tags.Label.rawValue)!
-                label.frame = CGRectMake(margin, itemSize, itemSize, margin*2)
-            }
+            
+            let margin = v.frame.width / 6
+            let itemSize = itemWidth - margin * 2
+            
+            let roundedView = v.viewWithTag(Tags.RoundedView.rawValue)!
+            roundedView.frame = CGRectMake(margin, margin, itemSize, itemSize)
+//            roundedView.setToRounded()
+            
+            let label = v.viewWithTag(Tags.Label.rawValue)! as! UILabel
+            label.backgroundColor = UIColor.redColor()
+            label.textColor = UIColor.blackColor()
+            label.sizeToFit()
+            let labelW = label.frame.size.width
+            label.frame.origin.x = roundedView.frame.origin.x + (roundedView.frame.size.width -Í labelW) / 2
+            label.frame.origin.y = roundedView.frame.maxY
         }
-        
     }
+
+    
 }
