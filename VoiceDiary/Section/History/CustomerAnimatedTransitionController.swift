@@ -32,10 +32,10 @@ class CustomerAnimatedTransitionController: NSObject, UIViewControllerAnimatedTr
             let originFromVCBackgroundColor = fromVC.view.backgroundColor
             
             let duration = transitionDuration(transitionContext)
-
             UIView.animateWithDuration(duration, animations: {
                 fromVC.calenderView.frame = toVC.calenderView.frame
-                fromVC.calenderView.update()
+                fromVC.calenderView.updateView()
+                fromVC.calenderView.updateLayer(duration)
                 for v in fromViewController.view.subviews {
                     if v is CalenderView {
                         continue

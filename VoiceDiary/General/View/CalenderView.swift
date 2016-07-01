@@ -17,6 +17,7 @@ class CalenderView: UIView {
     let size = DateTool.getDayCountOfMonth(NSDate())
     let offset = DateTool.getDayOfTheWeek(NSDate().startOfMonth()!) - 1
     var items:[UIView] = []
+    var firstUpdated = false
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -25,7 +26,14 @@ class CalenderView: UIView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        update()
+        if (!firstUpdated) {
+            firstUpdated = true
+            updateView()
+            for v in items {
+                let roundedView = v.viewWithTag(Tags.RoundedView.rawValue)!
+                roundedView.setToRounded()
+            }
+        }
     }
 }
 
@@ -40,6 +48,7 @@ extension CalenderView {
             let roundedView = UIView()
             roundedView.backgroundColor = UIColor.yellowColor()
             roundedView.tag = Tags.RoundedView.rawValue
+            roundedView.layer.masksToBounds = true
             v.addSubview(roundedView)
             
             let label = UILabel()
@@ -53,7 +62,7 @@ extension CalenderView {
         }
     }
     
-    func update() {
+    func updateView() {
         let colNum = 7
         let rowNum = size / 7 + 1
         let itemWidth = self.bounds.width / CGFloat(colNum)
@@ -69,17 +78,28 @@ extension CalenderView {
             
             let roundedView = v.viewWithTag(Tags.RoundedView.rawValue)!
             roundedView.frame = CGRectMake(margin, margin, itemSize, itemSize)
-//            roundedView.setToRounded()
             
             let label = v.viewWithTag(Tags.Label.rawValue)! as! UILabel
             label.backgroundColor = UIColor.redColor()
             label.textColor = UIColor.blackColor()
             label.sizeToFit()
             let labelW = label.frame.size.width
-            label.frame.origin.x = roundedView.frame.origin.x + (roundedView.frame.size.width -Í labelW) / 2
+            label.frame.origin.x = roundedView.frame.origin.x + (roundedView.frame.size.width - labelW) / 2
             label.frame.origin.y = roundedView.frame.maxY
         }
     }
-
     
+    func updateLayer(duration: NSTimeInterval) {
+        let animation = CABasicAnimation(keyPath: "cornerRadius")
+        animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
+        animation.duration = duration
+        print(items[0].frame.size.width)
+        for v in items {
+            let roundedView = v.viewWithTag(Tags.RoundedView.rawValue)!
+            animation.fromValue = NSNumber(double: Double(roundedView.layer.cornerRadius))
+            animation.toValue = NSNumber(double: Double(roundedView.frame.size.width / 2))
+            roundedView.layer.addAnimation(animation, forKey: "cornerRadius")
+        }
+    }
+
 }
