@@ -31,6 +31,7 @@ class CustomerAnimatedTransitionController: NSObject, UIViewControllerAnimatedTr
             
             let originFromVCBackgroundColor = fromVC.view.backgroundColor
             
+            
             UIView.animateWithDuration(transitionDuration(transitionContext), animations: {
                 fromVC.calenderView.frame = toVC.calenderView.frame
                 fromVC.calenderView.update()
@@ -41,6 +42,8 @@ class CustomerAnimatedTransitionController: NSObject, UIViewControllerAnimatedTr
                         v.alpha = 0
                     }
                 }
+                fromVC.calenderView.progress = 1
+                toVC.calenderView.progress = 1
                 fromViewController.view.backgroundColor = UIColor.clearColor()
             }, completion: { finished in
                 for v in fromViewController.view.subviews {
@@ -51,7 +54,7 @@ class CustomerAnimatedTransitionController: NSObject, UIViewControllerAnimatedTr
                     }
                 }
                 fromViewController.view.backgroundColor = originFromVCBackgroundColor
-                
+                fromVC.calenderView.progress = 0
                 toVC.calenderView.hidden = false
                 transitionContext.completeTransition(true)
             })

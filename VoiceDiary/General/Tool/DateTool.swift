@@ -63,6 +63,6 @@ class DateTool{
         let endOfMonth = date.endOfMonth()
         let calendar = NSCalendar.currentCalendar()
         let component = calendar.components(.Day, fromDate: endOfMonth!)
-        return component.day
+        return component.day + 1
     }
 }
