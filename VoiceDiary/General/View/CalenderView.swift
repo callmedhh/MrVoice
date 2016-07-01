@@ -13,7 +13,7 @@ class CalenderView: UIView {
         case RoundedView = 101
         case Label = 102
     }
-    private var progress: Float = 0
+    var progress = 0
     let size = DateTool.getDayCountOfMonth(NSDate())
     let offset = DateTool.getDayOfTheWeek(NSDate().startOfMonth()!) - 1
     var items:[UIView] = []
@@ -43,7 +43,6 @@ extension CalenderView {
         self.backgroundColor = UIColor.clearColor()
         for i in 0..<size {
             let v = UIView()
-            v.backgroundColor = UIColor(white: 1, alpha: CGFloat(Float(arc4random()) / Float(UINT32_MAX)))
             
             let roundedView = UIView()
             roundedView.backgroundColor = UIColor.yellowColor()
@@ -54,9 +53,10 @@ extension CalenderView {
             let label = UILabel()
             label.tag = Tags.Label.rawValue
             label.text = "\(i+1)"
+            label.textColor = UIColor(hex: 0x66696a)
             label.textAlignment = .Left
-            
             v.addSubview(label)
+            
             addSubview(v)
             items.append(v)
         }
@@ -80,8 +80,7 @@ extension CalenderView {
             roundedView.frame = CGRectMake(margin, margin, itemSize, itemSize)
             
             let label = v.viewWithTag(Tags.Label.rawValue)! as! UILabel
-            label.backgroundColor = UIColor.redColor()
-            label.textColor = UIColor.blackColor()
+            label.alpha = CGFloat(progress)
             label.sizeToFit()
             let labelW = label.frame.size.width
             label.frame.origin.x = roundedView.frame.origin.x + (roundedView.frame.size.width - labelW) / 2
