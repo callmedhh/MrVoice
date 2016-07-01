@@ -25,6 +25,8 @@ class CustomerAnimatedTransitionController: NSObject, UIViewControllerAnimatedTr
             let fromVC = fromViewController as! MainViewController
             let toVC = toViewController as! HistoryViewController
 
+            let originFrame = fromVC.calenderView.frame
+            
             toVC.calenderView.setNeedsLayout()
             toVC.calenderView.layoutIfNeeded()
             toVC.calenderView.hidden = true
@@ -45,6 +47,8 @@ class CustomerAnimatedTransitionController: NSObject, UIViewControllerAnimatedTr
                 }
                 fromViewController.view.backgroundColor = UIColor.clearColor()
             }, completion: { finished in
+                fromVC.calenderView.frame = originFrame
+                fromVC.calenderView.updateView()
                 for v in fromViewController.view.subviews {
                     if v is CalenderView {
                         continue
