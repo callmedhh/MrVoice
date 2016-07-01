@@ -69,8 +69,9 @@ extension CalenderView {
         let itemHeight = self.bounds.height / CGFloat(rowNum)
         
         for (i, v) in items.enumerate() {
-            let x = CGFloat(i % colNum) * (itemWidth)
-            let y = CGFloat(i / colNum) * (itemHeight)
+            let index = i + offset
+            let x = CGFloat(index % colNum) * (itemWidth)
+            let y = CGFloat(index / colNum) * (itemHeight)
             v.frame = CGRectMake(x, y, itemWidth, itemHeight)
             
             let margin = v.frame.width / 6
