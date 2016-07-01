@@ -302,10 +302,10 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UHm-CS-sXs" customClass="CalenderView" customModule="VoiceDiary" customModuleProvider="target">
-                                <rect key="frame" x="20" y="-160.5" width="560" height="650.5"/>
+                                <rect key="frame" x="20" y="-182" width="560" height="672"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="UHm-CS-sXs" secondAttribute="height" multiplier="15:18" constant="18" id="d60-uQ-ZxE"/>
+                                    <constraint firstAttribute="width" secondItem="UHm-CS-sXs" secondAttribute="height" multiplier="15:18" id="d60-uQ-ZxE"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A8A-o0-qBU">
