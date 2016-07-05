@@ -32,7 +32,7 @@ class HistoryViewController: UIViewController {
     }
     
     @IBAction func backgroundBtnPressed(sender: AnyObject) {
-        self.navigationController?.popViewControllerAnimated(true)
+//        self.navigationController?.popViewControllerAnimated(true)
     }
     
 }

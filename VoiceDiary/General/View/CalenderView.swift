@@ -93,9 +93,14 @@ extension CalenderView {
             label.frame.origin.y = roundedView.frame.maxY
             
             let button = v.viewWithTag(Tags.Button.rawValue) as! UIButton
-            button.frame = CGRectMake(margin, margin, itemSize/2, itemSize/2)
-            button.backgroundColor = UIColor.clearColor()
+            button.frame = CGRectMake(margin, margin, itemSize, itemSize)
+            button.backgroundColor = UIColor.redColor()
+            button.addTarget(button, action: #selector(CalenderView.buttonClicked), forControlEvents: .TouchUpInside)
         }
+    }
+    
+    func buttonClicked(){
+        print("I am clicked")
     }
     
     func updateLayer(duration: NSTimeInterval) {
