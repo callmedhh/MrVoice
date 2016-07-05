@@ -21,6 +21,7 @@ class HistoryViewController: UIViewController {
         monthNumberLabel.text =  DateTool.getMonth()
         monthTextLabel.text = DateTool.getMonthDes()
         playBtn.hidden = true
+        calenderView.backgroundColor = UIColor.blueColor()
     }
     
     @IBAction func playBtnPressed(sender: AnyObject) {

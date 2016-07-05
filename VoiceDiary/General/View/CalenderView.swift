@@ -12,6 +12,7 @@ class CalenderView: UIView {
     enum Tags: Int {
         case RoundedView = 101
         case Label = 102
+        case Button = 103
     }
     var progress = 0
     let size = DateTool.getDayCountOfMonth(NSDate())
@@ -57,6 +58,10 @@ extension CalenderView {
             label.textAlignment = .Left
             v.addSubview(label)
             
+            let button = UIButton()
+            button.tag = Tags.Button.rawValue
+            v.addSubview(button)
+            
             addSubview(v)
             items.append(v)
         }
@@ -86,6 +91,10 @@ extension CalenderView {
             let labelW = label.frame.size.width
             label.frame.origin.x = roundedView.frame.origin.x + (roundedView.frame.size.width - labelW) / 2
             label.frame.origin.y = roundedView.frame.maxY
+            
+            let button = v.viewWithTag(Tags.Button.rawValue) as! UIButton
+            button.frame = CGRectMake(margin, margin, itemSize/2, itemSize/2)
+            button.backgroundColor = UIColor.clearColor()
         }
     }
     
