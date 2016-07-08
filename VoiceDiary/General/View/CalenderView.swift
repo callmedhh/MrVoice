@@ -60,6 +60,7 @@ extension CalenderView {
             
             let button = UIButton()
             button.tag = Tags.Button.rawValue
+            button.addTarget(self, action: #selector(buttonClicked), forControlEvents: .TouchUpInside)
             v.addSubview(button)
             
             addSubview(v)
@@ -95,11 +96,10 @@ extension CalenderView {
             let button = v.viewWithTag(Tags.Button.rawValue) as! UIButton
             button.frame = CGRectMake(margin, margin, itemSize, itemSize)
             button.backgroundColor = UIColor.redColor()
-            button.addTarget(button, action: #selector(CalenderView.buttonClicked), forControlEvents: .TouchUpInside)
         }
     }
     
-    func buttonClicked(){
+    func buttonClicked(sender: UIButton){
         print("I am clicked")
     }
     
