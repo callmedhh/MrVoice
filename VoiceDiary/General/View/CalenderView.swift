@@ -160,7 +160,7 @@ extension CalenderView {
     func updateLayer(duration: NSTimeInterval) {
         let animation = CABasicAnimation(keyPath: "cornerRadius")
         animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
-        animation.duration = duration
+        animation.duration = duration + 0.05
         for v in items {
             let roundedView = v.viewWithTag(Tags.RoundedView.rawValue)!
             animation.fromValue = NSNumber(double: Double(roundedView.layer.cornerRadius))

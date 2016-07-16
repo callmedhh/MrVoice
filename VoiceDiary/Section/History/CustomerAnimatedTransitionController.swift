@@ -142,9 +142,8 @@ class CustomerAnimatedTransitionController: NSObject, UIViewControllerAnimatedTr
                 fromVC.calenderView.progress = 0
                 fromVC.calenderView.frame = toVC.calenderView.frame
                 fromVC.calenderView.updateView()
-                
                 fromVC.calenderView.updateLayer(duration)
-                }, completion: { finished in
+            }, completion: { finished in
                     toVC.calenderView.hidden = false
                     fromVC.calenderView.progress = 1
                     fromVC.view.backgroundColor = originFromVCBackgroundColor
