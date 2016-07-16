@@ -20,14 +20,14 @@ class CalenderView: UIView {
     var firstUpdated = false
     var viewRecordTool: ViewRecordTool = ViewRecordTool()
     let recordTool: RecordTool = RecordTool()
-    var recordPlayBtn: UIButton = UIButton()
+    var playButton = UIButton()
     let date = NSDate()
     
     let happyMoodColor = UIColor(hexString: "#fda529")
     let noMoodColor = UIColor(hexString: "#fee140")
     let sadMoodColor = UIColor(hexString: "#a09f8e")
     let notRecordedColor = UIColor(hexString: "#3e4243")
-
+    
     var filename: String? = nil
     
     required init?(coder aDecoder: NSCoder) {
@@ -96,7 +96,7 @@ extension CalenderView {
             addSubview(v)
             items.append(v)
         }
-        addSubview(recordPlayBtn)
+        addSubview(playButton)
     }
     
     func updateView() {
@@ -132,10 +132,10 @@ extension CalenderView {
             button.backgroundColor = UIColor.clearColor()
         }
         
-        recordPlayBtn.frame = CGRectMake(width/2-height*0.075, height*0.8, height*0.15, height*0.15)
-        recordPlayBtn.backgroundColor = UIColor(hexString: "#fee140")
-        recordPlayBtn.hidden = true
-        recordPlayBtn.setToRounded()
+        playButton.frame = CGRectMake(width/2-height*0.075, height*0.8, height*0.15, height*0.15)
+        playButton.backgroundColor = UIColor(hexString: "#fee140")
+        playButton.hidden = true
+        playButton.setToRounded()
     }
     
     func buttonClicked(sender: UIButton){
@@ -144,12 +144,12 @@ extension CalenderView {
         let year = date.getYear()
         let record = viewRecordTool.getRecordByTime(day, month: month, year: year)
         if record.isRecorded {
-            recordPlayBtn.tag = day
-            recordPlayBtn.hidden = false
-            recordPlayBtn.addTarget(self, action: #selector(recordPlayBtnClicked), forControlEvents: .TouchUpInside)
+            playButton.tag = day
+            playButton.hidden = false
+            playButton.addTarget(self, action: #selector(recordPlayBtnClicked), forControlEvents: .TouchUpInside)
             filename = record.recordModel!.filename
         } else {
-            recordPlayBtn.hidden = true
+            playButton.hidden = true
         }
     }
     
@@ -168,5 +168,25 @@ extension CalenderView {
             roundedView.layer.addAnimation(animation, forKey: "cornerRadius")
         }
     }
+    
+}
 
+
+// MARK: - Override
+extension CalenderView {
+    override func pointInside(point: CGPoint, withEvent event: UIEvent?) -> Bool {
+        if (!playButton.hidden) {
+            if (CGRectContainsPoint(playButton.frame, point)) {
+                return true
+            }
+        }
+        
+        for item in items {
+            if (CGRectContainsPoint(item.frame, point)) {
+                return true
+            }
+        }
+        
+        return false
+    }
 }
