@@ -11,7 +11,7 @@ import SQLite
 
 let id = Expression<Int>("id")
 let date = Expression<NSDate>("date")
-let recordUrl = Expression<String?>("recordUrl")
+let filename = Expression<String?>("filename")
 let mood = Expression<Int>("mood")
 
 class Database{
@@ -28,27 +28,25 @@ class Database{
             try db.run(record.create(ifNotExists: true, block: { t in
                 t.column(id, primaryKey: true)
                 t.column(date)
-                t.column(recordUrl)
+                t.column(filename)
                 t.column(mood)
             }))
-        }catch{
-            print("Error create table record")
+        } catch {
         }
         return record
     }
     
-    func addRecord(fileUrl fileUrl: String, moodValue: Int){
+    func addRecord(fileName fileName: String, moodValue: Int){
         let nowDate = NSDate()
         let newDate = DateTool.convertDate(nowDate)
-        let insert = record.insert(date <- newDate, recordUrl <- fileUrl, mood <- moodValue)
-        print("newDate\(newDate)")
+        let insert = record.insert(date <- newDate, filename <- fileName, mood <- moodValue)
         try! db.run(insert)
     }
     
     func updateRecord(idValue: Int, dateValue: NSDate, recordUrlValue: String, moodValue: Int){
         let recordRow = record.filter(id == idValue)
         let newDate = DateTool.convertDate(dateValue)
-        try! db.run(recordRow.update(date <- newDate, recordUrl <- recordUrlValue, mood <- moodValue))
+        try! db.run(recordRow.update(date <- newDate, filename <- recordUrlValue, mood <- moodValue))
     }
     
     func deleteRecord(deleteId deleteId:Int){
@@ -56,21 +54,26 @@ class Database{
         try! db.run(recordRow.delete())
     }
     
-    func selectRecordListByDate(dateValue: NSDate) -> RecordModel{
+    func selectRecordByDate(dateValue: NSDate) -> RecordModel?{
         var recordList = [RecordModel]()
         let query = record.filter(date == dateValue)
         
         for recordItem in try! db.prepare(query) {
-            let recordModel = RecordModel(dateValue: recordItem[date], recordUrlValue:recordItem[recordUrl]!, moodValue: recordItem[mood])
+            let recordModel = RecordModel(date: recordItem[date], filename:recordItem[filename]!, mood: recordItem[mood])
             recordList.append(recordModel)
         }
-        return recordList[0]
+        if recordList.count == 0 {
+            return nil
+        } else {
+            return recordList[0]
+        }
+        
     }
     
     func selectALLRecordList() -> [RecordModel]{
         var recordList = [RecordModel]()
         for recordItem in try! db.prepare(record) {
-            let recordModel = RecordModel(dateValue: recordItem[date], recordUrlValue:recordItem[recordUrl]!, moodValue: recordItem[mood])
+            let recordModel = RecordModel(date: recordItem[date], filename:recordItem[filename]!, mood: recordItem[mood])
             recordList.append(recordModel)
         }
         return recordList
@@ -82,7 +85,7 @@ class Database{
         
         let query = record.filter(date >= startDateValue && date <= endDateValue)
         for recordItem in try!db.prepare(query) {
-            let recordModel = RecordModel(dateValue: recordItem[date], recordUrlValue:recordItem[recordUrl]!, moodValue: recordItem[mood])
+            let recordModel = RecordModel(date: recordItem[date], filename:recordItem[filename]!, mood: recordItem[mood])
             recordList.append(recordModel)
         }
         return recordList

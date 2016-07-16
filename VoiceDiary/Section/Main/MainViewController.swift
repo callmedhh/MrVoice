@@ -16,7 +16,7 @@ class MainViewController: UIViewController, UINavigationControllerDelegate{
     let dbTool = Database()
     
     @IBOutlet weak var calenderView: CalenderView!
-    var mood: Int = 0
+    var mood: Mood? = nil
     
     @IBOutlet weak var borderView: BorderView!
     @IBOutlet weak var recordBtn: RecordButton!
@@ -81,23 +81,24 @@ class MainViewController: UIViewController, UINavigationControllerDelegate{
     }
     
     @IBAction func happyMood(sender: AnyObject) {
-        mood = 0
+        mood = Mood.Happy
         happyBtn.setTitle("我今天很开心", forState: .Normal)
     }
     
     @IBAction func noMood(sender: AnyObject) {
-        mood = 1
+        mood = Mood.NoMood
         nofeelBtn.setTitle("我今天不好也不坏", forState: .Normal)
     }
     
     @IBAction func badMood(sender: AnyObject) {
-        mood = 2
+        mood = Mood.Sad
         sadBtn.setTitle("我今天不开心", forState: .Normal)
     }
     
+    // TODO: 没有选择心情的时候，提交按钮应该 Disabled
     @IBAction func finishRecordBtnPressed(sender: AnyObject) {
         recordBtn.currentState = .Idle
-        recordTool.saveRecordingWithMood(mood: mood)
+        recordTool.saveRecordingWithMood(mood!)
         recordView.hidden = false
         emojiView.hidden = true
         mainpageGreetingView.hidden = false

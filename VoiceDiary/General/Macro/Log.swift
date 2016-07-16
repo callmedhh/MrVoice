@@ -12,5 +12,6 @@ let log = SwiftyBeaver.self
 
 func initLog() {
     let console = ConsoleDestination()
+    console.dateFormat = "HH:mm:ss"
     log.addDestination(console)
 }

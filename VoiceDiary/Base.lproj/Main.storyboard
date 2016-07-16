@@ -42,14 +42,14 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vIm-aX-Wr4" userLabel="CalandarView" customClass="CalenderView" customModule="VoiceDiary" customModuleProvider="target">
-                                <rect key="frame" x="310" y="65" width="270" height="193"/>
+                                <rect key="frame" x="310" y="65" width="270" height="270"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="vIm-aX-Wr4" secondAttribute="height" multiplier="7:5" id="95t-Gb-M9r"/>
+                                    <constraint firstAttribute="width" secondItem="vIm-aX-Wr4" secondAttribute="height" multiplier="7:7" id="95t-Gb-M9r"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5NO-d4-JlG" userLabel="CalandarViewButton">
-                                <rect key="frame" x="310" y="65" width="270" height="193"/>
+                                <rect key="frame" x="310" y="65" width="270" height="270"/>
                                 <connections>
                                     <segue destination="OTt-Vz-htn" kind="show" identifier="showHistory" id="fyz-Z3-dnC"/>
                                 </connections>
@@ -282,10 +282,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A8A-o0-qBU">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="We1-kG-Fek">
                                 <rect key="frame" x="0.0" y="20" width="600" height="580"/>
                                 <connections>
-                                    <action selector="backgroundBtnPressed:" destination="OTt-Vz-htn" eventType="touchUpInside" id="sbr-XB-I6R"/>
+                                    <action selector="backgroundTapped:" destination="OTt-Vz-htn" eventType="touchUpInside" id="QKd-US-mER"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VfI-MK-hTs" userLabel="monthNumberLabel">
@@ -300,48 +300,34 @@
                                 <color key="textColor" red="0.47450980392156861" green="0.47450980392156861" blue="0.47450980392156861" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oTl-bg-iiH">
-                                <rect key="frame" x="277" y="510" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="playBtnPressed:" destination="OTt-Vz-htn" eventType="touchUpInside" id="yO4-mC-y5p"/>
-                                </connections>
-                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UHm-CS-sXs" customClass="CalenderView" customModule="VoiceDiary" customModuleProvider="target">
-                                <rect key="frame" x="20" y="-182" width="560" height="672"/>
+                                <rect key="frame" x="20" y="-256.5" width="560" height="746.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="UHm-CS-sXs" secondAttribute="height" multiplier="15:18" id="d60-uQ-ZxE"/>
+                                    <constraint firstAttribute="width" secondItem="UHm-CS-sXs" secondAttribute="height" multiplier="15:20" id="d60-uQ-ZxE"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.098039215686274508" green="0.10980392156862745" blue="0.11764705882352941" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="We1-kG-Fek" firstAttribute="top" secondItem="HIN-1C-OvO" secondAttribute="bottom" id="0hY-X3-e28"/>
                             <constraint firstItem="Xw1-80-tEn" firstAttribute="leading" secondItem="VfI-MK-hTs" secondAttribute="trailing" constant="5" id="8W3-TD-ymY"/>
                             <constraint firstItem="Xw1-80-tEn" firstAttribute="baseline" secondItem="VfI-MK-hTs" secondAttribute="baseline" id="AFO-pp-Udh"/>
+                            <constraint firstItem="WxW-J8-TAA" firstAttribute="top" secondItem="UHm-CS-sXs" secondAttribute="bottom" constant="110" id="FhV-yf-jn0"/>
                             <constraint firstItem="UHm-CS-sXs" firstAttribute="leading" secondItem="nEf-5N-0cr" secondAttribute="leading" constant="20" id="FqA-iR-fRU"/>
-                            <constraint firstItem="WxW-J8-TAA" firstAttribute="top" secondItem="A8A-o0-qBU" secondAttribute="bottom" id="Lr1-87-hIj"/>
-                            <constraint firstItem="WxW-J8-TAA" firstAttribute="top" secondItem="oTl-bg-iiH" secondAttribute="bottom" constant="60" id="NyK-hN-7NH"/>
-                            <constraint firstItem="A8A-o0-qBU" firstAttribute="top" secondItem="HIN-1C-OvO" secondAttribute="bottom" id="Sls-PH-snd"/>
                             <constraint firstItem="VfI-MK-hTs" firstAttribute="top" secondItem="HIN-1C-OvO" secondAttribute="bottom" constant="50" id="YeE-QH-1O0"/>
-                            <constraint firstItem="A8A-o0-qBU" firstAttribute="leading" secondItem="nEf-5N-0cr" secondAttribute="leading" id="lyy-gL-hDG"/>
+                            <constraint firstAttribute="trailing" secondItem="We1-kG-Fek" secondAttribute="trailing" id="Z0B-yu-G2E"/>
+                            <constraint firstItem="WxW-J8-TAA" firstAttribute="top" secondItem="We1-kG-Fek" secondAttribute="bottom" id="eKd-76-09u"/>
+                            <constraint firstItem="We1-kG-Fek" firstAttribute="leading" secondItem="nEf-5N-0cr" secondAttribute="leading" id="fWq-BH-qk3"/>
                             <constraint firstItem="UHm-CS-sXs" firstAttribute="centerX" secondItem="nEf-5N-0cr" secondAttribute="centerX" id="moL-Ws-5A5"/>
                             <constraint firstItem="VfI-MK-hTs" firstAttribute="leading" secondItem="nEf-5N-0cr" secondAttribute="leading" constant="25" id="ojd-ie-pPO"/>
-                            <constraint firstItem="oTl-bg-iiH" firstAttribute="centerX" secondItem="nEf-5N-0cr" secondAttribute="centerX" id="tEb-zE-83A"/>
-                            <constraint firstItem="oTl-bg-iiH" firstAttribute="top" secondItem="UHm-CS-sXs" secondAttribute="bottom" constant="20" id="uBS-jN-huo"/>
-                            <constraint firstAttribute="trailing" secondItem="A8A-o0-qBU" secondAttribute="trailing" id="wCN-iv-IZ2"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="A8A-o0-qBU"/>
-                            </mask>
-                        </variation>
                     </view>
                     <connections>
+                        <outlet property="backgroundBtn" destination="We1-kG-Fek" id="acV-TK-yI3"/>
                         <outlet property="calenderView" destination="UHm-CS-sXs" id="4ov-Gq-BAv"/>
                         <outlet property="monthNumberLabel" destination="VfI-MK-hTs" id="fJd-VC-FKE"/>
                         <outlet property="monthTextLabel" destination="Xw1-80-tEn" id="eMa-Tg-aZ5"/>
-                        <outlet property="playBtn" destination="oTl-bg-iiH" id="fSs-ro-8PX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="01N-Lj-QJV" userLabel="First Responder" sceneMemberID="firstResponder"/>

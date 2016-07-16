@@ -50,16 +50,17 @@ extension RecordTool {
     
     func finishRecording(success success: Bool){
         if audioRecorder == nil {
-            print("error")
+            log.error("no audio recorder")
         } else {
             audioRecorder.stop()
             audioRecorder = nil
         }
     }
     
-    func saveRecordingWithMood(mood mood: Int) {
+    func saveRecordingWithMood(mood: Mood) {
         if let filePath = self.filePath {
-            dbTool.addRecord(fileUrl: filePath, moodValue: mood)
+            let names = filePath.componentsSeparatedByString("/")
+            dbTool.addRecord(fileName: names.last!, moodValue: mood.rawValue)
         }
         self.filePath = nil
     }
@@ -69,15 +70,17 @@ extension RecordTool {
 
 // MARK: - Play
 extension RecordTool {
-    func startPlaying(recordurl: String){
-        let url = NSURL(fileURLWithPath: recordurl)
+    func startPlaying(filename: String){
+        let folderPath = FilePathTool.getDocumentsDirectory()
+        let filepath = folderPath.stringByAppendingPathComponent(filename)
+        let url = NSURL(fileURLWithPath: filepath)
+        log.debug(url)
         do{
-            print(url)
             let sound = try AVAudioPlayer(contentsOfURL: url)
             audioPlayer = sound
             sound.play()
-        }catch{
-            
+        } catch {
+            log.error(error)
         }
     }
     func stopPlaying(){

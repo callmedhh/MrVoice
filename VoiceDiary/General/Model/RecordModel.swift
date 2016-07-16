@@ -8,13 +8,8 @@
 
 import Foundation
 
-class RecordModel{
+struct RecordModel{
     var date: NSDate
-    var recordUrl: String
+    var filename: String
     var mood: Int
-    init(dateValue: NSDate, recordUrlValue: String, moodValue: Int){
-        self.date = dateValue
-        self.recordUrl = recordUrlValue
-        self.mood = moodValue
-    }
 }
