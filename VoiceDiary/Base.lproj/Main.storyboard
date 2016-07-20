@@ -82,8 +82,8 @@
                                         <color key="textColor" red="0.47843137254901957" green="0.47843137254901957" blue="0.47450980392156861" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello,WW :)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SbG-AT-LHc">
-                                        <rect key="frame" x="48" y="10" width="105" height="24"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello:)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SbG-AT-LHc">
+                                        <rect key="frame" x="48" y="10" width="58" height="24"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <color key="textColor" red="0.47843137254901957" green="0.47843137254901957" blue="0.47450980392156861" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>

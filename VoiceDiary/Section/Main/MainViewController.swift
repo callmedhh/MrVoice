@@ -31,6 +31,9 @@ class MainViewController: UIViewController, UINavigationControllerDelegate{
     @IBOutlet weak var happyBtn: UIButton!
     @IBOutlet weak var nofeelBtn: UIButton!
     @IBOutlet weak var sadBtn: UIButton!
+    
+    var moodSelectFlag = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
                 
@@ -61,6 +64,7 @@ class MainViewController: UIViewController, UINavigationControllerDelegate{
         
         navigationController?.delegate = self
         
+        moodSelectFlag = 0
         
     }
 
@@ -83,20 +87,27 @@ class MainViewController: UIViewController, UINavigationControllerDelegate{
     @IBAction func happyMood(sender: AnyObject) {
         mood = Mood.Happy
         happyBtn.setTitle("我今天很开心", forState: .Normal)
+        moodSelectFlag = 1
     }
     
     @IBAction func noMood(sender: AnyObject) {
         mood = Mood.NoMood
         nofeelBtn.setTitle("我今天不好也不坏", forState: .Normal)
+        moodSelectFlag = 1
     }
     
     @IBAction func badMood(sender: AnyObject) {
         mood = Mood.Sad
         sadBtn.setTitle("我今天不开心", forState: .Normal)
+        moodSelectFlag = 1
     }
     
-    // TODO: 没有选择心情的时候，提交按钮应该 Disabled
     @IBAction func finishRecordBtnPressed(sender: AnyObject) {
+        if moodSelectFlag == 0 {
+            let button = sender as! UIButton
+            button.enabled = false
+        }
+        
         recordBtn.currentState = .Idle
         recordTool.saveRecordingWithMood(mood!)
         recordView.hidden = false
@@ -107,9 +118,14 @@ class MainViewController: UIViewController, UINavigationControllerDelegate{
         recordBtn.setNeedsDisplay()
 
         // TODO: RELOAD DATA
-//        let calenderVC = self.childViewControllers[0] as! CalanderViewController
-//        calenderVC.reloadRecordModelList()
-//        calenderVC.collectionView.reloadData()
+        for viewItem in self.view.subviews {
+            if viewItem is CalenderView {
+                let calendarView = viewItem as! CalenderView
+                calendarView.updateView()
+            }
+        }
+        
+        
     }
   
     

@@ -138,24 +138,7 @@ extension CalenderView {
         playButton.setToRounded()
     }
     
-    func buttonClicked(sender: UIButton){
-        let day = sender.tag
-        let month = date.getMonth()
-        let year = date.getYear()
-        let record = viewRecordTool.getRecordByTime(day, month: month, year: year)
-        if record.isRecorded {
-            playButton.tag = day
-            playButton.hidden = false
-            playButton.addTarget(self, action: #selector(recordPlayBtnClicked), forControlEvents: .TouchUpInside)
-            filename = record.recordModel!.filename
-        } else {
-            playButton.hidden = true
-        }
-    }
     
-    func recordPlayBtnClicked(sender: UIButton){
-        recordTool.startPlaying(filename!)
-    }
     
     func updateLayer(duration: NSTimeInterval) {
         let animation = CABasicAnimation(keyPath: "cornerRadius")
@@ -188,5 +171,26 @@ extension CalenderView {
         }
         
         return false
+    }
+}
+// MARK: - ButtonPress functions
+extension CalenderView {
+    func buttonClicked(sender: UIButton){
+        let day = sender.tag
+        let month = date.getMonth()
+        let year = date.getYear()
+        let record = viewRecordTool.getRecordByTime(day, month: month, year: year)
+        if record.isRecorded {
+            playButton.tag = day
+            playButton.hidden = false
+            playButton.addTarget(self, action: #selector(recordPlayBtnClicked), forControlEvents: .TouchUpInside)
+            filename = record.recordModel!.filename
+        } else {
+            playButton.hidden = true
+        }
+    }
+    
+    func recordPlayBtnClicked(sender: UIButton){
+        recordTool.startPlaying(filename!)
     }
 }
