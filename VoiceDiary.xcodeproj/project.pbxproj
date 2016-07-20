@@ -16,7 +16,6 @@
 		96D1FED51D0D3E4C00CFD119 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D1FED31D0D3E4C00CFD119 /* MainViewController.swift */; };
 		96D1FED81D0D41B800CFD119 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D1FED71D0D41B800CFD119 /* Log.swift */; };
 		96D1FEDA1D0D466500CFD119 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D1FED91D0D466500CFD119 /* StringExtension.swift */; };
-		A05127E21D1BE58700F2ECA1 /* DetailContailerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05127E11D1BE58700F2ECA1 /* DetailContailerViewController.swift */; };
 		A08E69801D0EBD040056F8B4 /* RecordButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08E697F1D0EBD040056F8B4 /* RecordButton.swift */; };
 		A08E69821D0FB38A0056F8B4 /* BorderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08E69811D0FB38A0056F8B4 /* BorderView.swift */; };
 		A096DCF31D07F1630023CB0C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A096DCF21D07F1630023CB0C /* AppDelegate.swift */; };
@@ -24,7 +23,6 @@
 		A096DCFA1D07F1630023CB0C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A096DCF91D07F1630023CB0C /* Assets.xcassets */; };
 		A096DCFD1D07F1630023CB0C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A096DCFB1D07F1630023CB0C /* LaunchScreen.storyboard */; };
 		A0BAE0C51D17A11B000D144C /* CalenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BAE0C41D17A11B000D144C /* CalenderView.swift */; };
-		A0BAE0F11D182DE0000D144C /* CalanderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BAE0F01D182DE0000D144C /* CalanderViewController.swift */; };
 		A0BAE0F31D183098000D144C /* DailyRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BAE0F21D183098000D144C /* DailyRecord.swift */; };
 		A0BAE0F51D18C922000D144C /* ViewRecordTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BAE0F41D18C922000D144C /* ViewRecordTool.swift */; };
 		A0BAE0F71D18CCD1000D144C /* MoodEnumModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BAE0F61D18CCD1000D144C /* MoodEnumModel.swift */; };
@@ -46,7 +44,6 @@
 		96D1FED71D0D41B800CFD119 /* Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		96D1FED91D0D466500CFD119 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		97FE544F589D7F987FD8FADE /* Pods-VoiceDiary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VoiceDiary.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VoiceDiary/Pods-VoiceDiary.debug.xcconfig"; sourceTree = "<group>"; };
-		A05127E11D1BE58700F2ECA1 /* DetailContailerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailContailerViewController.swift; sourceTree = "<group>"; };
 		A08E697F1D0EBD040056F8B4 /* RecordButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordButton.swift; sourceTree = "<group>"; };
 		A08E69811D0FB38A0056F8B4 /* BorderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorderView.swift; sourceTree = "<group>"; };
 		A096DCEF1D07F1630023CB0C /* VoiceDiary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VoiceDiary.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -56,7 +53,6 @@
 		A096DCFC1D07F1630023CB0C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A096DCFE1D07F1630023CB0C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A0BAE0C41D17A11B000D144C /* CalenderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalenderView.swift; sourceTree = "<group>"; };
-		A0BAE0F01D182DE0000D144C /* CalanderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalanderViewController.swift; sourceTree = "<group>"; };
 		A0BAE0F21D183098000D144C /* DailyRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyRecord.swift; sourceTree = "<group>"; };
 		A0BAE0F41D18C922000D144C /* ViewRecordTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewRecordTool.swift; sourceTree = "<group>"; };
 		A0BAE0F61D18CCD1000D144C /* MoodEnumModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoodEnumModel.swift; sourceTree = "<group>"; };
@@ -147,8 +143,6 @@
 			isa = PBXGroup;
 			children = (
 				A0F51C3E1D215D35002C93D1 /* HistoryViewController.swift */,
-				A0BAE0F01D182DE0000D144C /* CalanderViewController.swift */,
-				A05127E11D1BE58700F2ECA1 /* DetailContailerViewController.swift */,
 				A0F51C3C1D2006D0002C93D1 /* CustomerAnimatedTransitionController.swift */,
 			);
 			path = History;
@@ -343,14 +337,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A0BAE0F11D182DE0000D144C /* CalanderViewController.swift in Sources */,
 				A0BAE0F91D192F0F000D144C /* DateExtension.swift in Sources */,
 				96D1FECD1D0D3DB500CFD119 /* RecordTool.swift in Sources */,
 				96D1FECA1D0D3DB500CFD119 /* DatabaseTool.swift in Sources */,
 				96D1FEDA1D0D466500CFD119 /* StringExtension.swift in Sources */,
 				96D1FED81D0D41B800CFD119 /* Log.swift in Sources */,
 				A08E69801D0EBD040056F8B4 /* RecordButton.swift in Sources */,
-				A05127E21D1BE58700F2ECA1 /* DetailContailerViewController.swift in Sources */,
 				A0F51C3D1D2006D0002C93D1 /* CustomerAnimatedTransitionController.swift in Sources */,
 				96D1FECB1D0D3DB500CFD119 /* DateTool.swift in Sources */,
 				A0BAE0F51D18C922000D144C /* ViewRecordTool.swift in Sources */,
