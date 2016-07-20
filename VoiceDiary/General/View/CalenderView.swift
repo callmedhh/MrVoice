@@ -30,6 +30,8 @@ class CalenderView: UIView {
     
     var filename: String? = nil
     
+    var recordModelList: [DailyRecord] = []
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setup()
@@ -56,7 +58,7 @@ extension CalenderView {
         let month = date.getMonth()
         let year = date.getYear()
         
-        let recordModelList = viewRecordTool.getMonthDailyRecordList(month: month, year: year)
+        recordModelList = viewRecordTool.getMonthDailyRecordList(month: month, year: year)
         for i in 0..<size {
             let v = UIView()
             
@@ -73,7 +75,6 @@ extension CalenderView {
                 default:
                     roundedView.backgroundColor = notRecordedColor
                 }
-                log.debug(i)
             } else {
                 roundedView.backgroundColor = notRecordedColor
             }
@@ -99,7 +100,7 @@ extension CalenderView {
         addSubview(playButton)
     }
     
-    func updateView() {
+    func updateView() {        
         let colNum = 7
         let rowNum = (size + offset) / 7 + 1
         let width = self.bounds.width

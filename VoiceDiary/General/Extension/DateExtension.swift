@@ -39,6 +39,12 @@ extension NSDate {
         return comp.year
     }
     
+    func getDay() -> Int {
+        let cal = NSCalendar.currentCalendar()
+        let comp = cal.components([.Day], fromDate: self)
+        return comp.day
+    }
+    
 }
 
 internal extension NSDateComponents {

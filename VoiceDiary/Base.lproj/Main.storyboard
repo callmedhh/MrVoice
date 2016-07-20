@@ -254,6 +254,7 @@
                     <connections>
                         <outlet property="borderView" destination="I6T-yh-XVa" id="4nA-sw-kpl"/>
                         <outlet property="calenderView" destination="vIm-aX-Wr4" id="5tR-J8-Jf4"/>
+                        <outlet property="completeBtn" destination="geX-cT-gfH" id="uf1-J4-19t"/>
                         <outlet property="dayLabel" destination="E95-R8-KbK" id="ptr-L0-sSi"/>
                         <outlet property="emojiGreetingView" destination="bXb-C7-jcQ" id="P9M-SJ-MAf"/>
                         <outlet property="emojiView" destination="FKK-D8-A9e" id="6tD-eZ-8Tz"/>

@@ -31,6 +31,7 @@ class MainViewController: UIViewController, UINavigationControllerDelegate{
     @IBOutlet weak var happyBtn: UIButton!
     @IBOutlet weak var nofeelBtn: UIButton!
     @IBOutlet weak var sadBtn: UIButton!
+    @IBOutlet weak var completeBtn: UIButton!
     
     var moodSelectFlag = 0
     
@@ -88,24 +89,28 @@ class MainViewController: UIViewController, UINavigationControllerDelegate{
         mood = Mood.Happy
         happyBtn.setTitle("我今天很开心", forState: .Normal)
         moodSelectFlag = 1
+        completeBtn.enabled = true
     }
     
     @IBAction func noMood(sender: AnyObject) {
         mood = Mood.NoMood
         nofeelBtn.setTitle("我今天不好也不坏", forState: .Normal)
         moodSelectFlag = 1
+        completeBtn.enabled = true
     }
     
     @IBAction func badMood(sender: AnyObject) {
         mood = Mood.Sad
         sadBtn.setTitle("我今天不开心", forState: .Normal)
         moodSelectFlag = 1
+        completeBtn.enabled = true
     }
     
     @IBAction func finishRecordBtnPressed(sender: AnyObject) {
         if moodSelectFlag == 0 {
             let button = sender as! UIButton
             button.enabled = false
+            return
         }
         
         recordBtn.currentState = .Idle
@@ -120,11 +125,9 @@ class MainViewController: UIViewController, UINavigationControllerDelegate{
         // TODO: RELOAD DATA
         for viewItem in self.view.subviews {
             if viewItem is CalenderView {
-                let calendarView = viewItem as! CalenderView
-                calendarView.updateView()
+                
             }
         }
-        
         
     }
   
