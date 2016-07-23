@@ -38,14 +38,14 @@ class Database{
     
     func addRecord(fileName fileName: String, moodValue: Int){
         let nowDate = NSDate()
-        let newDate = DateTool.convertDate(nowDate)
+        let newDate = DateTool.convertDateToYearMonthDay(nowDate)
         let insert = record.insert(date <- newDate, filename <- fileName, mood <- moodValue)
         try! db.run(insert)
     }
     
     func updateRecord(idValue: Int, dateValue: NSDate, recordUrlValue: String, moodValue: Int){
         let recordRow = record.filter(id == idValue)
-        let newDate = DateTool.convertDate(dateValue)
+        let newDate = DateTool.convertDateToYearMonthDay(dateValue)
         try! db.run(recordRow.update(date <- newDate, filename <- recordUrlValue, mood <- moodValue))
     }
     

@@ -18,8 +18,9 @@ class HistoryViewController: UIViewController {
     @IBOutlet weak var calenderView: CalenderView!
     var recordUrl: String?
     override func viewDidLoad() {
-        monthNumberLabel.text =  DateTool.getMonth()
-        monthTextLabel.text = DateTool.getMonthDes()
+        let date = NSDate()
+        monthNumberLabel.text =  date.getMonthStr()
+        monthTextLabel.text = date.getMonthDes()
         backgroundBtn.backgroundColor = UIColor.clearColor()
      
     }

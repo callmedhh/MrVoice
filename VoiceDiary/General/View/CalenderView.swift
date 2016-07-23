@@ -14,8 +14,8 @@ class CalenderView: UIView {
         case Label = 102
     }
     var progress = 0
-    let size = DateTool.getDayCountOfMonth(NSDate())
-    let offset = DateTool.getDayOfTheWeek(NSDate().startOfMonth()!) - 1
+    var size = 0
+    var offset = 0
     var items:[UIView] = []
     var firstUpdated = false
     var viewRecordTool: ViewRecordTool = ViewRecordTool()
@@ -58,6 +58,9 @@ extension CalenderView {
         
         let month = date.getMonth()
         let year = date.getYear()
+        
+        size = date.getDayCountOfMonth()
+        offset = date.startOfMonth()!.getDayOfTheWeek() - 1
         
         recordModelList = viewRecordTool.getMonthDailyRecordList(month: month, year: year)
         for i in 0..<size {
@@ -109,9 +112,7 @@ extension CalenderView {
         
         let itemWidth = width / CGFloat(colNum)
         let itemHeight = height * 0.8 / CGFloat(rowNum)
-        
-        log.debug("item size:\(items.count)")
-        
+                
         for (i, v) in items.enumerate() {
             let index = i + offset
             let x = CGFloat(index % colNum) * (itemWidth)
@@ -193,7 +194,6 @@ extension CalenderView {
                 return true
             }
         }
-        
         return false
     }
 }

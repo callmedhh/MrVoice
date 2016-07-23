@@ -38,7 +38,7 @@ extension ViewRecordTool {
         let startOfMonth = DateTool.generateDateFromYearAndMonth(year, month: month, day: 1)
         let endOfMonth = startOfMonth.endOfMonth()
         let recordModelList = dbTool.selectAllMonthRecordListByRange(startOfMonth, endDateValue: endOfMonth!)
-        let daysOfTMonth = DateTool.getDayCountOfMonth(startOfMonth)
+        let daysOfTMonth = startOfMonth.getDayCountOfMonth()
         for i in 0..<daysOfTMonth{
             let date = DateTool.generateDateFromYearAndMonth(year, month: month, day: i+1)
             if ViewRecordTool.hasRecord(recordModelList, date: date) {

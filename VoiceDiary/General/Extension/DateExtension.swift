@@ -45,6 +45,48 @@ extension NSDate {
         return comp.day
     }
     
+    func getDayCountOfMonth() -> Int {
+        let endOfMonth = self.endOfMonth()
+        let cal = NSCalendar.currentCalendar()
+        let component = cal.components(.Day, fromDate: endOfMonth!)
+        return component.day + 1
+    }
+    
+    func getMonthStr() -> String {
+        let cal = NSCalendar.currentCalendar()
+        let component = cal.components([.Month], fromDate: self)
+        let month = component.month
+        return month.getTwobitNumber()
+    }
+    
+    func getDayStr() -> String {
+        let cal = NSCalendar.currentCalendar()
+        let component = cal.components([.Day], fromDate: self)
+        let day = component.day
+        return day.getTwobitNumber()
+    }
+    
+    func getDayOfTheWeek() -> Int {
+        let cal = NSCalendar.currentCalendar()
+        let component = cal.components(.Weekday, fromDate: self)
+        let weekday = component.weekday
+        return weekday
+    }
+    func getWeekOfTheMonth() -> Int {
+        let cal = NSCalendar.currentCalendar()
+        let component = cal.components(.WeekOfMonth, fromDate: self)
+        let weekOfMonth = component.weekOfMonth
+        return weekOfMonth
+    }
+    
+    func getMonthDes() -> String {
+        let monthDes = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Agu","Sep","Oct","Mov","Dec"]
+        let cal = NSCalendar.currentCalendar()
+        let component = cal.components([.Month], fromDate: self)
+        let month = component.month
+        return monthDes[month-1]
+    }
+
 }
 
 internal extension NSDateComponents {

@@ -8,11 +8,11 @@
 
 import Foundation
 extension Int{
-    func getTwobitNumber(number: Int) -> String {
-        if number>0 && number < 10 {
-            return "0\(number)"
+    func getTwobitNumber() -> String {
+        if self>0 && self < 10 {
+            return "0\(self)"
         }else{
-            return "\(number)"
+            return "\(self)"
         }
     }
 }

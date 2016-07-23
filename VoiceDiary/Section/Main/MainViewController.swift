@@ -52,8 +52,9 @@ class MainViewController: UIViewController, UINavigationControllerDelegate{
         } catch {
             log.error("Catch recordingSession error")
         }
-        let month = DateTool.getMonth()
-        let day = DateTool.getDay()
+        let date = NSDate()
+        let month = date.getMonthStr()
+        let day = date.getDayStr()
         monthLabel.text = month
         dayLabel.text = day
         recordBtn.backgroundColor = UIColor.clearColor()
@@ -61,8 +62,7 @@ class MainViewController: UIViewController, UINavigationControllerDelegate{
         emojiView.hidden = true
         emojiGreetingView.hidden = true
         
-        navigationController?.delegate = self
-        
+        navigationController?.delegate = self        
     }
 
     @IBAction func recordTapped(sender: AnyObject) {
@@ -70,6 +70,7 @@ class MainViewController: UIViewController, UINavigationControllerDelegate{
             recordTool.startRecording()
             recordBtn.currentState = .Recording
             borderView.animate()
+            mood = nil
         }else{
             borderView.cancelAnimate()
             recordTool.finishRecording(success: true)
@@ -124,9 +125,7 @@ class MainViewController: UIViewController, UINavigationControllerDelegate{
             button.enabled = false
             return
         }
-        
-        
-        
+                
     }
   
     
