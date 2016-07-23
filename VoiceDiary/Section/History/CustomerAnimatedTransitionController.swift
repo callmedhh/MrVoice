@@ -151,8 +151,5 @@ class CustomerAnimatedTransitionController: NSObject, UIViewControllerAnimatedTr
             })
         }
         
-        
-
-        
     }
 }
