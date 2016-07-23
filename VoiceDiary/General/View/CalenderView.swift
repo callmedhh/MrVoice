@@ -48,6 +48,7 @@ class CalenderView: UIView {
             }
         }
     }
+    
 }
 
 // MARK: - Private
@@ -109,6 +110,8 @@ extension CalenderView {
         let itemWidth = width / CGFloat(colNum)
         let itemHeight = height * 0.8 / CGFloat(rowNum)
         
+        log.debug("item size:\(items.count)")
+        
         for (i, v) in items.enumerate() {
             let index = i + offset
             let x = CGFloat(index % colNum) * (itemWidth)
@@ -150,6 +153,26 @@ extension CalenderView {
             animation.fromValue = NSNumber(double: Double(roundedView.layer.cornerRadius))
             animation.toValue = NSNumber(double: Double(roundedView.frame.size.width / 2))
             roundedView.layer.addAnimation(animation, forKey: "cornerRadius")
+        }
+    }
+    
+    func updateRoundedViewColor(day: Int, mood: Mood){
+        for (i,item) in self.items.enumerate() {
+            if (i+1) == day {
+                for subview in item.subviews {
+                    if subview.tag == Tags.RoundedView.rawValue {
+                        switch mood.rawValue {
+                        case 0:
+                            subview.backgroundColor = happyMoodColor
+                        case 1:
+                            subview.backgroundColor = noMoodColor
+                        default:
+                            subview.backgroundColor = sadMoodColor
+                        }
+                        subview.setNeedsDisplay()
+                    }
+                }
+            }
         }
     }
     

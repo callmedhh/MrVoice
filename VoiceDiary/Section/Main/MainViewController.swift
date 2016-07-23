@@ -33,8 +33,6 @@ class MainViewController: UIViewController, UINavigationControllerDelegate{
     @IBOutlet weak var sadBtn: UIButton!
     @IBOutlet weak var completeBtn: UIButton!
     
-    var moodSelectFlag = 0
-    
     override func viewDidLoad() {
         super.viewDidLoad()
                 
@@ -65,8 +63,6 @@ class MainViewController: UIViewController, UINavigationControllerDelegate{
         
         navigationController?.delegate = self
         
-        moodSelectFlag = 0
-        
     }
 
     @IBAction func recordTapped(sender: AnyObject) {
@@ -88,46 +84,48 @@ class MainViewController: UIViewController, UINavigationControllerDelegate{
     @IBAction func happyMood(sender: AnyObject) {
         mood = Mood.Happy
         happyBtn.setTitle("我今天很开心", forState: .Normal)
-        moodSelectFlag = 1
         completeBtn.enabled = true
     }
     
     @IBAction func noMood(sender: AnyObject) {
         mood = Mood.NoMood
         nofeelBtn.setTitle("我今天不好也不坏", forState: .Normal)
-        moodSelectFlag = 1
         completeBtn.enabled = true
     }
     
     @IBAction func badMood(sender: AnyObject) {
         mood = Mood.Sad
         sadBtn.setTitle("我今天不开心", forState: .Normal)
-        moodSelectFlag = 1
         completeBtn.enabled = true
     }
     
     @IBAction func finishRecordBtnPressed(sender: AnyObject) {
-        if moodSelectFlag == 0 {
+        if let mood = mood {
+            recordBtn.currentState = .Idle
+            recordTool.saveRecordingWithMood(mood)
+            recordView.hidden = false
+            emojiView.hidden = true
+            mainpageGreetingView.hidden = false
+            emojiGreetingView.hidden = true
+            
+            recordBtn.setNeedsDisplay()
+            
+            // TODO: RELOAD DATA
+            for viewItem in self.view.subviews {
+                if viewItem is CalenderView {
+                    let date = NSDate()
+                    let day = date.getDay()
+                    let calendarView = viewItem as! CalenderView
+                    calendarView.updateRoundedViewColor(day, mood: mood)
+                }
+            }
+        } else {
             let button = sender as! UIButton
             button.enabled = false
             return
         }
         
-        recordBtn.currentState = .Idle
-        recordTool.saveRecordingWithMood(mood!)
-        recordView.hidden = false
-        emojiView.hidden = true
-        mainpageGreetingView.hidden = false
-        emojiGreetingView.hidden = true
         
-        recordBtn.setNeedsDisplay()
-
-        // TODO: RELOAD DATA
-        for viewItem in self.view.subviews {
-            if viewItem is CalenderView {
-                
-            }
-        }
         
     }
   
