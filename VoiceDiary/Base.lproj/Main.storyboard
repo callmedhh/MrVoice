@@ -191,7 +191,7 @@
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                                 <state key="normal" backgroundImage="complete_button">
-                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                                 <variation key="default">
                                                     <mask key="constraints">
@@ -357,7 +357,7 @@
                                         <color key="textColor" red="0.47450980392156861" green="0.47450980392156861" blue="0.47450980392156861" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xw1-80-tEn" userLabel="monthTextLabel">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xw1-80-tEn" userLabel="monthTextLabel">
                                         <rect key="frame" x="159" y="45" width="77.5" height="38.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                         <color key="textColor" red="0.47450980392156861" green="0.47450980392156861" blue="0.47450980392156861" alpha="1" colorSpace="calibratedRGB"/>
@@ -408,6 +408,9 @@
                                             <constraint firstAttribute="width" secondItem="H2P-kP-djp" secondAttribute="height" id="xRv-n4-yFn"/>
                                         </constraints>
                                         <state key="normal" image="play"/>
+                                        <connections>
+                                            <action selector="playPressed:" destination="OTt-Vz-htn" eventType="touchUpInside" id="Wdc-kY-qCo"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -458,10 +461,11 @@
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="backgroundBtn" destination="We1-kG-Fek" id="acV-TK-yI3"/>
+                        <outlet property="backgroundButton" destination="We1-kG-Fek" id="No3-ix-HNw"/>
                         <outlet property="calenderView" destination="UHm-CS-sXs" id="4ov-Gq-BAv"/>
                         <outlet property="monthNumberLabel" destination="VfI-MK-hTs" id="fJd-VC-FKE"/>
                         <outlet property="monthTextLabel" destination="Xw1-80-tEn" id="eMa-Tg-aZ5"/>
+                        <outlet property="playButton" destination="H2P-kP-djp" id="PVe-Jq-dP6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="01N-Lj-QJV" userLabel="First Responder" sceneMemberID="firstResponder"/>

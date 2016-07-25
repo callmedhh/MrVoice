@@ -16,6 +16,7 @@ class CalenderView: UIView {
     var progress = 0
     var count = 0
     var offset = 0
+    var selectedDay: Int? = nil
     var itemViews:[UIView] = []
     var firstUpdated = false
     var viewRecordTool: ViewRecordTool = ViewRecordTool()
@@ -25,9 +26,9 @@ class CalenderView: UIView {
     let sadMoodColor = UIColor(hexString: "#a09f8e")
     let notRecordedColor = UIColor(hexString: "#3e4243")
     
-    var filename: String? = nil
-    
     var recordModelList: [DailyRecord] = []
+    
+    weak var playButton: UIButton?
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -183,14 +184,13 @@ extension CalenderView {
 // MARK: - Selector
 extension CalenderView {
     func buttonClicked(sender: UIButton){
-        let date = NSDate()
         let day = sender.tag
+        selectedDay = day
+        let date = NSDate()
         let month = date.getMonth()
         let year = date.getYear()
         let record = viewRecordTool.getRecordByTime(day, month: month, year: year)
-        if record.isRecorded {
-            filename = record.recordModel!.filename
-        } else {
-        }
+        playButton?.hidden = !record.isRecorded
+        playButton?.userInteractionEnabled = record.isRecorded
     }
 }

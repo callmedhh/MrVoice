@@ -13,19 +13,33 @@ class HistoryViewController: UIViewController {
     @IBOutlet weak var monthNumberLabel: UILabel!
     @IBOutlet weak var monthTextLabel: UILabel!
     var recordTool: RecordTool = RecordTool()
+    var viewRecordTool: ViewRecordTool = ViewRecordTool()
 
-    @IBOutlet weak var backgroundBtn: UIButton!
+    @IBOutlet weak var backgroundButton: UIButton!
+    @IBOutlet weak var playButton: UIButton!
     @IBOutlet weak var calenderView: CalenderView!
-    var recordUrl: String?
+    
     override func viewDidLoad() {
         let date = NSDate()
         monthNumberLabel.text =  date.getMonthStr()
         monthTextLabel.text = date.getMonthDes()
-        backgroundBtn.backgroundColor = UIColor.clearColor()
-     
+        playButton.hidden = true
+        calenderView.playButton = playButton
     }
     @IBAction func backgroundTapped(sender: AnyObject) {
         self.navigationController?.popViewControllerAnimated(true)
     }
     
+    @IBAction func playPressed(sender: AnyObject) {
+        let date = NSDate()
+        let month = date.getMonth()
+        let year = date.getYear()
+        let record = viewRecordTool.getRecordByTime(calenderView.selectedDay!, month: month, year: year)
+        if record.isRecorded {
+            let filename = record.recordModel!.filename
+            recordTool.startPlaying(filename)
+        } else {
+            
+        }
+    }
 }
