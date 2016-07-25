@@ -9,11 +9,6 @@
 import Foundation
 
 class ViewRecordTool{
-    var dbTool: Database = Database()
-    var dailyRecordList: [DailyRecord] = []
-    init(){
-        dbTool.createTable()
-    }
     class func hasRecord(recordModelList:[RecordModel], date: NSDate) -> Bool {
         for item in recordModelList {
             if item.date == date {
@@ -37,7 +32,7 @@ extension ViewRecordTool {
         var recordList: [DailyRecord] = []
         let startOfMonth = DateTool.generateDateFromYearAndMonth(year, month: month, day: 1)
         let endOfMonth = startOfMonth.endOfMonth()
-        let recordModelList = dbTool.selectAllMonthRecordListByRange(startOfMonth, endDateValue: endOfMonth!)
+        let recordModelList = database.selectAllMonthRecordListByRange(startOfMonth, endDateValue: endOfMonth!)
         let daysOfTMonth = startOfMonth.getDayCountOfMonth()
         for i in 0..<daysOfTMonth{
             let date = DateTool.generateDateFromYearAndMonth(year, month: month, day: i+1)
@@ -56,7 +51,7 @@ extension ViewRecordTool {
     func getRecordByTime(day: Int, month: Int, year: Int) -> DailyRecord {
         let date = DateTool.generateDateFromYearAndMonth(year, month: month, day: day)
         
-        if let record = dbTool.selectRecordByDate(date) {
+        if let record = database.selectRecordByDate(date) {
             return DailyRecord(isRecordedValue: true, dateValue: date, recordModelValue: record)
         }else{
             return DailyRecord(isRecordedValue: false, dateValue: date)

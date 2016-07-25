@@ -14,14 +14,20 @@ let date = Expression<NSDate>("date")
 let filename = Expression<String?>("filename")
 let mood = Expression<Int>("mood")
 
-class Database{
+let database = Database()
+
+class Database {
     let path = FilePathTool.getDocumentsDirectory()
     
-    lazy private var db: Connection = {[unowned self ] in
+    lazy private var db: Connection = {
        return try! Connection("\(self.path)/db.sqlite3")
     }()
     
     private var record = Table("record")
+    
+    init () {
+        createTable()
+    }
     
     func createTable() -> Table{
         do{

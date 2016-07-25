@@ -14,9 +14,9 @@ class CalenderView: UIView {
         case Label = 102
     }
     var progress = 0
-    var size = 0
+    var count = 0
     var offset = 0
-    var items:[UIView] = []
+    var itemViews:[UIView] = []
     var firstUpdated = false
     var viewRecordTool: ViewRecordTool = ViewRecordTool()
     
@@ -39,7 +39,7 @@ class CalenderView: UIView {
         if (!firstUpdated) {
             firstUpdated = true
             updateView()
-            for v in items {
+            for v in itemViews {
                 let roundedView = v.viewWithTag(Tags.RoundedView.rawValue)!
                 roundedView.setToRounded()
             }
@@ -55,11 +55,11 @@ extension CalenderView {
         let date = NSDate()
         let month = date.getMonth()
         let year = date.getYear()
-        size = date.getDayCountOfMonth()
+        count = date.getDayCountOfMonth()
         offset = date.startOfMonth()!.getDayOfTheWeek() - 1
         
         recordModelList = viewRecordTool.getMonthDailyRecordList(month: month, year: year)
-        for i in 0..<size {
+        for i in 0..<count {
             let v = UIView()
             
             let roundedView = UIView()
@@ -95,20 +95,20 @@ extension CalenderView {
             v.addSubview(button)
             
             addSubview(v)
-            items.append(v)
+            itemViews.append(v)
         }
     }
     
     func updateView() {
         let colNum = 7
-        let rowNum = (size + offset) / 7 + 1
+        let rowNum = (count + offset) / 7 + 1
         let width = self.bounds.width
         let height = self.bounds.height
         
         let itemWidth = width / CGFloat(colNum)
         let itemHeight = height / CGFloat(rowNum)
         
-        for (i, v) in items.enumerate() {
+        for (i, v) in itemViews.enumerate() {
             let index = i + offset
             let x = CGFloat(index % colNum) * (itemWidth)
             let y = CGFloat(index / colNum) * (itemHeight)
@@ -139,7 +139,7 @@ extension CalenderView {
         let animation = CABasicAnimation(keyPath: "cornerRadius")
         animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
         animation.duration = duration + 0.05
-        for v in items {
+        for v in itemViews {
             let roundedView = v.viewWithTag(Tags.RoundedView.rawValue)!
             animation.fromValue = NSNumber(double: Double(roundedView.layer.cornerRadius))
             animation.toValue = NSNumber(double: Double(roundedView.frame.size.width / 2))
@@ -148,7 +148,7 @@ extension CalenderView {
     }
     
     func updateRoundedViewColor(day: Int, mood: Mood){
-        for (i,item) in self.items.enumerate() {
+        for (i, item) in itemViews.enumerate() {
             if (i+1) == day {
                 for subview in item.subviews {
                     if subview.tag == Tags.RoundedView.rawValue {
@@ -166,14 +166,13 @@ extension CalenderView {
             }
         }
     }
-    
 }
 
 
 // MARK: - Override
 extension CalenderView {
     override func pointInside(point: CGPoint, withEvent event: UIEvent?) -> Bool {
-        for item in items {
+        for item in itemViews {
             if (CGRectContainsPoint(item.frame, point)) {
                 return true
             }
@@ -181,7 +180,7 @@ extension CalenderView {
         return false
     }
 }
-// MARK: - ButtonPress functions
+// MARK: - Selector
 extension CalenderView {
     func buttonClicked(sender: UIButton){
         let date = NSDate()

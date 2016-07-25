@@ -13,7 +13,6 @@ import QuartzCore
 class MainViewController: UIViewController, UINavigationControllerDelegate{
     let recordTool: RecordTool = RecordTool()
     var recordingSession: AVAudioSession!
-    let dbTool = Database()
     var mood: Mood? = nil
     
     @IBOutlet weak var calenderView: CalenderView!
@@ -27,9 +26,7 @@ class MainViewController: UIViewController, UINavigationControllerDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-                
-        // Do any additional setup after loading the view, typically from a nib.
-        dbTool.createTable()
+        
         recordingSession = AVAudioSession.sharedInstance()
         do {
             try recordingSession.setCategory(AVAudioSessionCategoryPlayAndRecord)
