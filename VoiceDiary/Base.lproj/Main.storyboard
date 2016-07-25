@@ -139,10 +139,10 @@
                                         </variation>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FKK-D8-A9e" userLabel="Mark">
-                                        <rect key="frame" x="0.0" y="60" width="288" height="129.5"/>
+                                        <rect key="frame" x="0.0" y="37" width="288" height="153"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0C8-z0-JsE" userLabel="Happy">
-                                                <rect key="frame" x="57" y="0.0" width="58" height="58"/>
+                                                <rect key="frame" x="44.5" y="0.0" width="63" height="62.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="0C8-z0-JsE" secondAttribute="height" id="Kb7-9h-RH6"/>
                                                     <constraint firstAttribute="width" constant="111" id="XnF-aR-wAH"/>
@@ -158,7 +158,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="biP-3f-tAI" userLabel="Ordinary">
-                                                <rect key="frame" x="115" y="0.0" width="58" height="58"/>
+                                                <rect key="frame" x="112.5" y="0.0" width="63" height="62.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="biP-3f-tAI" secondAttribute="height" multiplier="1:1" id="faD-BA-D2T"/>
                                                     <constraint firstAttribute="width" constant="60" id="fgB-9E-b3r"/>
@@ -174,7 +174,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aWu-DY-5YR" userLabel="Sad">
-                                                <rect key="frame" x="173" y="0.0" width="58" height="58"/>
+                                                <rect key="frame" x="180.5" y="0.0" width="63" height="62.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="aWu-DY-5YR" secondAttribute="height" multiplier="1:1" id="W8n-IX-JOQ"/>
                                                 </constraints>
@@ -184,12 +184,13 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="geX-cT-gfH" userLabel="Complete">
-                                                <rect key="frame" x="86" y="73" width="116" height="46.5"/>
+                                                <rect key="frame" x="81" y="82.5" width="126" height="50.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="geX-cT-gfH" secondAttribute="height" multiplier="5:2" id="GxF-3z-LfU"/>
                                                     <constraint firstAttribute="width" secondItem="geX-cT-gfH" secondAttribute="height" multiplier="131:59" id="oG2-V7-2ol"/>
                                                 </constraints>
-                                                <state key="normal" image="complete_button">
+                                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                                <state key="normal" backgroundImage="complete_button">
                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 </state>
                                                 <variation key="default">
@@ -201,26 +202,36 @@
                                                     <action selector="finishRecordBtnPressed:" destination="xuJ-KC-3cV" eventType="touchUpInside" id="raf-NO-nhI"/>
                                                 </connections>
                                             </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Finish" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CZ5-5V-u0j">
+                                                <rect key="frame" x="81" y="82.5" width="126" height="41.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <color key="textColor" red="0.16862745098039217" green="0.066666666666666666" blue="0.066666666666666666" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="geX-cT-gfH" firstAttribute="width" secondItem="FKK-D8-A9e" secondAttribute="height" id="0VQ-aJ-Gvz"/>
                                             <constraint firstItem="aWu-DY-5YR" firstAttribute="bottom" secondItem="biP-3f-tAI" secondAttribute="bottom" id="2Bo-Kz-SpH"/>
-                                            <constraint firstItem="aWu-DY-5YR" firstAttribute="leading" secondItem="biP-3f-tAI" secondAttribute="trailing" id="3BE-2V-piE"/>
+                                            <constraint firstItem="aWu-DY-5YR" firstAttribute="leading" secondItem="biP-3f-tAI" secondAttribute="trailing" constant="5" id="3BE-2V-piE"/>
                                             <constraint firstItem="geX-cT-gfH" firstAttribute="width" secondItem="biP-3f-tAI" secondAttribute="width" multiplier="2" id="98A-1o-KxN"/>
-                                            <constraint firstItem="geX-cT-gfH" firstAttribute="top" secondItem="biP-3f-tAI" secondAttribute="bottom" constant="15" id="Bim-Mg-lie"/>
+                                            <constraint firstItem="geX-cT-gfH" firstAttribute="top" secondItem="biP-3f-tAI" secondAttribute="bottom" constant="20" id="Bim-Mg-lie"/>
                                             <constraint firstItem="0C8-z0-JsE" firstAttribute="bottom" secondItem="biP-3f-tAI" secondAttribute="bottom" id="F55-Vj-VgO"/>
+                                            <constraint firstItem="CZ5-5V-u0j" firstAttribute="trailing" secondItem="geX-cT-gfH" secondAttribute="trailing" id="SDE-iA-TGT"/>
+                                            <constraint firstItem="CZ5-5V-u0j" firstAttribute="bottom" secondItem="geX-cT-gfH" secondAttribute="bottom" constant="-9" id="V0t-4J-p6U"/>
+                                            <constraint firstItem="CZ5-5V-u0j" firstAttribute="leading" secondItem="geX-cT-gfH" secondAttribute="leading" id="Wqm-g6-Dlh"/>
                                             <constraint firstItem="aWu-DY-5YR" firstAttribute="top" secondItem="biP-3f-tAI" secondAttribute="top" id="ZDj-mp-Q6j"/>
-                                            <constraint firstItem="biP-3f-tAI" firstAttribute="leading" secondItem="0C8-z0-JsE" secondAttribute="trailing" id="aKZ-AH-Cyh"/>
-                                            <constraint firstAttribute="bottom" secondItem="geX-cT-gfH" secondAttribute="bottom" constant="10" id="cL7-vr-yW6"/>
+                                            <constraint firstItem="biP-3f-tAI" firstAttribute="leading" secondItem="0C8-z0-JsE" secondAttribute="trailing" constant="5" id="aKZ-AH-Cyh"/>
+                                            <constraint firstAttribute="bottom" secondItem="geX-cT-gfH" secondAttribute="bottom" constant="20" id="cL7-vr-yW6"/>
                                             <constraint firstItem="0C8-z0-JsE" firstAttribute="top" secondItem="biP-3f-tAI" secondAttribute="top" id="cNr-9i-Xvz"/>
                                             <constraint firstItem="biP-3f-tAI" firstAttribute="top" secondItem="FKK-D8-A9e" secondAttribute="top" id="pV0-kI-Bei"/>
                                             <constraint firstItem="geX-cT-gfH" firstAttribute="width" secondItem="FKK-D8-A9e" secondAttribute="width" id="pj0-2r-YMj"/>
                                             <constraint firstAttribute="bottom" secondItem="geX-cT-gfH" secondAttribute="bottom" constant="10" id="q0k-tx-zE0"/>
+                                            <constraint firstItem="CZ5-5V-u0j" firstAttribute="top" secondItem="geX-cT-gfH" secondAttribute="top" id="qVi-UG-NYq"/>
                                             <constraint firstItem="biP-3f-tAI" firstAttribute="centerX" secondItem="FKK-D8-A9e" secondAttribute="centerX" id="u4v-d6-E2I"/>
                                             <constraint firstItem="geX-cT-gfH" firstAttribute="centerX" secondItem="FKK-D8-A9e" secondAttribute="centerX" id="u6I-pT-UwR"/>
                                             <constraint firstItem="0C8-z0-JsE" firstAttribute="height" secondItem="biP-3f-tAI" secondAttribute="height" id="uqV-Yf-Z8T"/>
-                                            <constraint firstItem="biP-3f-tAI" firstAttribute="width" secondItem="FKK-D8-A9e" secondAttribute="width" multiplier="0.2" id="z2j-MD-m15"/>
+                                            <constraint firstItem="biP-3f-tAI" firstAttribute="width" secondItem="FKK-D8-A9e" secondAttribute="width" multiplier="0.22" id="z2j-MD-m15"/>
                                         </constraints>
                                         <variation key="default">
                                             <mask key="constraints">
