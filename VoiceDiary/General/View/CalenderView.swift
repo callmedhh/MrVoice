@@ -19,9 +19,6 @@ class CalenderView: UIView {
     var items:[UIView] = []
     var firstUpdated = false
     var viewRecordTool: ViewRecordTool = ViewRecordTool()
-    let recordTool: RecordTool = RecordTool()
-    var playButton = UIButton()
-    let date = NSDate()
     
     let happyMoodColor = UIColor(hexString: "#fda529")
     let noMoodColor = UIColor(hexString: "#fee140")
@@ -55,10 +52,9 @@ class CalenderView: UIView {
 extension CalenderView {
     func setup() {
         self.backgroundColor = UIColor.clearColor()
-        
+        let date = NSDate()
         let month = date.getMonth()
         let year = date.getYear()
-        
         size = date.getDayCountOfMonth()
         offset = date.startOfMonth()!.getDayOfTheWeek() - 1
         
@@ -101,7 +97,6 @@ extension CalenderView {
             addSubview(v)
             items.append(v)
         }
-        addSubview(playButton)
     }
     
     func updateView() {
@@ -111,7 +106,7 @@ extension CalenderView {
         let height = self.bounds.height
         
         let itemWidth = width / CGFloat(colNum)
-        let itemHeight = height * 0.8 / CGFloat(rowNum)
+        let itemHeight = height / CGFloat(rowNum)
         
         for (i, v) in items.enumerate() {
             let index = i + offset
@@ -136,11 +131,6 @@ extension CalenderView {
             button.frame = CGRectMake(margin, margin, itemSize, itemSize)
             button.backgroundColor = UIColor.clearColor()
         }
-        
-        playButton.frame = CGRectMake(width/2-height*0.075, height*0.8, height*0.15, height*0.15)
-        playButton.backgroundColor = UIColor(hexString: "#fee140")
-        playButton.hidden = true
-        playButton.setToRounded()
     }
     
     
@@ -183,12 +173,6 @@ extension CalenderView {
 // MARK: - Override
 extension CalenderView {
     override func pointInside(point: CGPoint, withEvent event: UIEvent?) -> Bool {
-        if (!playButton.hidden) {
-            if (CGRectContainsPoint(playButton.frame, point)) {
-                return true
-            }
-        }
-        
         for item in items {
             if (CGRectContainsPoint(item.frame, point)) {
                 return true
@@ -200,21 +184,14 @@ extension CalenderView {
 // MARK: - ButtonPress functions
 extension CalenderView {
     func buttonClicked(sender: UIButton){
+        let date = NSDate()
         let day = sender.tag
         let month = date.getMonth()
         let year = date.getYear()
         let record = viewRecordTool.getRecordByTime(day, month: month, year: year)
         if record.isRecorded {
-            playButton.tag = day
-            playButton.hidden = false
-            playButton.addTarget(self, action: #selector(recordPlayBtnClicked), forControlEvents: .TouchUpInside)
             filename = record.recordModel!.filename
         } else {
-            playButton.hidden = true
         }
-    }
-    
-    func recordPlayBtnClicked(sender: UIButton){
-        recordTool.startPlaying(filename!)
     }
 }
