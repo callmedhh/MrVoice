@@ -104,7 +104,7 @@ extension CalenderView {
         addSubview(playButton)
     }
     
-    func updateView() {        
+    func updateView() {
         let colNum = 7
         let rowNum = (size + offset) / 7 + 1
         let width = self.bounds.width
@@ -112,7 +112,7 @@ extension CalenderView {
         
         let itemWidth = width / CGFloat(colNum)
         let itemHeight = height * 0.8 / CGFloat(rowNum)
-                
+        
         for (i, v) in items.enumerate() {
             let index = i + offset
             let x = CGFloat(index % colNum) * (itemWidth)

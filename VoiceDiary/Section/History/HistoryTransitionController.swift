@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CustomerAnimatedTransitionController: NSObject, UIViewControllerAnimatedTransitioning {
+class HistoryTransitionController: NSObject, UIViewControllerAnimatedTransitioning {
     func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval {
         return 1.2
     }

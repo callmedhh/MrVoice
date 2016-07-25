@@ -14,23 +14,15 @@ class MainViewController: UIViewController, UINavigationControllerDelegate{
     let recordTool: RecordTool = RecordTool()
     var recordingSession: AVAudioSession!
     let dbTool = Database()
-    
-    @IBOutlet weak var calenderView: CalenderView!
     var mood: Mood? = nil
     
-    @IBOutlet weak var borderView: BorderView!
+    @IBOutlet weak var calenderView: CalenderView!
     @IBOutlet weak var recordBtn: RecordButton!
-    
     @IBOutlet weak var monthLabel: UILabel!
     @IBOutlet weak var dayLabel: UILabel!
     
     @IBOutlet weak var recordView: UIView!
     @IBOutlet weak var emojiView: UIView!
-    @IBOutlet weak var mainpageGreetingView: UIView!
-    @IBOutlet weak var emojiGreetingView: UIView!
-    @IBOutlet weak var happyBtn: UIButton!
-    @IBOutlet weak var nofeelBtn: UIButton!
-    @IBOutlet weak var sadBtn: UIButton!
     @IBOutlet weak var completeBtn: UIButton!
     
     override func viewDidLoad() {
@@ -60,7 +52,6 @@ class MainViewController: UIViewController, UINavigationControllerDelegate{
         recordBtn.backgroundColor = UIColor.clearColor()
         self.navigationController?.navigationBarHidden = true
         emojiView.hidden = true
-        emojiGreetingView.hidden = true
         
         navigationController?.delegate = self        
     }
@@ -69,34 +60,27 @@ class MainViewController: UIViewController, UINavigationControllerDelegate{
         if(recordTool.audioRecorder == nil){
             recordTool.startRecording()
             recordBtn.currentState = .Recording
-            borderView.animate()
             mood = nil
         }else{
-            borderView.cancelAnimate()
             recordTool.finishRecording(success: true)
             recordView.hidden = true
             emojiView.hidden = false
-            mainpageGreetingView.hidden = true
-            emojiGreetingView.hidden = false
         }
         recordBtn.setNeedsDisplay()
     }
     
     @IBAction func happyMood(sender: AnyObject) {
         mood = Mood.Happy
-        happyBtn.setTitle("我今天很开心", forState: .Normal)
         completeBtn.enabled = true
     }
     
     @IBAction func noMood(sender: AnyObject) {
         mood = Mood.NoMood
-        nofeelBtn.setTitle("我今天不好也不坏", forState: .Normal)
         completeBtn.enabled = true
     }
     
     @IBAction func badMood(sender: AnyObject) {
         mood = Mood.Sad
-        sadBtn.setTitle("我今天不开心", forState: .Normal)
         completeBtn.enabled = true
     }
     
@@ -106,8 +90,6 @@ class MainViewController: UIViewController, UINavigationControllerDelegate{
             recordTool.saveRecordingWithMood(mood)
             recordView.hidden = false
             emojiView.hidden = true
-            mainpageGreetingView.hidden = false
-            emojiGreetingView.hidden = true
             
             recordBtn.setNeedsDisplay()
             
@@ -129,7 +111,7 @@ class MainViewController: UIViewController, UINavigationControllerDelegate{
     }
   
     
-    let animatedTransition = CustomerAnimatedTransitionController()
+    let animatedTransition = HistoryTransitionController()
    
     func navigationController(navigationController: UINavigationController, animationControllerForOperation operation: UINavigationControllerOperation, fromViewController fromVC: UIViewController, toViewController toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         return animatedTransition

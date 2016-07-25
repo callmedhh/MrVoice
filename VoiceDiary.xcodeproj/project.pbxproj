@@ -29,7 +29,7 @@
 		A0BAE0F91D192F0F000D144C /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BAE0F81D192F0F000D144C /* DateExtension.swift */; };
 		A0E794851D0E9F3B00EDC49C /* IntExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E794841D0E9F3B00EDC49C /* IntExtension.swift */; };
 		A0E794871D0EA7C400EDC49C /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E794861D0EA7C400EDC49C /* UIViewExtension.swift */; };
-		A0F51C3D1D2006D0002C93D1 /* CustomerAnimatedTransitionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F51C3C1D2006D0002C93D1 /* CustomerAnimatedTransitionController.swift */; };
+		A0F51C3D1D2006D0002C93D1 /* HistoryTransitionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F51C3C1D2006D0002C93D1 /* HistoryTransitionController.swift */; };
 		A0F51C3F1D215D35002C93D1 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F51C3E1D215D35002C93D1 /* HistoryViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -59,7 +59,7 @@
 		A0BAE0F81D192F0F000D144C /* DateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		A0E794841D0E9F3B00EDC49C /* IntExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntExtension.swift; sourceTree = "<group>"; };
 		A0E794861D0EA7C400EDC49C /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
-		A0F51C3C1D2006D0002C93D1 /* CustomerAnimatedTransitionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomerAnimatedTransitionController.swift; sourceTree = "<group>"; };
+		A0F51C3C1D2006D0002C93D1 /* HistoryTransitionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryTransitionController.swift; sourceTree = "<group>"; };
 		A0F51C3E1D215D35002C93D1 /* HistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		D5E4760629628DF3DD8BA77C /* Pods-VoiceDiary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VoiceDiary.release.xcconfig"; path = "Pods/Target Support Files/Pods-VoiceDiary/Pods-VoiceDiary.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -143,7 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				A0F51C3E1D215D35002C93D1 /* HistoryViewController.swift */,
-				A0F51C3C1D2006D0002C93D1 /* CustomerAnimatedTransitionController.swift */,
+				A0F51C3C1D2006D0002C93D1 /* HistoryTransitionController.swift */,
 			);
 			path = History;
 			sourceTree = "<group>";
@@ -249,7 +249,6 @@
 				TargetAttributes = {
 					A096DCEE1D07F1630023CB0C = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = 2V3AZZJGGG;
 					};
 				};
 			};
@@ -343,7 +342,7 @@
 				96D1FEDA1D0D466500CFD119 /* StringExtension.swift in Sources */,
 				96D1FED81D0D41B800CFD119 /* Log.swift in Sources */,
 				A08E69801D0EBD040056F8B4 /* RecordButton.swift in Sources */,
-				A0F51C3D1D2006D0002C93D1 /* CustomerAnimatedTransitionController.swift in Sources */,
+				A0F51C3D1D2006D0002C93D1 /* HistoryTransitionController.swift in Sources */,
 				96D1FECB1D0D3DB500CFD119 /* DateTool.swift in Sources */,
 				A0BAE0F51D18C922000D144C /* ViewRecordTool.swift in Sources */,
 				A08E69821D0FB38A0056F8B4 /* BorderView.swift in Sources */,
@@ -472,6 +471,7 @@
 			baseConfigurationReference = 97FE544F589D7F987FD8FADE /* Pods-VoiceDiary.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = VoiceDiary/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = work.lemur.voicediary;
@@ -484,6 +484,7 @@
 			baseConfigurationReference = D5E4760629628DF3DD8BA77C /* Pods-VoiceDiary.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = VoiceDiary/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = work.lemur.voicediary;
