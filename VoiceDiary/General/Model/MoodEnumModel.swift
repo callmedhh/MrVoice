@@ -8,5 +8,7 @@
 
 import Foundation
 enum Mood: Int {
-    case Happy = 0 ,NoMood = 1 ,Sad = 2
+    case Happy = 0
+    case Flat
+    case Sad
 }

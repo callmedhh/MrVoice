@@ -65,7 +65,7 @@ class Database {
         let query = record.filter(date == dateValue)
         
         for recordItem in try! db.prepare(query) {
-            let recordModel = RecordModel(date: recordItem[date], filename:recordItem[filename]!, mood: recordItem[mood])
+            let recordModel = RecordModel(date: recordItem[date], filename:recordItem[filename]!, mood: Mood(rawValue: recordItem[mood])!)
             recordList.append(recordModel)
         }
         if recordList.count == 0 {
@@ -79,7 +79,7 @@ class Database {
     func selectALLRecordList() -> [RecordModel]{
         var recordList = [RecordModel]()
         for recordItem in try! db.prepare(record) {
-            let recordModel = RecordModel(date: recordItem[date], filename:recordItem[filename]!, mood: recordItem[mood])
+            let recordModel = RecordModel(date: recordItem[date], filename:recordItem[filename]!, mood: Mood(rawValue: recordItem[mood])!)
             recordList.append(recordModel)
         }
         return recordList
@@ -91,7 +91,7 @@ class Database {
         
         let query = record.filter(date >= startDateValue && date <= endDateValue)
         for recordItem in try!db.prepare(query) {
-            let recordModel = RecordModel(date: recordItem[date], filename:recordItem[filename]!, mood: recordItem[mood])
+            let recordModel = RecordModel(date: recordItem[date], filename:recordItem[filename]!, mood: Mood(rawValue: recordItem[mood])!)
             recordList.append(recordModel)
         }
         return recordList

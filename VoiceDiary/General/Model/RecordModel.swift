@@ -11,5 +11,5 @@ import Foundation
 struct RecordModel{
     var date: NSDate
     var filename: String
-    var mood: Int
+    var mood: Mood
 }

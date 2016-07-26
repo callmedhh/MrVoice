@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		79E5D45D576D00E634596256 /* Pods_VoiceDiary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B07399BA037FD0C748958B1 /* Pods_VoiceDiary.framework */; };
+		9688CE7C1D47424E001AF6C0 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9688CE7B1D47424E001AF6C0 /* UIColorExtension.swift */; };
 		96D1FEC91D0D3DB500CFD119 /* RecordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D1FEC01D0D3DB500CFD119 /* RecordModel.swift */; };
 		96D1FECA1D0D3DB500CFD119 /* DatabaseTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D1FEC21D0D3DB500CFD119 /* DatabaseTool.swift */; };
 		96D1FECB1D0D3DB500CFD119 /* DateTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D1FEC31D0D3DB500CFD119 /* DateTool.swift */; };
@@ -35,6 +36,7 @@
 
 /* Begin PBXFileReference section */
 		0B07399BA037FD0C748958B1 /* Pods_VoiceDiary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VoiceDiary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9688CE7B1D47424E001AF6C0 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		96D1FEC01D0D3DB500CFD119 /* RecordModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordModel.swift; sourceTree = "<group>"; };
 		96D1FEC21D0D3DB500CFD119 /* DatabaseTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseTool.swift; sourceTree = "<group>"; };
 		96D1FEC31D0D3DB500CFD119 /* DateTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateTool.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 				A0E794841D0E9F3B00EDC49C /* IntExtension.swift */,
 				A0E794861D0EA7C400EDC49C /* UIViewExtension.swift */,
 				A0BAE0F81D192F0F000D144C /* DateExtension.swift */,
+				9688CE7B1D47424E001AF6C0 /* UIColorExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -344,6 +347,7 @@
 				A08E69801D0EBD040056F8B4 /* RecordButton.swift in Sources */,
 				A0F51C3D1D2006D0002C93D1 /* HistoryTransitionController.swift in Sources */,
 				96D1FECB1D0D3DB500CFD119 /* DateTool.swift in Sources */,
+				9688CE7C1D47424E001AF6C0 /* UIColorExtension.swift in Sources */,
 				A0BAE0F51D18C922000D144C /* ViewRecordTool.swift in Sources */,
 				A08E69821D0FB38A0056F8B4 /* BorderView.swift in Sources */,
 				A0E794871D0EA7C400EDC49C /* UIViewExtension.swift in Sources */,

@@ -72,7 +72,7 @@ class MainViewController: UIViewController, UINavigationControllerDelegate{
     }
     
     @IBAction func noMood(sender: AnyObject) {
-        mood = Mood.NoMood
+        mood = Mood.Flat
         completeBtn.enabled = true
     }
     

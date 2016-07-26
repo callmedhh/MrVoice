@@ -20,12 +20,6 @@ class CalenderView: UIView {
     var itemViews:[UIView] = []
     var firstUpdated = false
     var viewRecordTool: ViewRecordTool = ViewRecordTool()
-    
-    let happyMoodColor = UIColor(hexString: "#fda529")
-    let noMoodColor = UIColor(hexString: "#fee140")
-    let sadMoodColor = UIColor(hexString: "#a09f8e")
-    let notRecordedColor = UIColor(hexString: "#3e4243")
-    
     var recordModelList: [DailyRecord] = []
     
     weak var playButton: UIButton?
@@ -67,17 +61,15 @@ extension CalenderView {
             let recordModel = recordModelList[i]
             if recordModel.isRecorded {
                 switch recordModel.recordModel!.mood {
-                case Mood.Happy.rawValue:
-                    roundedView.backgroundColor = happyMoodColor
-                case Mood.NoMood.rawValue:
-                    roundedView.backgroundColor = noMoodColor
-                case Mood.Sad.rawValue:
-                    roundedView.backgroundColor = sadMoodColor
-                default:
-                    roundedView.backgroundColor = notRecordedColor
+                case Mood.Happy:
+                    roundedView.backgroundColor = UIColor.Calendar.happy
+                case Mood.Flat:
+                    roundedView.backgroundColor = UIColor.Calendar.flat
+                case Mood.Sad:
+                    roundedView.backgroundColor = UIColor.Calendar.sad
                 }
             } else {
-                roundedView.backgroundColor = notRecordedColor
+                roundedView.backgroundColor = UIColor.Calendar.nothing
             }
             roundedView.tag = Tags.RoundedView.rawValue
             roundedView.layer.masksToBounds = true
@@ -153,13 +145,13 @@ extension CalenderView {
             if (i+1) == day {
                 for subview in item.subviews {
                     if subview.tag == Tags.RoundedView.rawValue {
-                        switch mood.rawValue {
-                        case 0:
-                            subview.backgroundColor = happyMoodColor
-                        case 1:
-                            subview.backgroundColor = noMoodColor
-                        default:
-                            subview.backgroundColor = sadMoodColor
+                        switch mood {
+                        case Mood.Happy:
+                            subview.backgroundColor = UIColor.Calendar.happy
+                        case Mood.Flat:
+                            subview.backgroundColor = UIColor.Calendar.flat
+                        case Mood.Sad:
+                            subview.backgroundColor = UIColor.Calendar.sad
                         }
                         subview.setNeedsDisplay()
                     }
