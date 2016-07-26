@@ -48,7 +48,7 @@
 		97FE544F589D7F987FD8FADE /* Pods-VoiceDiary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VoiceDiary.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VoiceDiary/Pods-VoiceDiary.debug.xcconfig"; sourceTree = "<group>"; };
 		A08E697F1D0EBD040056F8B4 /* RecordButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordButton.swift; sourceTree = "<group>"; };
 		A08E69811D0FB38A0056F8B4 /* BorderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorderView.swift; sourceTree = "<group>"; };
-		A096DCEF1D07F1630023CB0C /* VoiceDiary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VoiceDiary.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A096DCEF1D07F1630023CB0C /* MrVoice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MrVoice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A096DCF21D07F1630023CB0C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A096DCF71D07F1630023CB0C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A096DCF91D07F1630023CB0C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -190,7 +190,7 @@
 		A096DCF01D07F1630023CB0C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A096DCEF1D07F1630023CB0C /* VoiceDiary.app */,
+				A096DCEF1D07F1630023CB0C /* MrVoice.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -220,9 +220,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A096DCEE1D07F1630023CB0C /* VoiceDiary */ = {
+		A096DCEE1D07F1630023CB0C /* MrVoice */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A096DD011D07F1630023CB0C /* Build configuration list for PBXNativeTarget "VoiceDiary" */;
+			buildConfigurationList = A096DD011D07F1630023CB0C /* Build configuration list for PBXNativeTarget "MrVoice" */;
 			buildPhases = (
 				B22F9D2ECD12D8472E55AA29 /* [CP] Check Pods Manifest.lock */,
 				A096DCEB1D07F1630023CB0C /* Sources */,
@@ -235,9 +235,9 @@
 			);
 			dependencies = (
 			);
-			name = VoiceDiary;
+			name = MrVoice;
 			productName = VoiceDiary;
-			productReference = A096DCEF1D07F1630023CB0C /* VoiceDiary.app */;
+			productReference = A096DCEF1D07F1630023CB0C /* MrVoice.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -255,7 +255,7 @@
 					};
 				};
 			};
-			buildConfigurationList = A096DCEA1D07F1630023CB0C /* Build configuration list for PBXProject "VoiceDiary" */;
+			buildConfigurationList = A096DCEA1D07F1630023CB0C /* Build configuration list for PBXProject "MrVoice" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -268,7 +268,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A096DCEE1D07F1630023CB0C /* VoiceDiary */,
+				A096DCEE1D07F1630023CB0C /* MrVoice */,
 			);
 		};
 /* End PBXProject section */
@@ -479,7 +479,7 @@
 				INFOPLIST_FILE = VoiceDiary/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.callmewhy.voicediary;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = MrVoice;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -493,7 +493,7 @@
 				INFOPLIST_FILE = VoiceDiary/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.callmewhy.voicediary;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = MrVoice;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
@@ -501,7 +501,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A096DCEA1D07F1630023CB0C /* Build configuration list for PBXProject "VoiceDiary" */ = {
+		A096DCEA1D07F1630023CB0C /* Build configuration list for PBXProject "MrVoice" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A096DCFF1D07F1630023CB0C /* Debug */,
@@ -510,7 +510,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A096DD011D07F1630023CB0C /* Build configuration list for PBXNativeTarget "VoiceDiary" */ = {
+		A096DD011D07F1630023CB0C /* Build configuration list for PBXNativeTarget "MrVoice" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A096DD021D07F1630023CB0C /* Debug */,
