@@ -7,63 +7,66 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		79E5D45D576D00E634596256 /* Pods_VoiceDiary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B07399BA037FD0C748958B1 /* Pods_VoiceDiary.framework */; };
-		9688CE7C1D47424E001AF6C0 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9688CE7B1D47424E001AF6C0 /* UIColorExtension.swift */; };
-		96D1FEC91D0D3DB500CFD119 /* RecordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D1FEC01D0D3DB500CFD119 /* RecordModel.swift */; };
-		96D1FECA1D0D3DB500CFD119 /* DatabaseTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D1FEC21D0D3DB500CFD119 /* DatabaseTool.swift */; };
-		96D1FECB1D0D3DB500CFD119 /* DateTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D1FEC31D0D3DB500CFD119 /* DateTool.swift */; };
-		96D1FECC1D0D3DB500CFD119 /* FilePathTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D1FEC41D0D3DB500CFD119 /* FilePathTool.swift */; };
-		96D1FECD1D0D3DB500CFD119 /* RecordTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D1FEC51D0D3DB500CFD119 /* RecordTool.swift */; };
-		96D1FED51D0D3E4C00CFD119 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D1FED31D0D3E4C00CFD119 /* MainViewController.swift */; };
-		96D1FED81D0D41B800CFD119 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D1FED71D0D41B800CFD119 /* Log.swift */; };
-		96D1FEDA1D0D466500CFD119 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D1FED91D0D466500CFD119 /* StringExtension.swift */; };
-		A08E69801D0EBD040056F8B4 /* RecordButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08E697F1D0EBD040056F8B4 /* RecordButton.swift */; };
-		A08E69821D0FB38A0056F8B4 /* BorderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08E69811D0FB38A0056F8B4 /* BorderView.swift */; };
-		A096DCF31D07F1630023CB0C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A096DCF21D07F1630023CB0C /* AppDelegate.swift */; };
-		A096DCF81D07F1630023CB0C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A096DCF61D07F1630023CB0C /* Main.storyboard */; };
-		A096DCFA1D07F1630023CB0C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A096DCF91D07F1630023CB0C /* Assets.xcassets */; };
-		A096DCFD1D07F1630023CB0C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A096DCFB1D07F1630023CB0C /* LaunchScreen.storyboard */; };
-		A0BAE0C51D17A11B000D144C /* CalenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BAE0C41D17A11B000D144C /* CalenderView.swift */; };
-		A0BAE0F31D183098000D144C /* DailyRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BAE0F21D183098000D144C /* DailyRecord.swift */; };
-		A0BAE0F51D18C922000D144C /* ViewRecordTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BAE0F41D18C922000D144C /* ViewRecordTool.swift */; };
-		A0BAE0F71D18CCD1000D144C /* Mood.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BAE0F61D18CCD1000D144C /* Mood.swift */; };
-		A0BAE0F91D192F0F000D144C /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BAE0F81D192F0F000D144C /* DateExtension.swift */; };
-		A0E794851D0E9F3B00EDC49C /* IntExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E794841D0E9F3B00EDC49C /* IntExtension.swift */; };
-		A0E794871D0EA7C400EDC49C /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E794861D0EA7C400EDC49C /* UIViewExtension.swift */; };
-		A0F51C3D1D2006D0002C93D1 /* HistoryTransitionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F51C3C1D2006D0002C93D1 /* HistoryTransitionController.swift */; };
-		A0F51C3F1D215D35002C93D1 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F51C3E1D215D35002C93D1 /* HistoryViewController.swift */; };
+		9688CEA41D475E32001AF6C0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9688CE801D475E32001AF6C0 /* AppDelegate.swift */; };
+		9688CEA51D475E32001AF6C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9688CE811D475E32001AF6C0 /* Assets.xcassets */; };
+		9688CEA61D475E32001AF6C0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9688CE821D475E32001AF6C0 /* LaunchScreen.storyboard */; };
+		9688CEA71D475E32001AF6C0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9688CE841D475E32001AF6C0 /* Main.storyboard */; };
+		9688CEA81D475E32001AF6C0 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9688CE881D475E32001AF6C0 /* DateExtension.swift */; };
+		9688CEA91D475E32001AF6C0 /* IntExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9688CE891D475E32001AF6C0 /* IntExtension.swift */; };
+		9688CEAA1D475E32001AF6C0 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9688CE8A1D475E32001AF6C0 /* StringExtension.swift */; };
+		9688CEAB1D475E32001AF6C0 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9688CE8B1D475E32001AF6C0 /* UIColorExtension.swift */; };
+		9688CEAC1D475E32001AF6C0 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9688CE8C1D475E32001AF6C0 /* UIViewExtension.swift */; };
+		9688CEAD1D475E32001AF6C0 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9688CE8E1D475E32001AF6C0 /* Log.swift */; };
+		9688CEAE1D475E32001AF6C0 /* DailyRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9688CE901D475E32001AF6C0 /* DailyRecord.swift */; };
+		9688CEAF1D475E32001AF6C0 /* Mood.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9688CE911D475E32001AF6C0 /* Mood.swift */; };
+		9688CEB01D475E32001AF6C0 /* RecordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9688CE921D475E32001AF6C0 /* RecordModel.swift */; };
+		9688CEB11D475E32001AF6C0 /* DatabaseTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9688CE941D475E32001AF6C0 /* DatabaseTool.swift */; };
+		9688CEB21D475E32001AF6C0 /* DateTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9688CE951D475E32001AF6C0 /* DateTool.swift */; };
+		9688CEB31D475E32001AF6C0 /* FilePathTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9688CE961D475E32001AF6C0 /* FilePathTool.swift */; };
+		9688CEB41D475E32001AF6C0 /* RecordTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9688CE971D475E32001AF6C0 /* RecordTool.swift */; };
+		9688CEB51D475E32001AF6C0 /* ViewRecordTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9688CE981D475E32001AF6C0 /* ViewRecordTool.swift */; };
+		9688CEB61D475E32001AF6C0 /* BorderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9688CE9A1D475E32001AF6C0 /* BorderView.swift */; };
+		9688CEB71D475E32001AF6C0 /* CalenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9688CE9B1D475E32001AF6C0 /* CalenderView.swift */; };
+		9688CEB81D475E32001AF6C0 /* RecordButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9688CE9C1D475E32001AF6C0 /* RecordButton.swift */; };
+		9688CEBA1D475E32001AF6C0 /* HistoryTransitionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9688CEA01D475E32001AF6C0 /* HistoryTransitionController.swift */; };
+		9688CEBB1D475E32001AF6C0 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9688CEA11D475E32001AF6C0 /* HistoryViewController.swift */; };
+		9688CEBC1D475E32001AF6C0 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9688CEA31D475E32001AF6C0 /* MainViewController.swift */; };
+		B26B60A975C9D5DE05234C53 /* Pods_MrVoice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9E328CEDDFDBD468ED0F879 /* Pods_MrVoice.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0B07399BA037FD0C748958B1 /* Pods_VoiceDiary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VoiceDiary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9688CE7B1D47424E001AF6C0 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
-		96D1FEC01D0D3DB500CFD119 /* RecordModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordModel.swift; sourceTree = "<group>"; };
-		96D1FEC21D0D3DB500CFD119 /* DatabaseTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseTool.swift; sourceTree = "<group>"; };
-		96D1FEC31D0D3DB500CFD119 /* DateTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateTool.swift; sourceTree = "<group>"; };
-		96D1FEC41D0D3DB500CFD119 /* FilePathTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilePathTool.swift; sourceTree = "<group>"; };
-		96D1FEC51D0D3DB500CFD119 /* RecordTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordTool.swift; sourceTree = "<group>"; };
-		96D1FED31D0D3E4C00CFD119 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		96D1FED71D0D41B800CFD119 /* Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
-		96D1FED91D0D466500CFD119 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		91D6C8B96EA9483028B94489 /* Pods-MrVoice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MrVoice.release.xcconfig"; path = "Pods/Target Support Files/Pods-MrVoice/Pods-MrVoice.release.xcconfig"; sourceTree = "<group>"; };
+		9688CE801D475E32001AF6C0 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		9688CE811D475E32001AF6C0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9688CE831D475E32001AF6C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9688CE851D475E32001AF6C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9688CE881D475E32001AF6C0 /* DateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		9688CE891D475E32001AF6C0 /* IntExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntExtension.swift; sourceTree = "<group>"; };
+		9688CE8A1D475E32001AF6C0 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		9688CE8B1D475E32001AF6C0 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		9688CE8C1D475E32001AF6C0 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		9688CE8E1D475E32001AF6C0 /* Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
+		9688CE901D475E32001AF6C0 /* DailyRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyRecord.swift; sourceTree = "<group>"; };
+		9688CE911D475E32001AF6C0 /* Mood.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mood.swift; sourceTree = "<group>"; };
+		9688CE921D475E32001AF6C0 /* RecordModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordModel.swift; sourceTree = "<group>"; };
+		9688CE941D475E32001AF6C0 /* DatabaseTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseTool.swift; sourceTree = "<group>"; };
+		9688CE951D475E32001AF6C0 /* DateTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateTool.swift; sourceTree = "<group>"; };
+		9688CE961D475E32001AF6C0 /* FilePathTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilePathTool.swift; sourceTree = "<group>"; };
+		9688CE971D475E32001AF6C0 /* RecordTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordTool.swift; sourceTree = "<group>"; };
+		9688CE981D475E32001AF6C0 /* ViewRecordTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewRecordTool.swift; sourceTree = "<group>"; };
+		9688CE9A1D475E32001AF6C0 /* BorderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorderView.swift; sourceTree = "<group>"; };
+		9688CE9B1D475E32001AF6C0 /* CalenderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalenderView.swift; sourceTree = "<group>"; };
+		9688CE9C1D475E32001AF6C0 /* RecordButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordButton.swift; sourceTree = "<group>"; };
+		9688CE9D1D475E32001AF6C0 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9688CEA01D475E32001AF6C0 /* HistoryTransitionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryTransitionController.swift; sourceTree = "<group>"; };
+		9688CEA11D475E32001AF6C0 /* HistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		9688CEA31D475E32001AF6C0 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		97FE544F589D7F987FD8FADE /* Pods-VoiceDiary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VoiceDiary.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VoiceDiary/Pods-VoiceDiary.debug.xcconfig"; sourceTree = "<group>"; };
-		A08E697F1D0EBD040056F8B4 /* RecordButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordButton.swift; sourceTree = "<group>"; };
-		A08E69811D0FB38A0056F8B4 /* BorderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorderView.swift; sourceTree = "<group>"; };
 		A096DCEF1D07F1630023CB0C /* MrVoice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MrVoice.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		A096DCF21D07F1630023CB0C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A096DCF71D07F1630023CB0C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		A096DCF91D07F1630023CB0C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		A096DCFC1D07F1630023CB0C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		A096DCFE1D07F1630023CB0C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A0BAE0C41D17A11B000D144C /* CalenderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalenderView.swift; sourceTree = "<group>"; };
-		A0BAE0F21D183098000D144C /* DailyRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyRecord.swift; sourceTree = "<group>"; };
-		A0BAE0F41D18C922000D144C /* ViewRecordTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewRecordTool.swift; sourceTree = "<group>"; };
-		A0BAE0F61D18CCD1000D144C /* Mood.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mood.swift; sourceTree = "<group>"; };
-		A0BAE0F81D192F0F000D144C /* DateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
-		A0E794841D0E9F3B00EDC49C /* IntExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntExtension.swift; sourceTree = "<group>"; };
-		A0E794861D0EA7C400EDC49C /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
-		A0F51C3C1D2006D0002C93D1 /* HistoryTransitionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryTransitionController.swift; sourceTree = "<group>"; };
-		A0F51C3E1D215D35002C93D1 /* HistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		D5E4760629628DF3DD8BA77C /* Pods-VoiceDiary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VoiceDiary.release.xcconfig"; path = "Pods/Target Support Files/Pods-VoiceDiary/Pods-VoiceDiary.release.xcconfig"; sourceTree = "<group>"; };
+		D9E328CEDDFDBD468ED0F879 /* Pods_MrVoice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MrVoice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F7A5C373FD22A533B250C0EC /* Pods-MrVoice.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MrVoice.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MrVoice/Pods-MrVoice.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,7 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				79E5D45D576D00E634596256 /* Pods_VoiceDiary.framework in Frameworks */,
+				B26B60A975C9D5DE05234C53 /* Pods_MrVoice.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,104 +86,120 @@
 			children = (
 				97FE544F589D7F987FD8FADE /* Pods-VoiceDiary.debug.xcconfig */,
 				D5E4760629628DF3DD8BA77C /* Pods-VoiceDiary.release.xcconfig */,
+				F7A5C373FD22A533B250C0EC /* Pods-MrVoice.debug.xcconfig */,
+				91D6C8B96EA9483028B94489 /* Pods-MrVoice.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		96D1FEBD1D0D3DB500CFD119 /* General */ = {
+		9688CE7F1D475E32001AF6C0 /* MrVoice */ = {
 			isa = PBXGroup;
 			children = (
-				96D1FED61D0D41A400CFD119 /* Macro */,
-				A08E697E1D0EBC8D0056F8B4 /* View */,
-				96D1FEBE1D0D3DB500CFD119 /* Extension */,
-				96D1FEBF1D0D3DB500CFD119 /* Model */,
-				96D1FEC11D0D3DB500CFD119 /* Tool */,
+				9688CE801D475E32001AF6C0 /* AppDelegate.swift */,
+				9688CE841D475E32001AF6C0 /* Main.storyboard */,
+				9688CE861D475E32001AF6C0 /* General */,
+				9688CE9E1D475E32001AF6C0 /* Section */,
+				9688CE9D1D475E32001AF6C0 /* Info.plist */,
+				9688CE811D475E32001AF6C0 /* Assets.xcassets */,
+				9688CE821D475E32001AF6C0 /* LaunchScreen.storyboard */,
+			);
+			path = MrVoice;
+			sourceTree = "<group>";
+		};
+		9688CE861D475E32001AF6C0 /* General */ = {
+			isa = PBXGroup;
+			children = (
+				9688CE8D1D475E32001AF6C0 /* Macro */,
+				9688CE871D475E32001AF6C0 /* Extension */,
+				9688CE8F1D475E32001AF6C0 /* Model */,
+				9688CE931D475E32001AF6C0 /* Tool */,
+				9688CE991D475E32001AF6C0 /* View */,
 			);
 			path = General;
 			sourceTree = "<group>";
 		};
-		96D1FEBE1D0D3DB500CFD119 /* Extension */ = {
+		9688CE871D475E32001AF6C0 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				96D1FED91D0D466500CFD119 /* StringExtension.swift */,
-				A0E794841D0E9F3B00EDC49C /* IntExtension.swift */,
-				A0E794861D0EA7C400EDC49C /* UIViewExtension.swift */,
-				A0BAE0F81D192F0F000D144C /* DateExtension.swift */,
-				9688CE7B1D47424E001AF6C0 /* UIColorExtension.swift */,
+				9688CE881D475E32001AF6C0 /* DateExtension.swift */,
+				9688CE891D475E32001AF6C0 /* IntExtension.swift */,
+				9688CE8A1D475E32001AF6C0 /* StringExtension.swift */,
+				9688CE8B1D475E32001AF6C0 /* UIColorExtension.swift */,
+				9688CE8C1D475E32001AF6C0 /* UIViewExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
 		};
-		96D1FEBF1D0D3DB500CFD119 /* Model */ = {
+		9688CE8D1D475E32001AF6C0 /* Macro */ = {
 			isa = PBXGroup;
 			children = (
-				96D1FEC01D0D3DB500CFD119 /* RecordModel.swift */,
-				A0BAE0F21D183098000D144C /* DailyRecord.swift */,
-				A0BAE0F61D18CCD1000D144C /* Mood.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		96D1FEC11D0D3DB500CFD119 /* Tool */ = {
-			isa = PBXGroup;
-			children = (
-				96D1FEC21D0D3DB500CFD119 /* DatabaseTool.swift */,
-				96D1FEC31D0D3DB500CFD119 /* DateTool.swift */,
-				96D1FEC41D0D3DB500CFD119 /* FilePathTool.swift */,
-				96D1FEC51D0D3DB500CFD119 /* RecordTool.swift */,
-				A0BAE0F41D18C922000D144C /* ViewRecordTool.swift */,
-			);
-			path = Tool;
-			sourceTree = "<group>";
-		};
-		96D1FEC61D0D3DB500CFD119 /* Section */ = {
-			isa = PBXGroup;
-			children = (
-				96D1FED21D0D3E4C00CFD119 /* Main */,
-				96D1FED01D0D3E4C00CFD119 /* History */,
-			);
-			path = Section;
-			sourceTree = "<group>";
-		};
-		96D1FED01D0D3E4C00CFD119 /* History */ = {
-			isa = PBXGroup;
-			children = (
-				A0F51C3E1D215D35002C93D1 /* HistoryViewController.swift */,
-				A0F51C3C1D2006D0002C93D1 /* HistoryTransitionController.swift */,
-			);
-			path = History;
-			sourceTree = "<group>";
-		};
-		96D1FED21D0D3E4C00CFD119 /* Main */ = {
-			isa = PBXGroup;
-			children = (
-				96D1FED31D0D3E4C00CFD119 /* MainViewController.swift */,
-			);
-			path = Main;
-			sourceTree = "<group>";
-		};
-		96D1FED61D0D41A400CFD119 /* Macro */ = {
-			isa = PBXGroup;
-			children = (
-				96D1FED71D0D41B800CFD119 /* Log.swift */,
+				9688CE8E1D475E32001AF6C0 /* Log.swift */,
 			);
 			path = Macro;
 			sourceTree = "<group>";
 		};
-		A08E697E1D0EBC8D0056F8B4 /* View */ = {
+		9688CE8F1D475E32001AF6C0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				A08E697F1D0EBD040056F8B4 /* RecordButton.swift */,
-				A08E69811D0FB38A0056F8B4 /* BorderView.swift */,
-				A0BAE0C41D17A11B000D144C /* CalenderView.swift */,
+				9688CE901D475E32001AF6C0 /* DailyRecord.swift */,
+				9688CE911D475E32001AF6C0 /* Mood.swift */,
+				9688CE921D475E32001AF6C0 /* RecordModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9688CE931D475E32001AF6C0 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				9688CE941D475E32001AF6C0 /* DatabaseTool.swift */,
+				9688CE951D475E32001AF6C0 /* DateTool.swift */,
+				9688CE961D475E32001AF6C0 /* FilePathTool.swift */,
+				9688CE971D475E32001AF6C0 /* RecordTool.swift */,
+				9688CE981D475E32001AF6C0 /* ViewRecordTool.swift */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
+		9688CE991D475E32001AF6C0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9688CE9A1D475E32001AF6C0 /* BorderView.swift */,
+				9688CE9B1D475E32001AF6C0 /* CalenderView.swift */,
+				9688CE9C1D475E32001AF6C0 /* RecordButton.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		9688CE9E1D475E32001AF6C0 /* Section */ = {
+			isa = PBXGroup;
+			children = (
+				9688CE9F1D475E32001AF6C0 /* History */,
+				9688CEA21D475E32001AF6C0 /* Main */,
+			);
+			path = Section;
+			sourceTree = "<group>";
+		};
+		9688CE9F1D475E32001AF6C0 /* History */ = {
+			isa = PBXGroup;
+			children = (
+				9688CEA01D475E32001AF6C0 /* HistoryTransitionController.swift */,
+				9688CEA11D475E32001AF6C0 /* HistoryViewController.swift */,
+			);
+			path = History;
+			sourceTree = "<group>";
+		};
+		9688CEA21D475E32001AF6C0 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				9688CEA31D475E32001AF6C0 /* MainViewController.swift */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 		A096DCE61D07F1630023CB0C = {
 			isa = PBXGroup;
 			children = (
-				A096DCF11D07F1630023CB0C /* VoiceDiary */,
+				9688CE7F1D475E32001AF6C0 /* MrVoice */,
 				A096DCF01D07F1630023CB0C /* Products */,
 				0767EFC579BEC1309D8F32A8 /* Pods */,
 				D58D14F11505131423036BF3 /* Frameworks */,
@@ -195,24 +214,11 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		A096DCF11D07F1630023CB0C /* VoiceDiary */ = {
-			isa = PBXGroup;
-			children = (
-				A096DCF21D07F1630023CB0C /* AppDelegate.swift */,
-				A096DCF61D07F1630023CB0C /* Main.storyboard */,
-				96D1FEBD1D0D3DB500CFD119 /* General */,
-				96D1FEC61D0D3DB500CFD119 /* Section */,
-				A096DCF91D07F1630023CB0C /* Assets.xcassets */,
-				A096DCFB1D07F1630023CB0C /* LaunchScreen.storyboard */,
-				A096DCFE1D07F1630023CB0C /* Info.plist */,
-			);
-			path = VoiceDiary;
-			sourceTree = "<group>";
-		};
 		D58D14F11505131423036BF3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				0B07399BA037FD0C748958B1 /* Pods_VoiceDiary.framework */,
+				D9E328CEDDFDBD468ED0F879 /* Pods_MrVoice.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -278,9 +284,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A096DCFD1D07F1630023CB0C /* LaunchScreen.storyboard in Resources */,
-				A096DCFA1D07F1630023CB0C /* Assets.xcassets in Resources */,
-				A096DCF81D07F1630023CB0C /* Main.storyboard in Resources */,
+				9688CEA51D475E32001AF6C0 /* Assets.xcassets in Resources */,
+				9688CEA71D475E32001AF6C0 /* Main.storyboard in Resources */,
+				9688CEA61D475E32001AF6C0 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,7 +305,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VoiceDiary/Pods-VoiceDiary-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MrVoice/Pods-MrVoice-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		AF5C3A9F0C036710FC252F3E /* [CP] Copy Pods Resources */ = {
@@ -314,7 +320,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VoiceDiary/Pods-VoiceDiary-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MrVoice/Pods-MrVoice-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		B22F9D2ECD12D8472E55AA29 /* [CP] Check Pods Manifest.lock */ = {
@@ -339,47 +345,47 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A0BAE0F91D192F0F000D144C /* DateExtension.swift in Sources */,
-				96D1FECD1D0D3DB500CFD119 /* RecordTool.swift in Sources */,
-				96D1FECA1D0D3DB500CFD119 /* DatabaseTool.swift in Sources */,
-				96D1FEDA1D0D466500CFD119 /* StringExtension.swift in Sources */,
-				96D1FED81D0D41B800CFD119 /* Log.swift in Sources */,
-				A08E69801D0EBD040056F8B4 /* RecordButton.swift in Sources */,
-				A0F51C3D1D2006D0002C93D1 /* HistoryTransitionController.swift in Sources */,
-				96D1FECB1D0D3DB500CFD119 /* DateTool.swift in Sources */,
-				9688CE7C1D47424E001AF6C0 /* UIColorExtension.swift in Sources */,
-				A0BAE0F51D18C922000D144C /* ViewRecordTool.swift in Sources */,
-				A08E69821D0FB38A0056F8B4 /* BorderView.swift in Sources */,
-				A0E794871D0EA7C400EDC49C /* UIViewExtension.swift in Sources */,
-				A0BAE0C51D17A11B000D144C /* CalenderView.swift in Sources */,
-				A0E794851D0E9F3B00EDC49C /* IntExtension.swift in Sources */,
-				A0BAE0F31D183098000D144C /* DailyRecord.swift in Sources */,
-				96D1FEC91D0D3DB500CFD119 /* RecordModel.swift in Sources */,
-				A096DCF31D07F1630023CB0C /* AppDelegate.swift in Sources */,
-				96D1FECC1D0D3DB500CFD119 /* FilePathTool.swift in Sources */,
-				A0F51C3F1D215D35002C93D1 /* HistoryViewController.swift in Sources */,
-				96D1FED51D0D3E4C00CFD119 /* MainViewController.swift in Sources */,
-				A0BAE0F71D18CCD1000D144C /* Mood.swift in Sources */,
+				9688CEBC1D475E32001AF6C0 /* MainViewController.swift in Sources */,
+				9688CEAC1D475E32001AF6C0 /* UIViewExtension.swift in Sources */,
+				9688CEB11D475E32001AF6C0 /* DatabaseTool.swift in Sources */,
+				9688CEB81D475E32001AF6C0 /* RecordButton.swift in Sources */,
+				9688CEBB1D475E32001AF6C0 /* HistoryViewController.swift in Sources */,
+				9688CEAF1D475E32001AF6C0 /* Mood.swift in Sources */,
+				9688CEB71D475E32001AF6C0 /* CalenderView.swift in Sources */,
+				9688CEBA1D475E32001AF6C0 /* HistoryTransitionController.swift in Sources */,
+				9688CEAD1D475E32001AF6C0 /* Log.swift in Sources */,
+				9688CEB61D475E32001AF6C0 /* BorderView.swift in Sources */,
+				9688CEB31D475E32001AF6C0 /* FilePathTool.swift in Sources */,
+				9688CEAA1D475E32001AF6C0 /* StringExtension.swift in Sources */,
+				9688CEB41D475E32001AF6C0 /* RecordTool.swift in Sources */,
+				9688CEB21D475E32001AF6C0 /* DateTool.swift in Sources */,
+				9688CEA41D475E32001AF6C0 /* AppDelegate.swift in Sources */,
+				9688CEAB1D475E32001AF6C0 /* UIColorExtension.swift in Sources */,
+				9688CEB51D475E32001AF6C0 /* ViewRecordTool.swift in Sources */,
+				9688CEA81D475E32001AF6C0 /* DateExtension.swift in Sources */,
+				9688CEAE1D475E32001AF6C0 /* DailyRecord.swift in Sources */,
+				9688CEB01D475E32001AF6C0 /* RecordModel.swift in Sources */,
+				9688CEA91D475E32001AF6C0 /* IntExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		A096DCF61D07F1630023CB0C /* Main.storyboard */ = {
+		9688CE821D475E32001AF6C0 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				A096DCF71D07F1630023CB0C /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		A096DCFB1D07F1630023CB0C /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A096DCFC1D07F1630023CB0C /* Base */,
+				9688CE831D475E32001AF6C0 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		9688CE841D475E32001AF6C0 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9688CE851D475E32001AF6C0 /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -472,13 +478,13 @@
 		};
 		A096DD021D07F1630023CB0C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 97FE544F589D7F987FD8FADE /* Pods-VoiceDiary.debug.xcconfig */;
+			baseConfigurationReference = F7A5C373FD22A533B250C0EC /* Pods-MrVoice.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				INFOPLIST_FILE = VoiceDiary/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/MrVoice/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.callmewhy.voicediary;
+				PRODUCT_BUNDLE_IDENTIFIER = com.callmewhy.mrvoice;
 				PRODUCT_NAME = MrVoice;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -486,13 +492,13 @@
 		};
 		A096DD031D07F1630023CB0C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D5E4760629628DF3DD8BA77C /* Pods-VoiceDiary.release.xcconfig */;
+			baseConfigurationReference = 91D6C8B96EA9483028B94489 /* Pods-MrVoice.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				INFOPLIST_FILE = VoiceDiary/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/MrVoice/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.callmewhy.voicediary;
+				PRODUCT_BUNDLE_IDENTIFIER = com.callmewhy.mrvoice;
 				PRODUCT_NAME = MrVoice;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

@@ -20,7 +20,6 @@ class CalenderView: UIView {
     var itemViews:[UIView] = []
     var firstUpdated = false
     var viewRecordTool: ViewRecordTool = ViewRecordTool()
-    var recordModelList: [DailyRecord] = []
     
     weak var playButton: UIButton?
     
@@ -45,24 +44,13 @@ extension CalenderView {
     func setup() {
         self.backgroundColor = UIColor.clearColor()
         let date = NSDate()
-        let month = date.getMonth()
-        let year = date.getYear()
-        
-        recordModelList = viewRecordTool.getMonthDailyRecordList(month: month, year: year)
+        let recordModelList = viewRecordTool.getMonthDailyRecordList(month: date.getMonth(), year: date.getYear())
         for i in 0..<count {
             let v = UIView()
-            
             let roundedView = UIView()
             let recordModel = recordModelList[i]
             if recordModel.isRecorded {
-                switch recordModel.recordModel!.mood {
-                case Mood.Happy:
-                    roundedView.backgroundColor = UIColor.Calendar.happy
-                case Mood.Flat:
-                    roundedView.backgroundColor = UIColor.Calendar.flat
-                case Mood.Sad:
-                    roundedView.backgroundColor = UIColor.Calendar.sad
-                }
+                roundedView.backgroundColor = recordModel.recordModel?.mood.color()
             } else {
                 roundedView.backgroundColor = UIColor.Calendar.nothing
             }
@@ -73,7 +61,7 @@ extension CalenderView {
             let label = UILabel()
             label.tag = Tags.Label.rawValue
             label.text = "\(i+1)"
-            label.textColor = UIColor(hex: 0x66696a)
+            label.textColor = UIColor.Calendar.nothing
             label.textAlignment = .Left
             v.addSubview(label)
             

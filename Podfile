@@ -1,7 +1,7 @@
-platform :ios, '9.0'
+platform :ios, '8.0'
 use_frameworks!
 
-target 'VoiceDiary' do
+target 'MrVoice' do
     pod 'SQLite.swift'
     pod 'SwiftyBeaver'
     pod 'SwiftHEXColors'
