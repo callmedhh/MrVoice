@@ -14,8 +14,8 @@ class CalenderView: UIView {
         case Label = 102
     }
     var progress = 0
-    var count = 0
-    var offset = 0
+    var count = NSDate().getDayCountOfMonth()
+    var offset = NSDate().startOfMonth()!.getDayOfTheWeek() - 1
     var selectedDay: Int? = nil
     var itemViews:[UIView] = []
     var firstUpdated = false
@@ -34,10 +34,7 @@ class CalenderView: UIView {
         if (!firstUpdated) {
             firstUpdated = true
             updateView()
-            for v in itemViews {
-                let roundedView = v.viewWithTag(Tags.RoundedView.rawValue)!
-                roundedView.setToRounded()
-            }
+            updateLayer()
         }
     }
     
@@ -50,8 +47,6 @@ extension CalenderView {
         let date = NSDate()
         let month = date.getMonth()
         let year = date.getYear()
-        count = date.getDayCountOfMonth()
-        offset = date.startOfMonth()!.getDayOfTheWeek() - 1
         
         recordModelList = viewRecordTool.getMonthDailyRecordList(month: month, year: year)
         for i in 0..<count {
@@ -128,7 +123,7 @@ extension CalenderView {
     
     
     
-    func updateLayer(duration: NSTimeInterval) {
+    func updateLayer(duration: NSTimeInterval = 0) {
         let animation = CABasicAnimation(keyPath: "cornerRadius")
         animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
         animation.duration = duration + 0.05
@@ -145,14 +140,7 @@ extension CalenderView {
             if (i+1) == day {
                 for subview in item.subviews {
                     if subview.tag == Tags.RoundedView.rawValue {
-                        switch mood {
-                        case Mood.Happy:
-                            subview.backgroundColor = UIColor.Calendar.happy
-                        case Mood.Flat:
-                            subview.backgroundColor = UIColor.Calendar.flat
-                        case Mood.Sad:
-                            subview.backgroundColor = UIColor.Calendar.sad
-                        }
+                        subview.backgroundColor = mood.color()
                         subview.setNeedsDisplay()
                     }
                 }
