@@ -29,7 +29,7 @@
         <!--Main View Controller-->
         <scene sceneID="vwG-Pf-6CY">
             <objects>
-                <viewController id="xuJ-KC-3cV" customClass="MainViewController" customModule="VoiceDiary" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="xuJ-KC-3cV" customClass="MainViewController" customModule="Mr_Voice" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fcb-L4-d9W"/>
                         <viewControllerLayoutGuide type="bottom" id="clw-CP-eww"/>
@@ -85,15 +85,15 @@
                                             </mask>
                                         </variation>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vIm-aX-Wr4" userLabel="CalandarView" customClass="CalenderView" customModule="VoiceDiary" customModuleProvider="target">
-                                        <rect key="frame" x="206" y="58" width="137" height="97"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vIm-aX-Wr4" userLabel="CalandarView" customClass="CalenderView" customModule="Mr_Voice" customModuleProvider="target">
+                                        <rect key="frame" x="206" y="72" width="137" height="69"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" secondItem="vIm-aX-Wr4" secondAttribute="height" multiplier="7:5" id="q9S-zV-oXm"/>
+                                            <constraint firstAttribute="width" secondItem="vIm-aX-Wr4" secondAttribute="height" multiplier="2" id="q9S-zV-oXm"/>
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5NO-d4-JlG" userLabel="CalandarViewButton">
-                                        <rect key="frame" x="206" y="58" width="137" height="97"/>
+                                        <rect key="frame" x="206" y="72" width="137" height="69"/>
                                         <connections>
                                             <segue destination="OTt-Vz-htn" kind="show" identifier="showHistory" id="fyz-Z3-dnC"/>
                                         </connections>
@@ -147,7 +147,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RiF-uo-jbs" userLabel="Record">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="300"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HJF-pA-LXh" userLabel="Record" customClass="RecordButton" customModule="VoiceDiary" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HJF-pA-LXh" userLabel="Record" customClass="RecordButton" customModule="Mr_Voice" customModuleProvider="target">
                                                 <rect key="frame" x="71" y="50" width="200" height="200"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
@@ -333,6 +333,7 @@
                     <navigationItem key="navigationItem" id="KiW-Ls-dPO"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <connections>
+                        <outlet property="calendarAspect" destination="q9S-zV-oXm" id="Zc1-wg-zKo"/>
                         <outlet property="calenderView" destination="vIm-aX-Wr4" id="5tR-J8-Jf4"/>
                         <outlet property="completeBtn" destination="geX-cT-gfH" id="uf1-J4-19t"/>
                         <outlet property="dayLabel" destination="E95-R8-KbK" id="ptr-L0-sSi"/>
@@ -349,7 +350,7 @@
         <!--History View Controller-->
         <scene sceneID="Ml3-Cc-jGA">
             <objects>
-                <viewController id="OTt-Vz-htn" customClass="HistoryViewController" customModule="VoiceDiary" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="OTt-Vz-htn" customClass="HistoryViewController" customModule="Mr_Voice" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="HIN-1C-OvO"/>
                         <viewControllerLayoutGuide type="bottom" id="WxW-J8-TAA"/>
@@ -396,7 +397,7 @@
                                     </mask>
                                 </variation>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UHm-CS-sXs" customClass="CalenderView" customModule="VoiceDiary" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UHm-CS-sXs" customClass="CalenderView" customModule="Mr_Voice" customModuleProvider="target">
                                 <rect key="frame" x="16" y="128" width="343" height="343"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>

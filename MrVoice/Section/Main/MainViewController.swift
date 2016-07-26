@@ -23,9 +23,12 @@ class MainViewController: UIViewController, UINavigationControllerDelegate{
     @IBOutlet weak var recordView: UIView!
     @IBOutlet weak var emojiView: UIView!
     @IBOutlet weak var completeBtn: UIButton!
+    @IBOutlet weak var calendarAspect: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBarHidden = true
+        navigationController?.delegate = self
         
         recordingSession = AVAudioSession.sharedInstance()
         do {
@@ -41,16 +44,12 @@ class MainViewController: UIViewController, UINavigationControllerDelegate{
         } catch {
             log.error("Catch recordingSession error")
         }
-        let date = NSDate()
-        let month = date.getMonthStr()
-        let day = date.getDayStr()
-        monthLabel.text = month
-        dayLabel.text = day
+        monthLabel.text = today.getMonthStr()
+        dayLabel.text = today.getDayStr()
         recordBtn.backgroundColor = UIColor.clearColor()
-        self.navigationController?.navigationBarHidden = true
         emojiView.hidden = true
         
-        navigationController?.delegate = self        
+        calendarAspect.setMultiplier(CGFloat(calenderView.colNum) / CGFloat(calenderView.rowNum))
     }
 
     @IBAction func recordTapped(sender: AnyObject) {

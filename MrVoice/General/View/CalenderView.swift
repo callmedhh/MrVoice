@@ -16,9 +16,13 @@ class CalenderView: UIView {
     var progress = 0
     var count = NSDate().getDayCountOfMonth()
     var offset = NSDate().startOfMonth()!.getDayOfTheWeek() - 1
+    let colNum = 7
+    var rowNum: Int {
+        get { return (count + offset) / 7 + 1 }
+    }
+    
     var selectedDay: Int? = nil
-    var itemViews:[UIView] = []
-    var firstUpdated = false
+    var itemButtons: [UIButton] = []
     var viewRecordTool: ViewRecordTool = ViewRecordTool()
     
     weak var playButton: UIButton?
@@ -27,26 +31,26 @@ class CalenderView: UIView {
         super.init(coder: aDecoder)
         setup()
     }
-    
+
     override func layoutSubviews() {
         super.layoutSubviews()
-        if (!firstUpdated) {
-            firstUpdated = true
-            updateView()
-            updateLayer()
-        }
+        updateView()
+        updateRadius()
     }
-    
 }
 
 // MARK: - Private
 extension CalenderView {
-    func setup() {
-        self.backgroundColor = UIColor.clearColor()
+    private func setup() {
+        self.backgroundColor = DEBUG ? UIColor.redColor() : UIColor.clearColor()
         let date = NSDate()
         let recordModelList = viewRecordTool.getMonthDailyRecordList(month: date.getMonth(), year: date.getYear())
         for i in 0..<count {
-            let v = UIView()
+            let button = UIButton()
+            button.tag = i+1
+            button.addTarget(self, action: #selector(buttonClicked), forControlEvents: .TouchUpInside)
+            button.backgroundColor = DEBUG ? UIColor(white: 255, alpha: CGFloat(i % 8) / 8) : UIColor.clearColor()
+
             let roundedView = UIView()
             let recordModel = recordModelList[i]
             if recordModel.isRecorded {
@@ -56,66 +60,62 @@ extension CalenderView {
             }
             roundedView.tag = Tags.RoundedView.rawValue
             roundedView.layer.masksToBounds = true
-            v.addSubview(roundedView)
+            button.addSubview(roundedView)
             
             let label = UILabel()
             label.tag = Tags.Label.rawValue
             label.text = "\(i+1)"
             label.textColor = UIColor.Calendar.nothing
-            label.textAlignment = .Left
-            v.addSubview(label)
-            
-            let button = UIButton()
-            button.tag = i+1
-            button.addTarget(self, action: #selector(buttonClicked), forControlEvents: .TouchUpInside)
-            v.addSubview(button)
-            
-            addSubview(v)
-            itemViews.append(v)
+            button.addSubview(label)
+
+            addSubview(button)
+            itemButtons.append(button)
         }
     }
-    
+
+    private func updateRadius() {
+        for v in itemButtons {
+            let roundedView = v.viewWithTag(Tags.RoundedView.rawValue)!
+            roundedView.setToRounded()
+        }
+    }
+}
+
+// MARK: - Public
+extension CalenderView {
     func updateView() {
-        let colNum = 7
-        let rowNum = (count + offset) / 7 + 1
         let width = self.bounds.width
         let height = self.bounds.height
         
         let itemWidth = width / CGFloat(colNum)
         let itemHeight = height / CGFloat(rowNum)
         
-        for (i, v) in itemViews.enumerate() {
+        for (i, button) in itemButtons.enumerate() {
             let index = i + offset
             let x = CGFloat(index % colNum) * (itemWidth)
             let y = CGFloat(index / colNum) * (itemHeight)
-            v.frame = CGRectMake(x, y, itemWidth, itemHeight)
+            button.frame = CGRectMake(x, y, itemWidth, itemHeight)
             
-            let margin = v.frame.width / 6
+            let margin = button.frame.width / 5.5
             let itemSize = itemWidth - margin * 2
             
-            let roundedView = v.viewWithTag(Tags.RoundedView.rawValue)!
+            let roundedView = button.viewWithTag(Tags.RoundedView.rawValue)!
             roundedView.frame = CGRectMake(margin, margin, itemSize, itemSize)
             
-            let label = v.viewWithTag(Tags.Label.rawValue)! as! UILabel
+            let label = button.viewWithTag(Tags.Label.rawValue) as! UILabel
             label.alpha = CGFloat(progress)
             label.sizeToFit()
             let labelW = label.frame.size.width
             label.frame.origin.x = roundedView.frame.origin.x + (roundedView.frame.size.width - labelW) / 2
             label.frame.origin.y = roundedView.frame.maxY
-            
-            let button = v.viewWithTag(i+1) as! UIButton
-            button.frame = CGRectMake(margin, margin, itemSize, itemSize)
-            button.backgroundColor = UIColor.clearColor()
         }
     }
     
-    
-    
-    func updateLayer(duration: NSTimeInterval = 0) {
+    func updateLayer(duration: NSTimeInterval) {
         let animation = CABasicAnimation(keyPath: "cornerRadius")
         animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
         animation.duration = duration + 0.05
-        for v in itemViews {
+        for v in itemButtons {
             let roundedView = v.viewWithTag(Tags.RoundedView.rawValue)!
             animation.fromValue = NSNumber(double: Double(roundedView.layer.cornerRadius))
             animation.toValue = NSNumber(double: Double(roundedView.frame.size.width / 2))
@@ -123,8 +123,9 @@ extension CalenderView {
         }
     }
     
+    // TODO: REMOVE
     func updateRoundedViewColor(day: Int, mood: Mood){
-        for (i, item) in itemViews.enumerate() {
+        for (i, item) in itemButtons.enumerate() {
             if (i+1) == day {
                 for subview in item.subviews {
                     if subview.tag == Tags.RoundedView.rawValue {
@@ -141,7 +142,7 @@ extension CalenderView {
 // MARK: - Override
 extension CalenderView {
     override func pointInside(point: CGPoint, withEvent event: UIEvent?) -> Bool {
-        for item in itemViews {
+        for item in itemButtons {
             if (CGRectContainsPoint(item.frame, point)) {
                 return true
             }

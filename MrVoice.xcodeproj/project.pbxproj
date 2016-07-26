@@ -31,6 +31,8 @@
 		9688CEBA1D475E32001AF6C0 /* HistoryTransitionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9688CEA01D475E32001AF6C0 /* HistoryTransitionController.swift */; };
 		9688CEBB1D475E32001AF6C0 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9688CEA11D475E32001AF6C0 /* HistoryViewController.swift */; };
 		9688CEBC1D475E32001AF6C0 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9688CEA31D475E32001AF6C0 /* MainViewController.swift */; };
+		9688CEBE1D478121001AF6C0 /* Macro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9688CEBD1D478121001AF6C0 /* Macro.swift */; };
+		9688CEC01D479420001AF6C0 /* UIConstraintExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9688CEBF1D479420001AF6C0 /* UIConstraintExtension.swift */; };
 		B26B60A975C9D5DE05234C53 /* Pods_MrVoice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9E328CEDDFDBD468ED0F879 /* Pods_MrVoice.framework */; };
 /* End PBXBuildFile section */
 
@@ -62,8 +64,10 @@
 		9688CEA01D475E32001AF6C0 /* HistoryTransitionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryTransitionController.swift; sourceTree = "<group>"; };
 		9688CEA11D475E32001AF6C0 /* HistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		9688CEA31D475E32001AF6C0 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		9688CEBD1D478121001AF6C0 /* Macro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Macro.swift; sourceTree = "<group>"; };
+		9688CEBF1D479420001AF6C0 /* UIConstraintExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIConstraintExtension.swift; sourceTree = "<group>"; };
 		97FE544F589D7F987FD8FADE /* Pods-VoiceDiary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VoiceDiary.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VoiceDiary/Pods-VoiceDiary.debug.xcconfig"; sourceTree = "<group>"; };
-		A096DCEF1D07F1630023CB0C /* MrVoice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MrVoice.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A096DCEF1D07F1630023CB0C /* Mr Voice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mr Voice.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5E4760629628DF3DD8BA77C /* Pods-VoiceDiary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VoiceDiary.release.xcconfig"; path = "Pods/Target Support Files/Pods-VoiceDiary/Pods-VoiceDiary.release.xcconfig"; sourceTree = "<group>"; };
 		D9E328CEDDFDBD468ED0F879 /* Pods_MrVoice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MrVoice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7A5C373FD22A533B250C0EC /* Pods-MrVoice.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MrVoice.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MrVoice/Pods-MrVoice.debug.xcconfig"; sourceTree = "<group>"; };
@@ -126,6 +130,7 @@
 				9688CE8A1D475E32001AF6C0 /* StringExtension.swift */,
 				9688CE8B1D475E32001AF6C0 /* UIColorExtension.swift */,
 				9688CE8C1D475E32001AF6C0 /* UIViewExtension.swift */,
+				9688CEBF1D479420001AF6C0 /* UIConstraintExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -134,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				9688CE8E1D475E32001AF6C0 /* Log.swift */,
+				9688CEBD1D478121001AF6C0 /* Macro.swift */,
 			);
 			path = Macro;
 			sourceTree = "<group>";
@@ -209,7 +215,7 @@
 		A096DCF01D07F1630023CB0C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A096DCEF1D07F1630023CB0C /* MrVoice.app */,
+				A096DCEF1D07F1630023CB0C /* Mr Voice.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -243,7 +249,7 @@
 			);
 			name = MrVoice;
 			productName = VoiceDiary;
-			productReference = A096DCEF1D07F1630023CB0C /* MrVoice.app */;
+			productReference = A096DCEF1D07F1630023CB0C /* Mr Voice.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -346,6 +352,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9688CEBC1D475E32001AF6C0 /* MainViewController.swift in Sources */,
+				9688CEC01D479420001AF6C0 /* UIConstraintExtension.swift in Sources */,
 				9688CEAC1D475E32001AF6C0 /* UIViewExtension.swift in Sources */,
 				9688CEB11D475E32001AF6C0 /* DatabaseTool.swift in Sources */,
 				9688CEB81D475E32001AF6C0 /* RecordButton.swift in Sources */,
@@ -359,6 +366,7 @@
 				9688CEAA1D475E32001AF6C0 /* StringExtension.swift in Sources */,
 				9688CEB41D475E32001AF6C0 /* RecordTool.swift in Sources */,
 				9688CEB21D475E32001AF6C0 /* DateTool.swift in Sources */,
+				9688CEBE1D478121001AF6C0 /* Macro.swift in Sources */,
 				9688CEA41D475E32001AF6C0 /* AppDelegate.swift in Sources */,
 				9688CEAB1D475E32001AF6C0 /* UIColorExtension.swift in Sources */,
 				9688CEB51D475E32001AF6C0 /* ViewRecordTool.swift in Sources */,
@@ -485,7 +493,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/MrVoice/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.callmewhy.mrvoice;
-				PRODUCT_NAME = MrVoice;
+				PRODUCT_NAME = "Mr Voice";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -499,7 +507,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/MrVoice/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.callmewhy.mrvoice;
-				PRODUCT_NAME = MrVoice;
+				PRODUCT_NAME = "Mr Voice";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
