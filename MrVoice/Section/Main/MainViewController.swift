@@ -15,7 +15,7 @@ class MainViewController: UIViewController, UINavigationControllerDelegate{
     var recordingSession: AVAudioSession!
     var mood: Mood? = nil
     
-    @IBOutlet weak var calenderView: CalenderView!
+    @IBOutlet weak var calendarView: CalendarView!
     @IBOutlet weak var recordBtn: RecordButton!
     @IBOutlet weak var monthLabel: UILabel!
     @IBOutlet weak var dayLabel: UILabel!
@@ -49,7 +49,7 @@ class MainViewController: UIViewController, UINavigationControllerDelegate{
         recordBtn.backgroundColor = UIColor.clearColor()
         emojiView.hidden = true
         
-        calendarAspect.setMultiplier(CGFloat(calenderView.colNum) / CGFloat(calenderView.rowNum))
+        calendarAspect.setMultiplier(CGFloat(calendarView.colNum) / CGFloat(calendarView.rowNum))
     }
 
     @IBAction func recordTapped(sender: AnyObject) {
@@ -91,10 +91,10 @@ class MainViewController: UIViewController, UINavigationControllerDelegate{
             
             // TODO: RELOAD DATA
             for viewItem in self.view.subviews {
-                if viewItem is CalenderView {
+                if viewItem is CalendarView {
                     let date = NSDate()
                     let day = date.getDay()
-                    let calendarView = viewItem as! CalenderView
+                    let calendarView = viewItem as! CalendarView
                     calendarView.updateRoundedViewColor(day, mood: mood)
                 }
             }

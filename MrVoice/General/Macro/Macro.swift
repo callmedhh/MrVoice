@@ -8,6 +8,6 @@
 
 import Foundation
 
-let DEBUG = true
+let DEBUG = false
 
 let today = NSDate()

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CalenderView: UIView {
+class CalendarView: UIView {
     enum Tags: Int {
         case RoundedView = 101
         case Label = 102
@@ -27,11 +27,17 @@ class CalenderView: UIView {
     
     weak var playButton: UIButton?
     
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setup()
+    }
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setup()
     }
 
+    var firstLoad = false
     override func layoutSubviews() {
         super.layoutSubviews()
         updateView()
@@ -40,7 +46,7 @@ class CalenderView: UIView {
 }
 
 // MARK: - Private
-extension CalenderView {
+extension CalendarView {
     private func setup() {
         self.backgroundColor = DEBUG ? UIColor.redColor() : UIColor.clearColor()
         let date = NSDate()
@@ -79,28 +85,40 @@ extension CalenderView {
             roundedView.setToRounded()
         }
     }
+    
+    
+    private func getItemWidth(width: CGFloat) -> CGFloat {
+        return width / CGFloat(colNum)
+    }
+    
+    private func getItemHeight(height: CGFloat) -> CGFloat {
+        return height / CGFloat(rowNum)
+    }
+    
+    private func getMargin(itemWidth: CGFloat) -> CGFloat {
+        return itemWidth / 5.5
+    }
+    
+    private func getRadius(itemWidth: CGFloat) -> CGFloat {
+        return (itemWidth - getMargin(itemWidth) * 2) / 2
+    }
 }
 
 // MARK: - Public
-extension CalenderView {
+extension CalendarView {
     func updateView() {
-        let width = self.bounds.width
-        let height = self.bounds.height
-        
-        let itemWidth = width / CGFloat(colNum)
-        let itemHeight = height / CGFloat(rowNum)
-        
         for (i, button) in itemButtons.enumerate() {
             let index = i + offset
-            let x = CGFloat(index % colNum) * (itemWidth)
-            let y = CGFloat(index / colNum) * (itemHeight)
-            button.frame = CGRectMake(x, y, itemWidth, itemHeight)
-            
-            let margin = button.frame.width / 5.5
-            let itemSize = itemWidth - margin * 2
-            
+            let itemW = getItemWidth(bounds.width)
+            let itemH = getItemHeight(bounds.height)
+            let x = CGFloat(index % colNum) * (itemW)
+            let y = CGFloat(index / colNum) * (itemH)
+            button.frame = CGRectMake(x, y, itemW, itemH)
+
             let roundedView = button.viewWithTag(Tags.RoundedView.rawValue)!
-            roundedView.frame = CGRectMake(margin, margin, itemSize, itemSize)
+            let margin = getMargin(itemW)
+            let radius = getRadius(itemW)
+            roundedView.frame = CGRectMake(margin, margin, radius*2, radius*2)
             
             let label = button.viewWithTag(Tags.Label.rawValue) as! UILabel
             label.alpha = CGFloat(progress)
@@ -111,14 +129,14 @@ extension CalenderView {
         }
     }
     
-    func updateLayer(duration: NSTimeInterval) {
+    func updateLayer(duration: NSTimeInterval, fromWidth: CGFloat, toWidth: CGFloat) {
         let animation = CABasicAnimation(keyPath: "cornerRadius")
         animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
         animation.duration = duration + 0.05
         for v in itemButtons {
             let roundedView = v.viewWithTag(Tags.RoundedView.rawValue)!
-            animation.fromValue = NSNumber(double: Double(roundedView.layer.cornerRadius))
-            animation.toValue = NSNumber(double: Double(roundedView.frame.size.width / 2))
+            animation.fromValue = NSNumber(double: getRadius(getItemWidth(fromWidth)).native)
+            animation.toValue = NSNumber(double: getRadius(getItemWidth(toWidth)).native)
             roundedView.layer.addAnimation(animation, forKey: "cornerRadius")
         }
     }
@@ -140,7 +158,7 @@ extension CalenderView {
 
 
 // MARK: - Override
-extension CalenderView {
+extension CalendarView {
     override func pointInside(point: CGPoint, withEvent event: UIEvent?) -> Bool {
         for item in itemButtons {
             if (CGRectContainsPoint(item.frame, point)) {
@@ -151,7 +169,7 @@ extension CalenderView {
     }
 }
 // MARK: - Selector
-extension CalenderView {
+extension CalendarView {
     func buttonClicked(sender: UIButton){
         let day = sender.tag
         selectedDay = day

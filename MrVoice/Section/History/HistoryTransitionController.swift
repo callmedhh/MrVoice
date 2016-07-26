@@ -21,134 +21,45 @@ class HistoryTransitionController: NSObject, UIViewControllerAnimatedTransitioni
         toViewController.view.frame = finalFrame
         containerView.insertSubview(toViewController.view, atIndex: 0)
         
-        if fromViewController is MainViewController && toViewController is HistoryViewController{
-            let fromVC = fromViewController as! MainViewController
-            let toVC = toViewController as! HistoryViewController
-
-            let originFrame = fromVC.calenderView.frame
-            let originFromVCBackgroundColor = fromVC.view.backgroundColor
-            fromViewController.view.backgroundColor = UIColor.clearColor()
+        if let fromVC = fromViewController as? MainViewController, let toVC = toViewController as? HistoryViewController {
+            toVC.calendarView.setNeedsLayout()
+            toVC.calendarView.layoutIfNeeded()
+            toVC.calendarView.hidden = true
+            fromVC.calendarView.hidden = true
+            toVC.view.alpha = 0
             
-            toVC.calenderView.progress = 1
-            toVC.calenderView.setNeedsLayout()
-            toVC.calenderView.layoutIfNeeded()
-            toVC.calenderView.hidden = true
-            
-            for v in toVC.view.subviews {
-                if v is CalenderView {
-                    continue
-                } else {
-                    v.alpha = 0
-                }
-            }
+            let originFrame =  fromVC.view.convertRect(fromVC.calendarView.frame, toView: containerView)
+            let calendarView = CalendarView(frame: originFrame)
+            containerView.addSubview(calendarView)
             
             let duration = transitionDuration(transitionContext)
             
-            // VC.view
+            // vc.view
             UIView.animateWithDuration(duration/2, animations: {
-                for v in fromViewController.view.subviews {
-                    if v is CalenderView {
-                        continue
-                    } else {
-                        v.alpha = 0
-                    }
-                }
+                fromVC.view.alpha = 0
             }, completion: { finished in
                 UIView.animateWithDuration(duration/2, animations: {
-                    for v in toVC.view.subviews {
-                        if v is CalenderView {
-                            continue
-                        } else {
-                            v.alpha = 1
-                        }
-                    }
+                    toVC.view.alpha = 1
                 }, completion: { finished in
-                    for v in fromVC.view.subviews {
-                        if v is CalenderView {
-                            continue
-                        } else {
-                            v.alpha = 1
-                        }
-                    }
-                    fromViewController.view.backgroundColor = originFromVCBackgroundColor
+                    fromVC.view.alpha = 1
+                    transitionContext.completeTransition(true)
                 })
             })
-
-            // calendarView
-            UIView.animateWithDuration(duration, animations: {
-                fromVC.calenderView.frame = toVC.calenderView.frame
-                fromVC.calenderView.progress = 1
-                fromVC.calenderView.updateView()
-                fromVC.calenderView.updateLayer(duration)
-            }, completion: { finished in
-                fromVC.calenderView.frame = originFrame
-                fromVC.calenderView.progress = 0
-                fromVC.calenderView.updateView()
-                toVC.calenderView.hidden = false
-                transitionContext.completeTransition(true)
-            })
             
+            // calendarView
+            calendarView.frame = originFrame
+            calendarView.updateView()
+            UIView.animateWithDuration(duration, animations: {
+                calendarView.frame = toVC.calendarView.frame
+                calendarView.updateView()
+                calendarView.updateLayer(duration, fromWidth: originFrame.size.width, toWidth: toVC.calendarView.frame.size.width)
+            }, completion: { finished in
+                calendarView.removeFromSuperview()
+                toVC.calendarView.hidden = false
+                fromVC.calendarView.hidden = false
+            })
         } else if fromViewController is HistoryViewController && toViewController is MainViewController {
-            let fromVC = fromViewController as! HistoryViewController
-            let toVC = toViewController as! MainViewController
-            
-            toVC.calenderView.progress = 0
-            toVC.calenderView.setNeedsLayout()
-            toVC.calenderView.layoutIfNeeded()
-            
-            toVC.calenderView.hidden = true
-            
-            for v in toVC.view.subviews {
-                if v is CalenderView {
-                    continue
-                } else {
-                    v.alpha = 0
-                }
-            }
-            let originFromVCBackgroundColor = fromVC.view.backgroundColor
-            fromVC.view.backgroundColor = UIColor.clearColor()
-    
-            let duration = transitionDuration(transitionContext)
-            //view
-            UIView.animateWithDuration(duration/2, animations: {
-                    for v in fromVC.view.subviews{
-                        if v is CalenderView{
-                            continue
-                        }else {
-                            v.alpha = 0
-                        }
-                    }
-                },completion: { finished in
-                    UIView.animateWithDuration(duration/2, animations: {
-                        for v in toVC.view.subviews {
-                            if v is CalenderView {
-                                continue
-                            }else {
-                                v.alpha = 1
-                            }
-                        }
-                    },completion:{ finished in
-                        for v in fromVC.view.subviews{
-                            if v is CalenderView{
-                                continue
-                            }else {
-                                v.alpha = 1
-                            }
-                        }
-                    })
-            })
-            // calendarView
-            UIView.animateWithDuration(duration, animations: {
-                fromVC.calenderView.progress = 0
-                fromVC.calenderView.frame = toVC.calenderView.frame
-                fromVC.calenderView.updateView()
-                fromVC.calenderView.updateLayer(duration)
-            }, completion: { finished in
-                    toVC.calenderView.hidden = false
-                    fromVC.calenderView.progress = 1
-                    fromVC.view.backgroundColor = originFromVCBackgroundColor
-                    transitionContext.completeTransition(true)
-            })
+            transitionContext.completeTransition(true)
         }
         
     }

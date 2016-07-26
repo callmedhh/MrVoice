@@ -17,14 +17,14 @@ class HistoryViewController: UIViewController {
 
     @IBOutlet weak var backgroundButton: UIButton!
     @IBOutlet weak var playButton: UIButton!
-    @IBOutlet weak var calenderView: CalenderView!
+    @IBOutlet weak var calendarView: CalendarView!
     
     override func viewDidLoad() {
         let date = NSDate()
         monthNumberLabel.text =  date.getMonthStr()
         monthTextLabel.text = date.getMonthDes()
         playButton.hidden = true
-        calenderView.playButton = playButton
+        calendarView.playButton = playButton
     }
     @IBAction func backgroundTapped(sender: AnyObject) {
         self.navigationController?.popViewControllerAnimated(true)
@@ -34,7 +34,7 @@ class HistoryViewController: UIViewController {
         let date = NSDate()
         let month = date.getMonth()
         let year = date.getYear()
-        let record = viewRecordTool.getRecordByTime(calenderView.selectedDay!, month: month, year: year)
+        let record = viewRecordTool.getRecordByTime(calendarView.selectedDay!, month: month, year: year)
         if record.isRecorded {
             let filename = record.recordModel!.filename
             recordTool.startPlaying(filename)
