@@ -118,7 +118,7 @@
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Hello Aha" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bu8-Xm-gB8">
                                         <rect key="frame" x="0.0" y="27" width="343" height="80"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="textColor" white="1" alpha="0.90018284574468088" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
@@ -369,19 +369,19 @@
                                     <action selector="backgroundTapped:" destination="OTt-Vz-htn" eventType="touchUpInside" id="QKd-US-mER"/>
                                 </connections>
                             </button>
-                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h6p-Fu-wxI">
+                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h6p-Fu-wxI" userLabel="Top">
                                 <rect key="frame" x="16" y="20" width="343" height="108"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VfI-MK-hTs" userLabel="monthNumberLabel">
-                                        <rect key="frame" x="0.0" y="16" width="150" height="76"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="63"/>
-                                        <color key="textColor" red="0.47450980392156861" green="0.47450980392156861" blue="0.47450980392156861" alpha="1" colorSpace="calibratedRGB"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="06" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VfI-MK-hTs" userLabel="monthNumberLabel">
+                                        <rect key="frame" x="0.0" y="16" width="76" height="76"/>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="63"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xw1-80-tEn" userLabel="monthTextLabel">
-                                        <rect key="frame" x="160" y="46" width="78" height="39"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xw1-80-tEn" userLabel="monthTextLabel">
+                                        <rect key="frame" x="76" y="46" width="51" height="39"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="32"/>
-                                        <color key="textColor" red="0.47450980392156861" green="0.47450980392156861" blue="0.47450980392156861" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -391,7 +391,7 @@
                                     <constraint firstAttribute="bottom" secondItem="VfI-MK-hTs" secondAttribute="bottom" id="FT9-h2-cDp"/>
                                     <constraint firstItem="VfI-MK-hTs" firstAttribute="centerY" secondItem="h6p-Fu-wxI" secondAttribute="centerY" id="cf5-bk-wgq"/>
                                     <constraint firstItem="VfI-MK-hTs" firstAttribute="top" secondItem="h6p-Fu-wxI" secondAttribute="top" id="gIB-bL-FpE"/>
-                                    <constraint firstItem="Xw1-80-tEn" firstAttribute="leading" secondItem="VfI-MK-hTs" secondAttribute="trailing" constant="10" id="jDd-od-3wH"/>
+                                    <constraint firstItem="Xw1-80-tEn" firstAttribute="leading" secondItem="VfI-MK-hTs" secondAttribute="trailing" id="jDd-od-3wH"/>
                                     <constraint firstItem="Xw1-80-tEn" firstAttribute="baseline" secondItem="VfI-MK-hTs" secondAttribute="baseline" id="lD3-Jg-kIy"/>
                                 </constraints>
                                 <variation key="default">
