@@ -16,7 +16,7 @@ class MainViewController: UIViewController, UINavigationControllerDelegate{
     var mood: Mood? = nil
     
     @IBOutlet weak var calendarView: CalendarView!
-    @IBOutlet weak var recordBtn: RecordButton!
+    @IBOutlet weak var recordButton: RecordButton!
     @IBOutlet weak var monthLabel: UILabel!
     @IBOutlet weak var dayLabel: UILabel!
     
@@ -46,24 +46,23 @@ class MainViewController: UIViewController, UINavigationControllerDelegate{
         }
         monthLabel.text = today.getMonthStr()
         dayLabel.text = today.getDayStr()
-        recordBtn.backgroundColor = UIColor.clearColor()
         emojiView.hidden = true
         
         calendarAspect.setMultiplier(CGFloat(calendarView.colNum) / CGFloat(calendarView.rowNum))
     }
-
-    @IBAction func recordTapped(sender: AnyObject) {
-        if(recordTool.audioRecorder == nil){
-            recordTool.startRecording()
-            recordBtn.currentState = .Recording
-            mood = nil
-        }else{
-            recordTool.finishRecording(success: true)
-            recordView.hidden = true
-            emojiView.hidden = false
-        }
-        recordBtn.setNeedsDisplay()
-    }
+    
+//    @IBAction func recordTapped(sender: AnyObject) {
+//        if(recordTool.audioRecorder == nil){
+//            recordTool.startRecording()
+//            recordBtn.currentState = .Recording
+//            mood = nil
+//        }else{
+//            recordTool.finishRecording(success: true)
+//            recordView.hidden = true
+//            emojiView.hidden = false
+//        }
+//        recordBtn.setNeedsDisplay()
+//    }
     
     @IBAction func happyMood(sender: AnyObject) {
         mood = Mood.Happy
@@ -81,34 +80,32 @@ class MainViewController: UIViewController, UINavigationControllerDelegate{
     }
     
     @IBAction func finishRecordBtnPressed(sender: AnyObject) {
-        if let mood = mood {
-            recordBtn.currentState = .Idle
-            recordTool.saveRecordingWithMood(mood)
-            recordView.hidden = false
-            emojiView.hidden = true
-            
-            recordBtn.setNeedsDisplay()
-            
-            // TODO: RELOAD DATA
-            for viewItem in self.view.subviews {
-                if viewItem is CalendarView {
-                    let date = NSDate()
-                    let day = date.getDay()
-                    let calendarView = viewItem as! CalendarView
-                    calendarView.updateRoundedViewColor(day, mood: mood)
-                }
-            }
-        } else {
-            let button = sender as! UIButton
-            button.enabled = false
-            return
-        }
-                
+//        if let mood = mood {
+//            recordTool.saveRecordingWithMood(mood)
+//            recordView.hidden = false
+//            emojiView.hidden = true
+//            
+//            recordBtn.setNeedsDisplay()
+//            
+//            // TODO: RELOAD DATA
+//            for viewItem in self.view.subviews {
+//                if viewItem is CalendarView {
+//                    let date = NSDate()
+//                    let day = date.getDay()
+//                    let calendarView = viewItem as! CalendarView
+//                    calendarView.updateRoundedViewColor(day, mood: mood)
+//                }
+//            }
+//        } else {
+//            let button = sender as! UIButton
+//            button.enabled = false
+//            return
+//        }
     }
-  
+    
     
     let animatedTransition = HistoryTransitionController()
-   
+    
     func navigationController(navigationController: UINavigationController, animationControllerForOperation operation: UINavigationControllerOperation, fromViewController fromVC: UIViewController, toViewController toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         return animatedTransition
     }

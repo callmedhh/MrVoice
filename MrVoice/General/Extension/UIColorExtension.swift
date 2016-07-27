@@ -15,4 +15,7 @@ extension UIColor {
         static let flat = UIColor(hexString: "#F8E71C", alpha: 1.0)!
         static let sad = UIColor(hexString: "#E0CB7E", alpha: 1.0)!
     }
+    struct RecordButton {
+        static let mainColor = UIColor(hexString: "#FFE327")!
+    }
 }

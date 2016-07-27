@@ -154,9 +154,6 @@
                                                     <constraint firstAttribute="width" secondItem="HJF-pA-LXh" secondAttribute="height" id="OzD-pd-5zr"/>
                                                     <constraint firstAttribute="width" constant="200" id="Y4z-0C-Elx"/>
                                                 </constraints>
-                                                <connections>
-                                                    <action selector="recordTapped:" destination="xuJ-KC-3cV" eventType="touchUpInside" id="DhR-Xd-Rfi"/>
-                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -340,7 +337,7 @@
                         <outlet property="dayLabel" destination="E95-R8-KbK" id="ptr-L0-sSi"/>
                         <outlet property="emojiView" destination="FKK-D8-A9e" id="6tD-eZ-8Tz"/>
                         <outlet property="monthLabel" destination="HWy-dq-47d" id="sWE-kC-BUb"/>
-                        <outlet property="recordBtn" destination="HJF-pA-LXh" id="yxR-96-f2S"/>
+                        <outlet property="recordButton" destination="HJF-pA-LXh" id="8q2-ir-EZ1"/>
                         <outlet property="recordView" destination="RiF-uo-jbs" id="gEW-bN-HDq"/>
                     </connections>
                 </viewController>

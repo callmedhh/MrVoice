@@ -34,7 +34,10 @@
 		9688CEBE1D478121001AF6C0 /* Macro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9688CEBD1D478121001AF6C0 /* Macro.swift */; };
 		9688CEC01D479420001AF6C0 /* UIConstraintExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9688CEBF1D479420001AF6C0 /* UIConstraintExtension.swift */; };
 		9688CEC31D488994001AF6C0 /* WithCalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9688CEC21D488994001AF6C0 /* WithCalendarViewController.swift */; };
-		B26B60A975C9D5DE05234C53 /* Pods_MrVoice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9E328CEDDFDBD468ED0F879 /* Pods_MrVoice.framework */; };
+		96F8BF891D49045200F4219E /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 96F8BF881D49045200F4219E /* Cartfile */; };
+		96F8BF8D1D49083000F4219E /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96F8BF8A1D49083000F4219E /* SQLite.framework */; };
+		96F8BF8E1D49083000F4219E /* SwiftHEXColors.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96F8BF8B1D49083000F4219E /* SwiftHEXColors.framework */; };
+		96F8BF8F1D49083000F4219E /* SwiftyBeaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96F8BF8C1D49083000F4219E /* SwiftyBeaver.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +71,10 @@
 		9688CEBD1D478121001AF6C0 /* Macro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Macro.swift; sourceTree = "<group>"; };
 		9688CEBF1D479420001AF6C0 /* UIConstraintExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIConstraintExtension.swift; sourceTree = "<group>"; };
 		9688CEC21D488994001AF6C0 /* WithCalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WithCalendarViewController.swift; sourceTree = "<group>"; };
+		96F8BF881D49045200F4219E /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
+		96F8BF8A1D49083000F4219E /* SQLite.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SQLite.framework; path = Carthage/Build/iOS/SQLite.framework; sourceTree = "<group>"; };
+		96F8BF8B1D49083000F4219E /* SwiftHEXColors.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftHEXColors.framework; path = Carthage/Build/iOS/SwiftHEXColors.framework; sourceTree = "<group>"; };
+		96F8BF8C1D49083000F4219E /* SwiftyBeaver.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyBeaver.framework; path = Carthage/Build/iOS/SwiftyBeaver.framework; sourceTree = "<group>"; };
 		97FE544F589D7F987FD8FADE /* Pods-VoiceDiary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VoiceDiary.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VoiceDiary/Pods-VoiceDiary.debug.xcconfig"; sourceTree = "<group>"; };
 		A096DCEF1D07F1630023CB0C /* Mr Voice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mr Voice.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5E4760629628DF3DD8BA77C /* Pods-VoiceDiary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VoiceDiary.release.xcconfig"; path = "Pods/Target Support Files/Pods-VoiceDiary/Pods-VoiceDiary.release.xcconfig"; sourceTree = "<group>"; };
@@ -80,7 +87,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B26B60A975C9D5DE05234C53 /* Pods_MrVoice.framework in Frameworks */,
+				96F8BF8D1D49083000F4219E /* SQLite.framework in Frameworks */,
+				96F8BF8E1D49083000F4219E /* SwiftHEXColors.framework in Frameworks */,
+				96F8BF8F1D49083000F4219E /* SwiftyBeaver.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,6 +225,7 @@
 		A096DCE61D07F1630023CB0C = {
 			isa = PBXGroup;
 			children = (
+				96F8BF881D49045200F4219E /* Cartfile */,
 				9688CE7F1D475E32001AF6C0 /* MrVoice */,
 				A096DCF01D07F1630023CB0C /* Products */,
 				0767EFC579BEC1309D8F32A8 /* Pods */,
@@ -234,6 +244,9 @@
 		D58D14F11505131423036BF3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				96F8BF8A1D49083000F4219E /* SQLite.framework */,
+				96F8BF8B1D49083000F4219E /* SwiftHEXColors.framework */,
+				96F8BF8C1D49083000F4219E /* SwiftyBeaver.framework */,
 				0B07399BA037FD0C748958B1 /* Pods_VoiceDiary.framework */,
 				D9E328CEDDFDBD468ED0F879 /* Pods_MrVoice.framework */,
 			);
@@ -247,12 +260,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A096DD011D07F1630023CB0C /* Build configuration list for PBXNativeTarget "MrVoice" */;
 			buildPhases = (
-				B22F9D2ECD12D8472E55AA29 /* [CP] Check Pods Manifest.lock */,
 				A096DCEB1D07F1630023CB0C /* Sources */,
 				A096DCEC1D07F1630023CB0C /* Frameworks */,
 				A096DCED1D07F1630023CB0C /* Resources */,
-				1C7B6FC125BA00BBF61A0B85 /* [CP] Embed Pods Frameworks */,
-				AF5C3A9F0C036710FC252F3E /* [CP] Copy Pods Resources */,
+				96F8BF901D49084100F4219E /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -303,6 +314,7 @@
 			files = (
 				9688CEA51D475E32001AF6C0 /* Assets.xcassets in Resources */,
 				9688CEA71D475E32001AF6C0 /* Main.storyboard in Resources */,
+				96F8BF891D49045200F4219E /* Cartfile in Resources */,
 				9688CEA61D475E32001AF6C0 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -310,50 +322,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1C7B6FC125BA00BBF61A0B85 /* [CP] Embed Pods Frameworks */ = {
+		96F8BF901D49084100F4219E /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/SQLite.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SwiftHEXColors.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SwiftyBeaver.framework",
 			);
-			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MrVoice/Pods-MrVoice-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		AF5C3A9F0C036710FC252F3E /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MrVoice/Pods-MrVoice-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B22F9D2ECD12D8472E55AA29 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -502,6 +485,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/MrVoice/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.callmewhy.mrvoice;
@@ -516,6 +503,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/MrVoice/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.callmewhy.mrvoice;
