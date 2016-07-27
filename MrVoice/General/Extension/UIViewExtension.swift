@@ -17,4 +17,12 @@ extension UIView {
     func copyView() -> UIView {
         return NSKeyedUnarchiver.unarchiveObjectWithData(NSKeyedArchiver.archivedDataWithRootObject(self)) as! UIView
     }
+    
+    func setSubviewsAlpha(alpha: CGFloat, without tags: [Int] = []) {
+        for view in subviews {
+            if !tags.contains(view.tag) {
+                view.alpha = alpha
+            }
+        }
+    }
 }

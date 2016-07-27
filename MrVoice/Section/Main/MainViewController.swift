@@ -114,3 +114,10 @@ class MainViewController: UIViewController, UINavigationControllerDelegate{
     }
 }
 
+
+// MARK: - WithCalendarViewController
+extension MainViewController: WithCalendarViewController {
+    func getCalendarView() -> CalendarView {
+        return calendarView
+    }
+}

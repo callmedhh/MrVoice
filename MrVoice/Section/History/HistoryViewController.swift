@@ -25,6 +25,7 @@ class HistoryViewController: UIViewController {
         monthTextLabel.text = date.getMonthDes()
         playButton.hidden = true
         calendarView.playButton = playButton
+        calendarView.mode = .History
     }
     @IBAction func backgroundTapped(sender: AnyObject) {
         self.navigationController?.popViewControllerAnimated(true)
@@ -41,5 +42,12 @@ class HistoryViewController: UIViewController {
         } else {
             
         }
+    }
+}
+
+// MARK: - WithCalendarViewController
+extension HistoryViewController: WithCalendarViewController {
+    func getCalendarView() -> CalendarView {
+        return calendarView
     }
 }

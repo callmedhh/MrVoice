@@ -13,7 +13,11 @@ class CalendarView: UIView {
         case RoundedView = 101
         case Label = 102
     }
-    var progress = 0
+    enum Mode: Int {
+        case Main
+        case History
+    }
+    var mode = Mode.Main
     var count = NSDate().getDayCountOfMonth()
     var offset = NSDate().startOfMonth()!.getDayOfTheWeek() - 1
     let colNum = 7
@@ -121,7 +125,7 @@ extension CalendarView {
             roundedView.frame = CGRectMake(margin, margin, radius*2, radius*2)
             
             let label = button.viewWithTag(Tags.Label.rawValue) as! UILabel
-            label.alpha = CGFloat(progress)
+            label.alpha = (mode == .History) ? 1 : 0
             label.sizeToFit()
             let labelW = label.frame.size.width
             label.frame.origin.x = roundedView.frame.origin.x + (roundedView.frame.size.width - labelW) / 2

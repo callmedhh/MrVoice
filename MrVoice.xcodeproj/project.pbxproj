@@ -33,6 +33,7 @@
 		9688CEBC1D475E32001AF6C0 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9688CEA31D475E32001AF6C0 /* MainViewController.swift */; };
 		9688CEBE1D478121001AF6C0 /* Macro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9688CEBD1D478121001AF6C0 /* Macro.swift */; };
 		9688CEC01D479420001AF6C0 /* UIConstraintExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9688CEBF1D479420001AF6C0 /* UIConstraintExtension.swift */; };
+		9688CEC31D488994001AF6C0 /* WithCalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9688CEC21D488994001AF6C0 /* WithCalendarViewController.swift */; };
 		B26B60A975C9D5DE05234C53 /* Pods_MrVoice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9E328CEDDFDBD468ED0F879 /* Pods_MrVoice.framework */; };
 /* End PBXBuildFile section */
 
@@ -66,6 +67,7 @@
 		9688CEA31D475E32001AF6C0 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		9688CEBD1D478121001AF6C0 /* Macro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Macro.swift; sourceTree = "<group>"; };
 		9688CEBF1D479420001AF6C0 /* UIConstraintExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIConstraintExtension.swift; sourceTree = "<group>"; };
+		9688CEC21D488994001AF6C0 /* WithCalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WithCalendarViewController.swift; sourceTree = "<group>"; };
 		97FE544F589D7F987FD8FADE /* Pods-VoiceDiary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VoiceDiary.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VoiceDiary/Pods-VoiceDiary.debug.xcconfig"; sourceTree = "<group>"; };
 		A096DCEF1D07F1630023CB0C /* Mr Voice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mr Voice.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5E4760629628DF3DD8BA77C /* Pods-VoiceDiary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VoiceDiary.release.xcconfig"; path = "Pods/Target Support Files/Pods-VoiceDiary/Pods-VoiceDiary.release.xcconfig"; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 				9688CE8F1D475E32001AF6C0 /* Model */,
 				9688CE931D475E32001AF6C0 /* Tool */,
 				9688CE991D475E32001AF6C0 /* View */,
+				9688CEC11D488979001AF6C0 /* Protocol */,
 			);
 			path = General;
 			sourceTree = "<group>";
@@ -200,6 +203,14 @@
 				9688CEA31D475E32001AF6C0 /* MainViewController.swift */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		9688CEC11D488979001AF6C0 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				9688CEC21D488994001AF6C0 /* WithCalendarViewController.swift */,
+			);
+			path = Protocol;
 			sourceTree = "<group>";
 		};
 		A096DCE61D07F1630023CB0C = {
@@ -359,6 +370,7 @@
 				9688CEBB1D475E32001AF6C0 /* HistoryViewController.swift in Sources */,
 				9688CEAF1D475E32001AF6C0 /* Mood.swift in Sources */,
 				9688CEB71D475E32001AF6C0 /* CalenderView.swift in Sources */,
+				9688CEC31D488994001AF6C0 /* WithCalendarViewController.swift in Sources */,
 				9688CEBA1D475E32001AF6C0 /* HistoryTransitionController.swift in Sources */,
 				9688CEAD1D475E32001AF6C0 /* Log.swift in Sources */,
 				9688CEB61D475E32001AF6C0 /* BorderView.swift in Sources */,
