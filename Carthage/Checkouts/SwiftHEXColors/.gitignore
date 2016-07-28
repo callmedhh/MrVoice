@@ -1,9 +1,7 @@
-# Created by https://www.gitignore.io
-
-### Swift ###
 # Xcode
 #
 build/
+.build/
 *.pbxuser
 !default.pbxuser
 *.mode1v3
@@ -18,7 +16,6 @@ xcuserdata
 DerivedData
 *.hmap
 *.ipa
-*.dSYM.zip
 *.xcuserstate
 
 # CocoaPods
@@ -28,19 +25,3 @@ DerivedData
 # http://guides.cocoapods.org/using/using-cocoapods.html#should-i-ignore-the-pods-directory-in-source-control
 #
 Pods/
-
-# Carthage
-#
-# Add this line if you want to avoid checking in source code from Carthage dependencies.
-# Carthage/Checkouts
-
-Carthage/Build
-
-# Fir
-build/
-build_ipa/
-fir_build_ipa/
-fir-cli_tmp/
-
-# R.swift
-*.generated.swift
