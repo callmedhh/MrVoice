@@ -44,12 +44,21 @@ class RecordButton: UIButton {
         let path = UIBezierPath(ovalInRect: CGRectMake(margin, margin, radius*2, radius*2))
         
         let layer = CAShapeLayer()
-        layer.fillColor = UIColor.redColor().CGColor
+        layer.lineWidth = 1
+        layer.strokeColor = UIColor.RecordButton.mainColor.CGColor
+        layer.fillColor = UIColor.RecordButton.mainColor.colorWithAlphaComponent(0.2).CGColor
         layer.path = path.CGPath
         layer.shadowColor = layer.fillColor
         layer.shadowRadius = 5
         layer.shadowOpacity = 0.4
         layer.shadowOffset = CGSize(width: 0, height: 0)
+        
+        let subLayer = CAShapeLayer()
+        let subSize = radius * 2 * 0.44
+        let subMargin = (width - subSize) / 2
+        subLayer.path = UIBezierPath(roundedRect: CGRect(x: subMargin, y: subMargin, width: subSize, height: subSize), cornerRadius: 3).CGPath
+        subLayer.fillColor = UIColor.RecordButton.mainColor.CGColor
+        layer.addSublayer(subLayer)
         return layer
     }()
     lazy var backgroundLayers: [CAShapeLayer] = {
