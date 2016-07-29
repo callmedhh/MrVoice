@@ -486,7 +486,6 @@
 		};
 		A096DD021D07F1630023CB0C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F7A5C373FD22A533B250C0EC /* Pods-MrVoice.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -504,7 +503,6 @@
 		};
 		A096DD031D07F1630023CB0C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 91D6C8B96EA9483028B94489 /* Pods-MrVoice.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";

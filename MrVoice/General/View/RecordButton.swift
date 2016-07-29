@@ -8,6 +8,7 @@
 
 import UIKit
 import SwiftHEXColors
+import Async
 
 protocol RecordButtonHandler {
     func stateChanged(state: RecordButton.State)
@@ -90,10 +91,27 @@ extension RecordButton {
             currentState = .Recording
             idleLayer.removeFromSuperlayer()
             layer.addSublayer(recordingLayer)
+            
+            let fadeAnimation = CABasicAnimation(keyPath: "opacity")
+            fadeAnimation.fromValue = 1.0
+            fadeAnimation.toValue = 0.0
+            fadeAnimation.duration = 1.2
+            fadeAnimation.repeatCount = Float(Int.max)
+            
+            self.backgroundLayers[2].addAnimation(fadeAnimation, forKey: "FadeAnimation")
+            Async.main(after: 0.2, block: {
+                self.backgroundLayers[1].addAnimation(fadeAnimation, forKey: "FadeAnimation")
+                Async.main(after: 0.2, block: {
+                    self.backgroundLayers[0].addAnimation(fadeAnimation, forKey: "FadeAnimation")
+                })
+            })
         case .Recording:
             currentState = .Idle
             recordingLayer.removeFromSuperlayer()
             layer.addSublayer(idleLayer)
+            for layer in backgroundLayers {
+                layer.removeAllAnimations()
+            }
         default:
             return
         }
