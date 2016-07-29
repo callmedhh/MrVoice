@@ -9,11 +9,13 @@
 import UIKit
 import AVFoundation
 import QuartzCore
+import Async
 
 class MainViewController: UIViewController, UINavigationControllerDelegate{
     let recordTool: RecordTool = RecordTool()
     var recordingSession: AVAudioSession!
     var mood: Mood? = nil
+    var startDate: NSDate? = nil
     
     @IBOutlet weak var calendarView: CalendarView!
     @IBOutlet weak var recordButton: RecordButton!
@@ -48,65 +50,43 @@ class MainViewController: UIViewController, UINavigationControllerDelegate{
         monthLabel.text = today.getMonthStr()
         dayLabel.text = today.getDayStr()
         emojiView.hidden = true
+        progressView.hidden = true
         recordButton.delegate = self
         
         calendarAspect.setMultiplier(CGFloat(calendarView.colNum) / CGFloat(calendarView.rowNum))
     }
-    
-    override func viewDidAppear(animated: Bool) {
-        progressView.progress = 0.5
-    }
-    
-//    @IBAction func recordTapped(sender: AnyObject) {
-//        if(recordTool.audioRecorder == nil){
-//            recordTool.startRecording()
-//            recordBtn.currentState = .Recording
-//            mood = nil
-//        }else{
-//            recordTool.finishRecording(success: true)
-//            recordView.hidden = true
-//            emojiView.hidden = false
-//        }
-//        recordBtn.setNeedsDisplay()
-//    }
-    
-    @IBAction func happyMood(sender: AnyObject) {
+
+    @IBAction func happyMood(sender: UIButton) {
         mood = Mood.Happy
         completeBtn.enabled = true
+        setButtonSelected(sender, selected: true)
     }
     
-    @IBAction func noMood(sender: AnyObject) {
+    @IBAction func flatMood(sender: UIButton) {
         mood = Mood.Flat
         completeBtn.enabled = true
+        setButtonSelected(sender, selected: true)
     }
     
-    @IBAction func badMood(sender: AnyObject) {
+    @IBAction func badMood(sender: UIButton) {
         mood = Mood.Sad
         completeBtn.enabled = true
+        setButtonSelected(sender, selected: true)
     }
     
-    @IBAction func finishRecordBtnPressed(sender: AnyObject) {
-//        if let mood = mood {
-//            recordTool.saveRecordingWithMood(mood)
-//            recordView.hidden = false
-//            emojiView.hidden = true
-//            
-//            recordBtn.setNeedsDisplay()
-//            
-//            // TODO: RELOAD DATA
-//            for viewItem in self.view.subviews {
-//                if viewItem is CalendarView {
-//                    let date = NSDate()
-//                    let day = date.getDay()
-//                    let calendarView = viewItem as! CalendarView
-//                    calendarView.updateRoundedViewColor(day, mood: mood)
-//                }
-//            }
-//        } else {
-//            let button = sender as! UIButton
-//            button.enabled = false
-//            return
-//        }
+    @IBAction func finishRecordButtonPressed(sender: UIButton) {
+        clearSubviewShadow(sender)
+        guard let mood = mood else {
+            log.error("异常")
+            return
+        }
+        recordTool.saveRecordingWithMood(mood)
+        recordView.hidden = false
+        emojiView.hidden = true
+        
+        let date = NSDate()
+        let day = date.getDay()
+        calendarView.updateRoundedViewColor(day, mood: mood)
     }
     
     
@@ -117,6 +97,22 @@ class MainViewController: UIViewController, UINavigationControllerDelegate{
     }
 }
 
+// MARK: - Private
+extension MainViewController {
+    private func clearSubviewShadow(view: UIView) {
+        for subview in view.subviews {
+            subview.layer.shadowOpacity = 0
+        }
+    }
+    
+    private func setButtonSelected(button: UIButton, selected: Bool) {
+        clearSubviewShadow(button.superview!)
+        button.layer.shadowColor = UIColor.General.mainColor.CGColor
+        button.layer.shadowOffset = CGSizeMake(0.0, 0.0)
+        button.layer.masksToBounds = false
+        button.layer.shadowOpacity = selected ? 1 : 0
+    }
+}
 
 // MARK: - WithCalendarViewController
 extension MainViewController: WithCalendarViewController {
@@ -128,6 +124,29 @@ extension MainViewController: WithCalendarViewController {
 // MARK: - RecordButtonDelegate
 extension MainViewController: RecordButtonHandler {
     func stateChanged(state: RecordButton.State) {
-        progressView.progress += 0.1
+        if(state == .Recording) {
+            startDate = NSDate()
+            mood = nil
+            progressView.hidden = false
+            recordTool.startRecording()
+            
+            func updateProgressView(sDate: NSDate) {
+                let ms = CGFloat(NSDate().timeIntervalSince1970 - sDate.timeIntervalSince1970)
+                progressView.progress = ms / 60
+                if let date = self.startDate {
+                    Async.main(after: 0.3, block: { 
+                        updateProgressView(date)  
+                    })
+                }
+            }
+            updateProgressView(startDate!)
+        }
+        if(state == .Idle) {
+            startDate = nil
+            recordTool.finishRecording(success: true)
+            recordView.hidden = true
+            emojiView.hidden = false
+            progressView.hidden = true
+        }
     }
 }

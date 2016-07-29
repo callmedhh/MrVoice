@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Async
 
 class ProgressView: UIView {
     var backgroundLayer = CAShapeLayer()
@@ -30,7 +31,7 @@ class ProgressView: UIView {
     private func updateLayers() {
         backgroundLayer.fillColor = UIColor.ProgressView.backgroundColor.CGColor
         backgroundLayer.path = UIBezierPath(roundedRect: self.bounds, cornerRadius: self.bounds.height/2).CGPath
-        foregroundLayer.fillColor = UIColor.ProgressView.mainColor.CGColor
+        foregroundLayer.fillColor = UIColor.General.mainColor.CGColor
         foregroundLayer.path = UIBezierPath(roundedRect: CGRectMake(0, 0, bounds.width * progress, bounds.height), cornerRadius: self.bounds.height/2).CGPath
     }
 }

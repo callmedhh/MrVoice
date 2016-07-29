@@ -179,7 +179,7 @@
                                         </variation>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FKK-D8-A9e" userLabel="Mark">
-                                        <rect key="frame" x="0.0" y="125" width="343" height="175"/>
+                                        <rect key="frame" x="0.0" y="134" width="343" height="166"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0C8-z0-JsE" userLabel="Happy">
                                                 <rect key="frame" x="54" y="0.0" width="75" height="75"/>
@@ -203,14 +203,14 @@
                                                     <constraint firstAttribute="width" secondItem="biP-3f-tAI" secondAttribute="height" multiplier="1:1" id="faD-BA-D2T"/>
                                                     <constraint firstAttribute="width" constant="60" id="fgB-9E-b3r"/>
                                                 </constraints>
-                                                <state key="normal" image="ordinary"/>
+                                                <state key="normal" image="flat"/>
                                                 <variation key="default">
                                                     <mask key="constraints">
                                                         <exclude reference="fgB-9E-b3r"/>
                                                     </mask>
                                                 </variation>
                                                 <connections>
-                                                    <action selector="noMood:" destination="xuJ-KC-3cV" eventType="touchUpInside" id="iKW-eq-sM5"/>
+                                                    <action selector="flatMood:" destination="xuJ-KC-3cV" eventType="touchUpInside" id="1Jd-QX-KIi"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aWu-DY-5YR" userLabel="Sad">
@@ -219,18 +219,19 @@
                                                     <constraint firstAttribute="width" secondItem="aWu-DY-5YR" secondAttribute="height" multiplier="1:1" id="W8n-IX-JOQ"/>
                                                 </constraints>
                                                 <state key="normal" image="sad"/>
+                                                <state key="selected" image="sadH"/>
                                                 <connections>
                                                     <action selector="badMood:" destination="xuJ-KC-3cV" eventType="touchUpInside" id="RHT-qi-mwl"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="geX-cT-gfH" userLabel="Complete">
-                                                <rect key="frame" x="96" y="95" width="150" height="60"/>
+                                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="geX-cT-gfH" userLabel="Complete">
+                                                <rect key="frame" x="96" y="95" width="150" height="51"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" secondItem="geX-cT-gfH" secondAttribute="height" multiplier="5:2" id="GxF-3z-LfU"/>
+                                                    <constraint firstAttribute="width" secondItem="geX-cT-gfH" secondAttribute="height" multiplier="130:44" id="GxF-3z-LfU"/>
                                                     <constraint firstAttribute="width" secondItem="geX-cT-gfH" secondAttribute="height" multiplier="131:59" id="oG2-V7-2ol"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                                <state key="normal" backgroundImage="complete_button">
+                                                <state key="normal" title="Finish" backgroundImage="complete_button">
                                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                                 <variation key="default">
@@ -239,15 +240,9 @@
                                                     </mask>
                                                 </variation>
                                                 <connections>
-                                                    <action selector="finishRecordBtnPressed:" destination="xuJ-KC-3cV" eventType="touchUpInside" id="raf-NO-nhI"/>
+                                                    <action selector="finishRecordButtonPressed:" destination="xuJ-KC-3cV" eventType="touchUpInside" id="P29-vZ-cHn"/>
                                                 </connections>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Finish" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CZ5-5V-u0j">
-                                                <rect key="frame" x="96" y="95" width="150" height="51"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                <color key="textColor" red="0.16862745098039217" green="0.066666666666666666" blue="0.066666666666666666" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -257,9 +252,6 @@
                                             <constraint firstItem="geX-cT-gfH" firstAttribute="width" secondItem="biP-3f-tAI" secondAttribute="width" multiplier="2" id="98A-1o-KxN"/>
                                             <constraint firstItem="geX-cT-gfH" firstAttribute="top" secondItem="biP-3f-tAI" secondAttribute="bottom" constant="20" id="Bim-Mg-lie"/>
                                             <constraint firstItem="0C8-z0-JsE" firstAttribute="bottom" secondItem="biP-3f-tAI" secondAttribute="bottom" id="F55-Vj-VgO"/>
-                                            <constraint firstItem="CZ5-5V-u0j" firstAttribute="trailing" secondItem="geX-cT-gfH" secondAttribute="trailing" id="SDE-iA-TGT"/>
-                                            <constraint firstItem="CZ5-5V-u0j" firstAttribute="bottom" secondItem="geX-cT-gfH" secondAttribute="bottom" constant="-9" id="V0t-4J-p6U"/>
-                                            <constraint firstItem="CZ5-5V-u0j" firstAttribute="leading" secondItem="geX-cT-gfH" secondAttribute="leading" id="Wqm-g6-Dlh"/>
                                             <constraint firstItem="aWu-DY-5YR" firstAttribute="top" secondItem="biP-3f-tAI" secondAttribute="top" id="ZDj-mp-Q6j"/>
                                             <constraint firstItem="biP-3f-tAI" firstAttribute="leading" secondItem="0C8-z0-JsE" secondAttribute="trailing" constant="5" id="aKZ-AH-Cyh"/>
                                             <constraint firstAttribute="bottom" secondItem="geX-cT-gfH" secondAttribute="bottom" constant="20" id="cL7-vr-yW6"/>
@@ -267,7 +259,6 @@
                                             <constraint firstItem="biP-3f-tAI" firstAttribute="top" secondItem="FKK-D8-A9e" secondAttribute="top" id="pV0-kI-Bei"/>
                                             <constraint firstItem="geX-cT-gfH" firstAttribute="width" secondItem="FKK-D8-A9e" secondAttribute="width" id="pj0-2r-YMj"/>
                                             <constraint firstAttribute="bottom" secondItem="geX-cT-gfH" secondAttribute="bottom" constant="10" id="q0k-tx-zE0"/>
-                                            <constraint firstItem="CZ5-5V-u0j" firstAttribute="top" secondItem="geX-cT-gfH" secondAttribute="top" id="qVi-UG-NYq"/>
                                             <constraint firstItem="biP-3f-tAI" firstAttribute="centerX" secondItem="FKK-D8-A9e" secondAttribute="centerX" id="u4v-d6-E2I"/>
                                             <constraint firstItem="geX-cT-gfH" firstAttribute="centerX" secondItem="FKK-D8-A9e" secondAttribute="centerX" id="u6I-pT-UwR"/>
                                             <constraint firstItem="0C8-z0-JsE" firstAttribute="height" secondItem="biP-3f-tAI" secondAttribute="height" id="uqV-Yf-Z8T"/>
@@ -508,10 +499,11 @@
     </scenes>
     <resources>
         <image name="background" width="320" height="568"/>
-        <image name="complete_button" width="284" height="112"/>
-        <image name="happy" width="146" height="146"/>
-        <image name="ordinary" width="147" height="146"/>
+        <image name="complete_button" width="130" height="44"/>
+        <image name="flat" width="61" height="60"/>
+        <image name="happy" width="60" height="60"/>
         <image name="play" width="190" height="190"/>
-        <image name="sad" width="146" height="146"/>
+        <image name="sad" width="60" height="60"/>
+        <image name="sadH" width="146" height="146"/>
     </resources>
 </document>

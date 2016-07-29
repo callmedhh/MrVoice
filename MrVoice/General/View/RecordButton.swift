@@ -36,7 +36,7 @@ class RecordButton: UIButton {
         let path = UIBezierPath(ovalInRect: CGRectMake(margin, margin, self.radius*2, self.radius*2))
         
         let layer = CAShapeLayer()
-        layer.fillColor = UIColor.RecordButton.mainColor.CGColor
+        layer.fillColor = UIColor.General.mainColor.CGColor
         layer.path = path.CGPath
         layer.shadowColor = layer.fillColor
         layer.shadowRadius = 5
@@ -50,8 +50,8 @@ class RecordButton: UIButton {
         
         let layer = CAShapeLayer()
         layer.lineWidth = 1
-        layer.strokeColor = UIColor.RecordButton.mainColor.CGColor
-        layer.fillColor = UIColor.RecordButton.mainColor.colorWithAlphaComponent(0.2).CGColor
+        layer.strokeColor = UIColor.General.mainColor.CGColor
+        layer.fillColor = UIColor.General.mainColor.colorWithAlphaComponent(0.2).CGColor
         layer.path = path.CGPath
         layer.shadowColor = layer.fillColor
         layer.shadowRadius = 5
@@ -62,7 +62,7 @@ class RecordButton: UIButton {
         let subSize = self.radius * 2 * 0.44
         let subMargin = (self.bounds.width - subSize) / 2
         subLayer.path = UIBezierPath(roundedRect: CGRect(x: subMargin, y: subMargin, width: subSize, height: subSize), cornerRadius: 3).CGPath
-        subLayer.fillColor = UIColor.RecordButton.mainColor.CGColor
+        subLayer.fillColor = UIColor.General.mainColor.CGColor
         layer.addSublayer(subLayer)
         return layer
     }()

@@ -39,11 +39,11 @@ extension RecordTool {
             AVNumberOfChannelsKey: 1 as NSNumber,
             AVEncoderAudioQualityKey: AVAudioQuality.High.rawValue
         ]
-        do{
+        do {
             audioRecorder = try AVAudioRecorder(URL: fileURL, settings: settings)
             audioRecorder.delegate = self
             audioRecorder.record()
-        }catch{
+        } catch {
             finishRecording(success: false)
         }
     }
