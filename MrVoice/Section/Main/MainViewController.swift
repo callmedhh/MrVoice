@@ -75,7 +75,7 @@ class MainViewController: UIViewController, UINavigationControllerDelegate{
     }
     
     @IBAction func finishRecordButtonPressed(sender: UIButton) {
-        clearSubviewShadow(sender)
+        clearSubviewShadow(sender.superview!)
         guard let mood = mood else {
             log.error("异常")
             return
