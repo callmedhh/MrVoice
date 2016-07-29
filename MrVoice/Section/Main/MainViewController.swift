@@ -48,6 +48,7 @@ class MainViewController: UIViewController, UINavigationControllerDelegate{
         monthLabel.text = today.getMonthStr()
         dayLabel.text = today.getDayStr()
         emojiView.hidden = true
+        recordButton.delegate = self
         
         calendarAspect.setMultiplier(CGFloat(calendarView.colNum) / CGFloat(calendarView.rowNum))
     }
@@ -121,5 +122,12 @@ class MainViewController: UIViewController, UINavigationControllerDelegate{
 extension MainViewController: WithCalendarViewController {
     func getCalendarView() -> CalendarView {
         return calendarView
+    }
+}
+
+// MARK: - RecordButtonDelegate
+extension MainViewController: RecordButtonHandler {
+    func stateChanged(state: RecordButton.State) {
+        progressView.progress += 0.1
     }
 }

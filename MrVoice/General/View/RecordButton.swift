@@ -20,7 +20,11 @@ class RecordButton: UIButton {
         case Recording
         case Disabled
     }
-    var currentState: State = State.Idle
+    var currentState: State = State.Idle {
+        didSet {
+            delegate?.stateChanged(currentState)
+        }
+    }
     var delegate: RecordButtonHandler?
     let spacing = 17
     lazy var radius: CGFloat = {
