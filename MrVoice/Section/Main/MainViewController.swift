@@ -22,6 +22,7 @@ class MainViewController: UIViewController, UINavigationControllerDelegate{
     
     @IBOutlet weak var recordView: UIView!
     @IBOutlet weak var emojiView: UIView!
+    @IBOutlet weak var progressView: ProgressView!
     @IBOutlet weak var completeBtn: UIButton!
     @IBOutlet weak var calendarAspect: NSLayoutConstraint!
     
@@ -49,6 +50,10 @@ class MainViewController: UIViewController, UINavigationControllerDelegate{
         emojiView.hidden = true
         
         calendarAspect.setMultiplier(CGFloat(calendarView.colNum) / CGFloat(calendarView.rowNum))
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        progressView.progress = 0.5
     }
     
 //    @IBAction func recordTapped(sender: AnyObject) {

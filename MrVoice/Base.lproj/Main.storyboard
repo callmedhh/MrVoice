@@ -122,14 +122,24 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZJq-j2-4ao" customClass="ProgressView" customModule="Mr_Voice" customModuleProvider="target">
+                                        <rect key="frame" x="103" y="104" width="137" height="3"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="3" id="OZi-Vz-38a"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="Bu8-Xm-gB8" firstAttribute="leading" secondItem="dcw-bH-Nos" secondAttribute="leading" id="9jg-ec-BPq"/>
                                     <constraint firstItem="Bu8-Xm-gB8" firstAttribute="centerY" secondItem="dcw-bH-Nos" secondAttribute="centerY" id="E8h-Aa-389"/>
+                                    <constraint firstItem="ZJq-j2-4ao" firstAttribute="centerX" secondItem="Bu8-Xm-gB8" secondAttribute="centerX" id="T0S-VD-5BQ"/>
                                     <constraint firstAttribute="height" constant="100" id="fyI-RU-w1h"/>
                                     <constraint firstAttribute="bottom" secondItem="Bu8-Xm-gB8" secondAttribute="bottom" id="gpV-yx-2sb"/>
+                                    <constraint firstItem="ZJq-j2-4ao" firstAttribute="bottom" secondItem="Bu8-Xm-gB8" secondAttribute="bottom" id="kEn-9F-yHL"/>
                                     <constraint firstAttribute="trailing" secondItem="Bu8-Xm-gB8" secondAttribute="trailing" id="kjH-87-i3b"/>
+                                    <constraint firstItem="ZJq-j2-4ao" firstAttribute="width" secondItem="dcw-bH-Nos" secondAttribute="width" multiplier="0.4" id="mLo-Og-BCr"/>
                                     <constraint firstItem="Bu8-Xm-gB8" firstAttribute="top" secondItem="dcw-bH-Nos" secondAttribute="top" id="rwq-8Q-Ygj"/>
                                     <constraint firstItem="Bu8-Xm-gB8" firstAttribute="height" secondItem="dcw-bH-Nos" secondAttribute="height" multiplier="0.6" id="zBF-FZ-ay9"/>
                                 </constraints>
@@ -337,6 +347,7 @@
                         <outlet property="dayLabel" destination="E95-R8-KbK" id="ptr-L0-sSi"/>
                         <outlet property="emojiView" destination="FKK-D8-A9e" id="6tD-eZ-8Tz"/>
                         <outlet property="monthLabel" destination="HWy-dq-47d" id="sWE-kC-BUb"/>
+                        <outlet property="progressView" destination="ZJq-j2-4ao" id="TgL-6f-YDy"/>
                         <outlet property="recordButton" destination="HJF-pA-LXh" id="8q2-ir-EZ1"/>
                         <outlet property="recordView" destination="RiF-uo-jbs" id="gEW-bN-HDq"/>
                     </connections>

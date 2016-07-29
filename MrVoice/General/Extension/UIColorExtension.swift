@@ -18,4 +18,8 @@ extension UIColor {
     struct RecordButton {
         static let mainColor = UIColor(hexString: "#FFE327")!
     }
+    struct ProgressView {
+        static let mainColor = UIColor(hexString: "#FFE327")!
+        static let backgroundColor = UIColor(white: 1, alpha: 0.2)
+    }
 }

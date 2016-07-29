@@ -39,6 +39,7 @@
 		96F8BF8E1D49083000F4219E /* SwiftHEXColors.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96F8BF8B1D49083000F4219E /* SwiftHEXColors.framework */; };
 		96F8BF8F1D49083000F4219E /* SwiftyBeaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96F8BF8C1D49083000F4219E /* SwiftyBeaver.framework */; };
 		96F8BF921D490EFC00F4219E /* Async.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96F8BF911D490EFC00F4219E /* Async.framework */; };
+		96F8BFB81D4AFA8F00F4219E /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F8BFB71D4AFA8F00F4219E /* ProgressView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,6 +78,7 @@
 		96F8BF8B1D49083000F4219E /* SwiftHEXColors.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftHEXColors.framework; path = Carthage/Build/iOS/SwiftHEXColors.framework; sourceTree = "<group>"; };
 		96F8BF8C1D49083000F4219E /* SwiftyBeaver.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyBeaver.framework; path = Carthage/Build/iOS/SwiftyBeaver.framework; sourceTree = "<group>"; };
 		96F8BF911D490EFC00F4219E /* Async.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Async.framework; path = Carthage/Build/iOS/Async.framework; sourceTree = "<group>"; };
+		96F8BFB71D4AFA8F00F4219E /* ProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
 		97FE544F589D7F987FD8FADE /* Pods-VoiceDiary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VoiceDiary.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VoiceDiary/Pods-VoiceDiary.debug.xcconfig"; sourceTree = "<group>"; };
 		A096DCEF1D07F1630023CB0C /* Mr Voice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mr Voice.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5E4760629628DF3DD8BA77C /* Pods-VoiceDiary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VoiceDiary.release.xcconfig"; path = "Pods/Target Support Files/Pods-VoiceDiary/Pods-VoiceDiary.release.xcconfig"; sourceTree = "<group>"; };
@@ -187,6 +189,7 @@
 				9688CE9A1D475E32001AF6C0 /* BorderView.swift */,
 				9688CE9B1D475E32001AF6C0 /* CalenderView.swift */,
 				9688CE9C1D475E32001AF6C0 /* RecordButton.swift */,
+				96F8BFB71D4AFA8F00F4219E /* ProgressView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -362,6 +365,7 @@
 				9688CEBA1D475E32001AF6C0 /* HistoryTransitionController.swift in Sources */,
 				9688CEAD1D475E32001AF6C0 /* Log.swift in Sources */,
 				9688CEB61D475E32001AF6C0 /* BorderView.swift in Sources */,
+				96F8BFB81D4AFA8F00F4219E /* ProgressView.swift in Sources */,
 				9688CEB31D475E32001AF6C0 /* FilePathTool.swift in Sources */,
 				9688CEAA1D475E32001AF6C0 /* StringExtension.swift in Sources */,
 				9688CEB41D475E32001AF6C0 /* RecordTool.swift in Sources */,
