@@ -157,23 +157,25 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RiF-uo-jbs" userLabel="Record">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="300"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HJF-pA-LXh" userLabel="Record" customClass="RecordButton" customModule="Mr_Voice" customModuleProvider="target">
-                                                <rect key="frame" x="71" y="50" width="200" height="200"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HJF-pA-LXh" customClass="RecordButton" customModule="Mr_Voice" customModuleProvider="target">
+                                                <rect key="frame" x="95" y="73" width="154" height="154"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" secondItem="HJF-pA-LXh" secondAttribute="height" id="OzD-pd-5zr"/>
-                                                    <constraint firstAttribute="width" constant="200" id="Y4z-0C-Elx"/>
+                                                    <constraint firstAttribute="width" secondItem="HJF-pA-LXh" secondAttribute="height" id="BCX-h9-a2c"/>
                                                 </constraints>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
+                                            <constraint firstItem="HJF-pA-LXh" firstAttribute="width" secondItem="RiF-uo-jbs" secondAttribute="width" multiplier="0.45" id="Hco-EF-Vpq"/>
                                             <constraint firstItem="HJF-pA-LXh" firstAttribute="centerY" secondItem="RiF-uo-jbs" secondAttribute="centerY" id="MjE-NO-XP9"/>
                                             <constraint firstItem="HJF-pA-LXh" firstAttribute="centerX" secondItem="RiF-uo-jbs" secondAttribute="centerX" id="OBF-Fh-fbo"/>
+                                            <constraint firstItem="HJF-pA-LXh" firstAttribute="width" secondItem="RiF-uo-jbs" secondAttribute="width" id="iUp-Sk-Q4J"/>
                                             <constraint firstItem="HJF-pA-LXh" firstAttribute="width" secondItem="RiF-uo-jbs" secondAttribute="height" multiplier="4:5" id="qa2-H0-fTj"/>
                                         </constraints>
                                         <variation key="default">
                                             <mask key="constraints">
+                                                <exclude reference="iUp-Sk-Q4J"/>
                                                 <exclude reference="qa2-H0-fTj"/>
                                             </mask>
                                         </variation>
@@ -422,31 +424,49 @@
                                             <action selector="backgroundTapped:" destination="OTt-Vz-htn" eventType="touchUpInside" id="fp9-in-Yhu"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H2P-kP-djp" userLabel="Play">
-                                        <rect key="frame" x="120" y="46" width="103" height="103"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H2P-kP-djp" customClass="RecordButton" customModule="Mr_Voice" customModuleProvider="target">
+                                        <rect key="frame" x="95" y="21" width="154" height="154"/>
                                         <constraints>
+                                            <constraint firstAttribute="width" secondItem="H2P-kP-djp" secondAttribute="height" id="FxM-xg-Szb"/>
+                                            <constraint firstAttribute="width" constant="200" id="lj0-bF-pmQ"/>
                                             <constraint firstAttribute="width" secondItem="H2P-kP-djp" secondAttribute="height" id="xRv-n4-yFn"/>
                                         </constraints>
-                                        <state key="normal" image="play"/>
-                                        <connections>
-                                            <action selector="playPressed:" destination="OTt-Vz-htn" eventType="touchUpInside" id="Wdc-kY-qCo"/>
-                                        </connections>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="lj0-bF-pmQ"/>
+                                                <exclude reference="xRv-n4-yFn"/>
+                                            </mask>
+                                        </variation>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="H2P-kP-djp" firstAttribute="centerX" secondItem="tzB-m6-zML" secondAttribute="centerX" id="0iQ-Hp-SiO"/>
+                                    <constraint firstAttribute="bottom" secondItem="H2P-kP-djp" secondAttribute="bottom" id="4WC-IL-r4G"/>
                                     <constraint firstItem="H2P-kP-djp" firstAttribute="centerX" secondItem="tzB-m6-zML" secondAttribute="centerX" id="GrL-ta-2Rr"/>
                                     <constraint firstAttribute="bottom" secondItem="cW1-gm-xHI" secondAttribute="bottom" id="HDn-mP-mPn"/>
+                                    <constraint firstItem="H2P-kP-djp" firstAttribute="leading" secondItem="tzB-m6-zML" secondAttribute="leading" id="HZe-3h-7ho"/>
                                     <constraint firstItem="H2P-kP-djp" firstAttribute="centerY" secondItem="tzB-m6-zML" secondAttribute="centerY" id="Hho-wL-Ce6"/>
+                                    <constraint firstItem="H2P-kP-djp" firstAttribute="top" secondItem="tzB-m6-zML" secondAttribute="top" id="PYa-qa-Ldz"/>
+                                    <constraint firstAttribute="trailing" secondItem="H2P-kP-djp" secondAttribute="trailing" id="SaN-OJ-FxW"/>
                                     <constraint firstItem="cW1-gm-xHI" firstAttribute="leading" secondItem="tzB-m6-zML" secondAttribute="leading" id="WjM-7y-Gsf"/>
                                     <constraint firstItem="cW1-gm-xHI" firstAttribute="top" secondItem="tzB-m6-zML" secondAttribute="top" id="Xf7-uW-0Nl"/>
                                     <constraint firstItem="H2P-kP-djp" firstAttribute="height" secondItem="tzB-m6-zML" secondAttribute="height" multiplier="0.4" id="clY-WS-eX8"/>
                                     <constraint firstAttribute="trailing" secondItem="cW1-gm-xHI" secondAttribute="trailing" id="jrT-Fy-XEF"/>
+                                    <constraint firstItem="H2P-kP-djp" firstAttribute="centerY" secondItem="tzB-m6-zML" secondAttribute="centerY" id="yt3-Tx-Lp8"/>
                                     <constraint firstItem="H2P-kP-djp" firstAttribute="width" secondItem="tzB-m6-zML" secondAttribute="width" multiplier="0.3" id="yxy-C9-KcG"/>
+                                    <constraint firstItem="H2P-kP-djp" firstAttribute="width" secondItem="tzB-m6-zML" secondAttribute="width" multiplier="0.45" id="zav-3L-8Vh"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
+                                        <exclude reference="4WC-IL-r4G"/>
+                                        <exclude reference="GrL-ta-2Rr"/>
+                                        <exclude reference="HZe-3h-7ho"/>
+                                        <exclude reference="Hho-wL-Ce6"/>
+                                        <exclude reference="PYa-qa-Ldz"/>
+                                        <exclude reference="SaN-OJ-FxW"/>
                                         <exclude reference="clY-WS-eX8"/>
+                                        <exclude reference="yxy-C9-KcG"/>
                                     </mask>
                                 </variation>
                             </view>
@@ -485,11 +505,10 @@
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="backgroundButton" destination="We1-kG-Fek" id="No3-ix-HNw"/>
                         <outlet property="calendarView" destination="UHm-CS-sXs" id="1nW-wC-SdC"/>
                         <outlet property="monthNumberLabel" destination="VfI-MK-hTs" id="fJd-VC-FKE"/>
                         <outlet property="monthTextLabel" destination="Xw1-80-tEn" id="eMa-Tg-aZ5"/>
-                        <outlet property="playButton" destination="H2P-kP-djp" id="PVe-Jq-dP6"/>
+                        <outlet property="playButton" destination="H2P-kP-djp" id="AIk-GF-oWJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="01N-Lj-QJV" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -502,7 +521,6 @@
         <image name="complete_button" width="130" height="44"/>
         <image name="flat" width="61" height="60"/>
         <image name="happy" width="60" height="60"/>
-        <image name="play" width="190" height="190"/>
         <image name="sad" width="60" height="60"/>
         <image name="sadH" width="146" height="146"/>
     </resources>

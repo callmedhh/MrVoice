@@ -12,37 +12,39 @@ class HistoryViewController: UIViewController {
     
     @IBOutlet weak var monthNumberLabel: UILabel!
     @IBOutlet weak var monthTextLabel: UILabel!
+    @IBOutlet weak var playButton: RecordButton!
+    
     var recordTool: RecordTool = RecordTool()
     var viewRecordTool: ViewRecordTool = ViewRecordTool()
 
-    @IBOutlet weak var backgroundButton: UIButton!
-    @IBOutlet weak var playButton: UIButton!
     @IBOutlet weak var calendarView: CalendarView!
     
     override func viewDidLoad() {
         let date = NSDate()
         monthNumberLabel.text =  date.getMonthStr()
         monthTextLabel.text = date.getMonthDes()
-        playButton.hidden = true
-        calendarView.playButton = playButton
         calendarView.mode = .History
     }
     @IBAction func backgroundTapped(sender: AnyObject) {
         self.navigationController?.popViewControllerAnimated(true)
     }
     
-    @IBAction func playPressed(sender: AnyObject) {
-        let date = NSDate()
-        let month = date.getMonth()
-        let year = date.getYear()
-        let record = viewRecordTool.getRecordByTime(calendarView.selectedDay!, month: month, year: year)
-        if record.isRecorded {
-            let filename = record.recordModel!.filename
-            recordTool.startPlaying(filename)
-        } else {
-            
-        }
+    override func viewDidLayoutSubviews() {
+        playButton.layoutIfNeeded()
     }
+    
+//    @IBAction func playPressed(sender: AnyObject) {
+//        let date = NSDate()
+//        let month = date.getMonth()
+//        let year = date.getYear()
+//        let record = viewRecordTool.getRecordByTime(calendarView.selectedDay!, month: month, year: year)
+//        if record.isRecorded {
+//            let filename = record.recordModel!.filename
+//            recordTool.startPlaying(filename)
+//        } else {
+//            
+//        }
+//    }
 }
 
 // MARK: - WithCalendarViewController

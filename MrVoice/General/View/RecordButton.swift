@@ -26,56 +26,46 @@ class RecordButton: UIButton {
         }
     }
     var delegate: RecordButtonHandler?
-    let spacing = 17
-    lazy var radius: CGFloat = {
-        return CGFloat(Screen.width * 0.1)
-    }()
+    var spacing: CGFloat {
+        get {
+            return CGFloat(self.bounds.width * 0.09)
+        }
+    }
+    var radius: CGFloat {
+        get {
+            return CGFloat(self.bounds.width * 0.22)
+        }
+    }
     
-    lazy var idleLayer: CAShapeLayer = {
-        let margin = self.bounds.width / 2 - self.radius
-        let path = UIBezierPath(ovalInRect: CGRectMake(margin, margin, self.radius*2, self.radius*2))
-        
+    var idleLayer: CAShapeLayer = {
         let layer = CAShapeLayer()
         layer.fillColor = UIColor.General.mainColor.CGColor
-        layer.path = path.CGPath
         layer.shadowColor = layer.fillColor
         layer.shadowRadius = 5
         layer.shadowOpacity = 0.4
         layer.shadowOffset = CGSize(width: 0, height: 0)
         return layer
     }()
-    lazy var recordingLayer: CAShapeLayer = {
-        let margin = self.bounds.width / 2 - self.radius
-        let path = UIBezierPath(ovalInRect: CGRectMake(margin, margin, self.radius*2, self.radius*2))
-        
+    var recordingLayer: CAShapeLayer = {
         let layer = CAShapeLayer()
         layer.lineWidth = 1
         layer.strokeColor = UIColor.General.mainColor.CGColor
         layer.fillColor = UIColor.General.mainColor.colorWithAlphaComponent(0.2).CGColor
-        layer.path = path.CGPath
         layer.shadowColor = layer.fillColor
         layer.shadowRadius = 5
         layer.shadowOpacity = 0.4
         layer.shadowOffset = CGSize(width: 0, height: 0)
         
         let subLayer = CAShapeLayer()
-        let subSize = self.radius * 2 * 0.44
-        let subMargin = (self.bounds.width - subSize) / 2
-        subLayer.path = UIBezierPath(roundedRect: CGRect(x: subMargin, y: subMargin, width: subSize, height: subSize), cornerRadius: 3).CGPath
         subLayer.fillColor = UIColor.General.mainColor.CGColor
         layer.addSublayer(subLayer)
         return layer
     }()
-    lazy var backgroundLayers: [CAShapeLayer] = {
+    var backgroundLayers: [CAShapeLayer] = {
         let layers = [CAShapeLayer(), CAShapeLayer(), CAShapeLayer()]
         let alphas:[CGFloat] = [0.02, 0.04, 0.08]
-        let width = self.bounds.width
         for (i, layer) in layers.enumerate() {
-            let radius = self.radius + CGFloat(self.spacing * (alphas.count - i))
-            let margin = width / 2 - radius
-            let path = UIBezierPath(ovalInRect: CGRectMake(margin, margin, radius*2, radius*2))
             layer.fillColor = UIColor(white: 1, alpha: alphas[i]).CGColor
-            layer.path = path.CGPath
         }
         return layers
     }()
@@ -84,6 +74,22 @@ class RecordButton: UIButton {
         super.init(coder: aDecoder)
         addTarget(self, action: #selector(pressed), forControlEvents: .TouchUpInside)
         setupLayers()
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        let margin = bounds.width / 2 - self.radius
+        idleLayer.path = UIBezierPath(ovalInRect: CGRectMake(margin, margin, self.radius*2, self.radius*2)).CGPath
+        recordingLayer.path = UIBezierPath(ovalInRect: CGRectMake(margin, margin, self.radius*2, self.radius*2)).CGPath
+        let subLayer = recordingLayer.sublayers![0] as! CAShapeLayer
+        let subSize = self.radius * 2 * 0.44
+        let subMargin = (self.bounds.width - subSize) / 2
+        subLayer.path = UIBezierPath(roundedRect: CGRect(x: subMargin, y: subMargin, width: subSize, height: subSize), cornerRadius: 3).CGPath
+        for (i, layer) in backgroundLayers.enumerate() {
+            let radius = self.radius + self.spacing * CGFloat(backgroundLayers.count - i)
+            let margin = bounds.width / 2 - radius
+            layer.path = UIBezierPath(ovalInRect: CGRectMake(margin, margin, radius*2, radius*2)).CGPath
+        }
     }
 }
 

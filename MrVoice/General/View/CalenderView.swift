@@ -28,9 +28,7 @@ class CalendarView: UIView {
     var selectedDay: Int? = nil
     var itemButtons: [UIButton] = []
     var viewRecordTool: ViewRecordTool = ViewRecordTool()
-    
-    weak var playButton: UIButton?
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
@@ -139,8 +137,8 @@ extension CalendarView {
         animation.duration = duration + 0.05
         for v in itemButtons {
             let roundedView = v.viewWithTag(Tags.RoundedView.rawValue)!
-            animation.fromValue = NSNumber(double: getRadius(getItemWidth(fromWidth)).native)
-            animation.toValue = NSNumber(double: getRadius(getItemWidth(toWidth)).native)
+            animation.fromValue = NSNumber(double: Double(getRadius(getItemWidth(fromWidth))))
+            animation.toValue = NSNumber(double: Double(getRadius(getItemWidth(toWidth))))
             roundedView.layer.addAnimation(animation, forKey: "cornerRadius")
         }
     }
@@ -175,13 +173,6 @@ extension CalendarView {
 // MARK: - Selector
 extension CalendarView {
     func buttonClicked(sender: UIButton){
-        let day = sender.tag
-        selectedDay = day
-        let date = NSDate()
-        let month = date.getMonth()
-        let year = date.getYear()
-        let record = viewRecordTool.getRecordByTime(day, month: month, year: year)
-        playButton?.hidden = !record.isRecorded
-        playButton?.userInteractionEnabled = record.isRecorded
+        selectedDay = sender.tag
     }
 }
