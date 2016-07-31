@@ -11,7 +11,6 @@ import AVFoundation
 class RecordTool: NSObject, AVAudioRecorderDelegate{
     var audioRecorder: AVAudioRecorder!
     var audioPlayer: AVAudioPlayer!
-    var dbTool: Database = Database()
     var filePath: String? = nil
     var mood: Int? = nil
 }
@@ -59,13 +58,12 @@ extension RecordTool {
     
     func saveRecordingWithMood(mood: Mood) {
         if let filePath = self.filePath {
-            let names = filePath.componentsSeparatedByString("/")
-            dbTool.addRecord(fileName: names.last!, moodValue: mood.rawValue)
+            let name = filePath.componentsSeparatedByString("/").last!
+            let record = Record(filename: name, mood: mood)
+            DB.Record.addRecord(record)
         }
         self.filePath = nil
     }
-    
-    
 }
 
 // MARK: - Play

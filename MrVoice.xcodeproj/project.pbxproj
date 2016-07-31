@@ -11,20 +11,17 @@
 		9688CEA51D475E32001AF6C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9688CE811D475E32001AF6C0 /* Assets.xcassets */; };
 		9688CEA61D475E32001AF6C0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9688CE821D475E32001AF6C0 /* LaunchScreen.storyboard */; };
 		9688CEA71D475E32001AF6C0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9688CE841D475E32001AF6C0 /* Main.storyboard */; };
-		9688CEA81D475E32001AF6C0 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9688CE881D475E32001AF6C0 /* DateExtension.swift */; };
+		9688CEA81D475E32001AF6C0 /* NSDateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9688CE881D475E32001AF6C0 /* NSDateExtension.swift */; };
 		9688CEA91D475E32001AF6C0 /* IntExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9688CE891D475E32001AF6C0 /* IntExtension.swift */; };
 		9688CEAA1D475E32001AF6C0 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9688CE8A1D475E32001AF6C0 /* StringExtension.swift */; };
 		9688CEAB1D475E32001AF6C0 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9688CE8B1D475E32001AF6C0 /* UIColorExtension.swift */; };
 		9688CEAC1D475E32001AF6C0 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9688CE8C1D475E32001AF6C0 /* UIViewExtension.swift */; };
 		9688CEAD1D475E32001AF6C0 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9688CE8E1D475E32001AF6C0 /* Log.swift */; };
-		9688CEAE1D475E32001AF6C0 /* DailyRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9688CE901D475E32001AF6C0 /* DailyRecord.swift */; };
-		9688CEAF1D475E32001AF6C0 /* Mood.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9688CE911D475E32001AF6C0 /* Mood.swift */; };
-		9688CEB01D475E32001AF6C0 /* RecordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9688CE921D475E32001AF6C0 /* RecordModel.swift */; };
-		9688CEB11D475E32001AF6C0 /* DatabaseTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9688CE941D475E32001AF6C0 /* DatabaseTool.swift */; };
+		9688CEAE1D475E32001AF6C0 /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9688CE901D475E32001AF6C0 /* Record.swift */; };
+		9688CEB11D475E32001AF6C0 /* DB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9688CE941D475E32001AF6C0 /* DB.swift */; };
 		9688CEB21D475E32001AF6C0 /* DateTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9688CE951D475E32001AF6C0 /* DateTool.swift */; };
 		9688CEB31D475E32001AF6C0 /* FilePathTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9688CE961D475E32001AF6C0 /* FilePathTool.swift */; };
 		9688CEB41D475E32001AF6C0 /* RecordTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9688CE971D475E32001AF6C0 /* RecordTool.swift */; };
-		9688CEB51D475E32001AF6C0 /* ViewRecordTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9688CE981D475E32001AF6C0 /* ViewRecordTool.swift */; };
 		9688CEB61D475E32001AF6C0 /* BorderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9688CE9A1D475E32001AF6C0 /* BorderView.swift */; };
 		9688CEB71D475E32001AF6C0 /* CalenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9688CE9B1D475E32001AF6C0 /* CalenderView.swift */; };
 		9688CEB81D475E32001AF6C0 /* RecordButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9688CE9C1D475E32001AF6C0 /* RecordButton.swift */; };
@@ -40,6 +37,7 @@
 		96F8BF8F1D49083000F4219E /* SwiftyBeaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96F8BF8C1D49083000F4219E /* SwiftyBeaver.framework */; };
 		96F8BF921D490EFC00F4219E /* Async.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96F8BF911D490EFC00F4219E /* Async.framework */; };
 		96F8BFB81D4AFA8F00F4219E /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F8BFB71D4AFA8F00F4219E /* ProgressView.swift */; };
+		96F8BFBC1D4DD89900F4219E /* Mood.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F8BFBB1D4DD89900F4219E /* Mood.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,20 +47,17 @@
 		9688CE811D475E32001AF6C0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9688CE831D475E32001AF6C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9688CE851D475E32001AF6C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		9688CE881D475E32001AF6C0 /* DateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		9688CE881D475E32001AF6C0 /* NSDateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateExtension.swift; sourceTree = "<group>"; };
 		9688CE891D475E32001AF6C0 /* IntExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntExtension.swift; sourceTree = "<group>"; };
 		9688CE8A1D475E32001AF6C0 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		9688CE8B1D475E32001AF6C0 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		9688CE8C1D475E32001AF6C0 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		9688CE8E1D475E32001AF6C0 /* Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
-		9688CE901D475E32001AF6C0 /* DailyRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyRecord.swift; sourceTree = "<group>"; };
-		9688CE911D475E32001AF6C0 /* Mood.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mood.swift; sourceTree = "<group>"; };
-		9688CE921D475E32001AF6C0 /* RecordModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordModel.swift; sourceTree = "<group>"; };
-		9688CE941D475E32001AF6C0 /* DatabaseTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseTool.swift; sourceTree = "<group>"; };
+		9688CE901D475E32001AF6C0 /* Record.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Record.swift; sourceTree = "<group>"; };
+		9688CE941D475E32001AF6C0 /* DB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DB.swift; sourceTree = "<group>"; };
 		9688CE951D475E32001AF6C0 /* DateTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateTool.swift; sourceTree = "<group>"; };
 		9688CE961D475E32001AF6C0 /* FilePathTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilePathTool.swift; sourceTree = "<group>"; };
 		9688CE971D475E32001AF6C0 /* RecordTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordTool.swift; sourceTree = "<group>"; };
-		9688CE981D475E32001AF6C0 /* ViewRecordTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewRecordTool.swift; sourceTree = "<group>"; };
 		9688CE9A1D475E32001AF6C0 /* BorderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorderView.swift; sourceTree = "<group>"; };
 		9688CE9B1D475E32001AF6C0 /* CalenderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalenderView.swift; sourceTree = "<group>"; };
 		9688CE9C1D475E32001AF6C0 /* RecordButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordButton.swift; sourceTree = "<group>"; };
@@ -79,6 +74,7 @@
 		96F8BF8C1D49083000F4219E /* SwiftyBeaver.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyBeaver.framework; path = Carthage/Build/iOS/SwiftyBeaver.framework; sourceTree = "<group>"; };
 		96F8BF911D490EFC00F4219E /* Async.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Async.framework; path = Carthage/Build/iOS/Async.framework; sourceTree = "<group>"; };
 		96F8BFB71D4AFA8F00F4219E /* ProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
+		96F8BFBB1D4DD89900F4219E /* Mood.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mood.swift; sourceTree = "<group>"; };
 		97FE544F589D7F987FD8FADE /* Pods-VoiceDiary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VoiceDiary.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VoiceDiary/Pods-VoiceDiary.debug.xcconfig"; sourceTree = "<group>"; };
 		A096DCEF1D07F1630023CB0C /* Mr Voice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mr Voice.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5E4760629628DF3DD8BA77C /* Pods-VoiceDiary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VoiceDiary.release.xcconfig"; path = "Pods/Target Support Files/Pods-VoiceDiary/Pods-VoiceDiary.release.xcconfig"; sourceTree = "<group>"; };
@@ -142,7 +138,7 @@
 		9688CE871D475E32001AF6C0 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				9688CE881D475E32001AF6C0 /* DateExtension.swift */,
+				9688CE881D475E32001AF6C0 /* NSDateExtension.swift */,
 				9688CE891D475E32001AF6C0 /* IntExtension.swift */,
 				9688CE8A1D475E32001AF6C0 /* StringExtension.swift */,
 				9688CE8B1D475E32001AF6C0 /* UIColorExtension.swift */,
@@ -164,9 +160,8 @@
 		9688CE8F1D475E32001AF6C0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				9688CE901D475E32001AF6C0 /* DailyRecord.swift */,
-				9688CE911D475E32001AF6C0 /* Mood.swift */,
-				9688CE921D475E32001AF6C0 /* RecordModel.swift */,
+				96F8BFBB1D4DD89900F4219E /* Mood.swift */,
+				9688CE901D475E32001AF6C0 /* Record.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -174,11 +169,10 @@
 		9688CE931D475E32001AF6C0 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
-				9688CE941D475E32001AF6C0 /* DatabaseTool.swift */,
+				9688CE941D475E32001AF6C0 /* DB.swift */,
 				9688CE951D475E32001AF6C0 /* DateTool.swift */,
 				9688CE961D475E32001AF6C0 /* FilePathTool.swift */,
 				9688CE971D475E32001AF6C0 /* RecordTool.swift */,
-				9688CE981D475E32001AF6C0 /* ViewRecordTool.swift */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -356,10 +350,10 @@
 				9688CEBC1D475E32001AF6C0 /* MainViewController.swift in Sources */,
 				9688CEC01D479420001AF6C0 /* UIConstraintExtension.swift in Sources */,
 				9688CEAC1D475E32001AF6C0 /* UIViewExtension.swift in Sources */,
-				9688CEB11D475E32001AF6C0 /* DatabaseTool.swift in Sources */,
+				9688CEB11D475E32001AF6C0 /* DB.swift in Sources */,
+				96F8BFBC1D4DD89900F4219E /* Mood.swift in Sources */,
 				9688CEB81D475E32001AF6C0 /* RecordButton.swift in Sources */,
 				9688CEBB1D475E32001AF6C0 /* HistoryViewController.swift in Sources */,
-				9688CEAF1D475E32001AF6C0 /* Mood.swift in Sources */,
 				9688CEB71D475E32001AF6C0 /* CalenderView.swift in Sources */,
 				9688CEC31D488994001AF6C0 /* WithCalendarViewController.swift in Sources */,
 				9688CEBA1D475E32001AF6C0 /* HistoryTransitionController.swift in Sources */,
@@ -373,10 +367,8 @@
 				9688CEBE1D478121001AF6C0 /* Macro.swift in Sources */,
 				9688CEA41D475E32001AF6C0 /* AppDelegate.swift in Sources */,
 				9688CEAB1D475E32001AF6C0 /* UIColorExtension.swift in Sources */,
-				9688CEB51D475E32001AF6C0 /* ViewRecordTool.swift in Sources */,
-				9688CEA81D475E32001AF6C0 /* DateExtension.swift in Sources */,
-				9688CEAE1D475E32001AF6C0 /* DailyRecord.swift in Sources */,
-				9688CEB01D475E32001AF6C0 /* RecordModel.swift in Sources */,
+				9688CEA81D475E32001AF6C0 /* NSDateExtension.swift in Sources */,
+				9688CEAE1D475E32001AF6C0 /* Record.swift in Sources */,
 				9688CEA91D475E32001AF6C0 /* IntExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

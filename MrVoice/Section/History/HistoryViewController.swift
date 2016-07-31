@@ -15,7 +15,6 @@ class HistoryViewController: UIViewController {
     @IBOutlet weak var playButton: RecordButton!
     
     var recordTool: RecordTool = RecordTool()
-    var viewRecordTool: ViewRecordTool = ViewRecordTool()
 
     @IBOutlet weak var calendarView: CalendarView!
     

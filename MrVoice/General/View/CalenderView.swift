@@ -27,7 +27,6 @@ class CalendarView: UIView {
     
     var selectedDay: Int? = nil
     var itemButtons: [UIButton] = []
-    var viewRecordTool: ViewRecordTool = ViewRecordTool()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -52,17 +51,21 @@ extension CalendarView {
     private func setup() {
         self.backgroundColor = DEBUG ? UIColor.redColor() : UIColor.clearColor()
         let date = NSDate()
-        let recordModelList = viewRecordTool.getMonthDailyRecordList(month: date.getMonth(), year: date.getYear())
-        for i in 0..<count {
+        let records = DB.Record.selectRecords(year: date.getYear(), month: date.getMonth())
+        var recordDict =  [Int: Record]()
+        for record in records {
+            recordDict[record.date.day] = record
+        }
+        for i in 1...count {
             let button = UIButton()
-            button.tag = i+1
+            button.tag = i
             button.addTarget(self, action: #selector(buttonClicked), forControlEvents: .TouchUpInside)
             button.backgroundColor = DEBUG ? UIColor(white: 255, alpha: CGFloat(i % 8) / 8) : UIColor.clearColor()
 
             let roundedView = UIView()
-            let recordModel = recordModelList[i]
-            if recordModel.isRecorded {
-                roundedView.backgroundColor = recordModel.recordModel?.mood.color()
+            let record = recordDict[i]
+            if let r = record {
+                roundedView.backgroundColor = r.mood.color()
             } else {
                 roundedView.backgroundColor = UIColor.Calendar.nothing
             }
@@ -72,7 +75,7 @@ extension CalendarView {
             
             let label = UILabel()
             label.tag = Tags.Label.rawValue
-            label.text = "\(i+1)"
+            label.text = "\(i)"
             label.textColor = UIColor.Calendar.nothing
             button.addSubview(label)
 
