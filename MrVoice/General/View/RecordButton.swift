@@ -6,6 +6,7 @@
 //  Copyright © 2016年 Lemur. All rights reserved.
 //
 
+// TODO: substract layers
 import UIKit
 import SwiftHEXColors
 import Async
@@ -20,8 +21,42 @@ class RecordButton: UIButton {
         case Recording
         case Disabled
     }
-    var currentState: State = State.Idle {
+    var currentState: State = .Idle {
         didSet {
+            switch currentState {
+            case .Idle:
+                recordingLayer.removeFromSuperlayer()
+                disabledLayer.removeFromSuperlayer()
+                layer.addSublayer(idleLayer)
+                for layer in backgroundLayers {
+                    layer.removeAllAnimations()
+                }
+            case .Recording:
+                idleLayer.removeFromSuperlayer()
+                disabledLayer.removeFromSuperlayer()
+                layer.addSublayer(recordingLayer)
+
+                let fadeAnimation = CABasicAnimation(keyPath: "opacity")
+                fadeAnimation.fromValue = 1.0
+                fadeAnimation.toValue = 0.0
+                fadeAnimation.duration = 1.2
+                fadeAnimation.repeatCount = Float(Int.max)
+                
+                self.backgroundLayers[2].addAnimation(fadeAnimation, forKey: "FadeAnimation")
+                Async.main(after: 0.2, block: {
+                    self.backgroundLayers[1].addAnimation(fadeAnimation, forKey: "FadeAnimation")
+                    Async.main(after: 0.2, block: {
+                        self.backgroundLayers[0].addAnimation(fadeAnimation, forKey: "FadeAnimation")
+                    })
+                })
+            case .Disabled:
+                idleLayer.removeFromSuperlayer()
+                recordingLayer.removeFromSuperlayer()
+                layer.addSublayer(disabledLayer)
+                for layer in backgroundLayers {
+                    layer.removeAllAnimations()
+                }
+            }
             delegate?.stateChanged(currentState)
         }
     }
@@ -61,6 +96,13 @@ class RecordButton: UIButton {
         layer.addSublayer(subLayer)
         return layer
     }()
+    var disabledLayer: CAShapeLayer = {
+        let layer = CAShapeLayer()
+        layer.fillColor = UIColor.General.mainColor.colorWithAlphaComponent(0.38).CGColor
+        layer.lineWidth = 1
+        layer.strokeColor = UIColor.General.mainColor.CGColor
+        return layer
+    }()
     var backgroundLayers: [CAShapeLayer] = {
         let layers = [CAShapeLayer(), CAShapeLayer(), CAShapeLayer()]
         let alphas:[CGFloat] = [0.02, 0.04, 0.08]
@@ -73,14 +115,20 @@ class RecordButton: UIButton {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         addTarget(self, action: #selector(pressed), forControlEvents: .TouchUpInside)
-        setupLayers()
+        for i in backgroundLayers {
+            layer.addSublayer(i)
+        }
+        layer.addSublayer(idleLayer)
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
         let margin = bounds.width / 2 - self.radius
-        idleLayer.path = UIBezierPath(ovalInRect: CGRectMake(margin, margin, self.radius*2, self.radius*2)).CGPath
-        recordingLayer.path = UIBezierPath(ovalInRect: CGRectMake(margin, margin, self.radius*2, self.radius*2)).CGPath
+        let path = UIBezierPath(ovalInRect: CGRectMake(margin, margin, self.radius*2, self.radius*2)).CGPath
+        idleLayer.path = path
+        recordingLayer.path = path
+        disabledLayer.path = path
+        
         let subLayer = recordingLayer.sublayers![0] as! CAShapeLayer
         let subSize = self.radius * 2 * 0.44
         let subMargin = (self.bounds.width - subSize) / 2
@@ -99,31 +147,10 @@ extension RecordButton {
         switch currentState {
         case .Idle:
             currentState = .Recording
-            idleLayer.removeFromSuperlayer()
-            layer.addSublayer(recordingLayer)
-            
-            let fadeAnimation = CABasicAnimation(keyPath: "opacity")
-            fadeAnimation.fromValue = 1.0
-            fadeAnimation.toValue = 0.0
-            fadeAnimation.duration = 1.2
-            fadeAnimation.repeatCount = Float(Int.max)
-            
-            self.backgroundLayers[2].addAnimation(fadeAnimation, forKey: "FadeAnimation")
-            Async.main(after: 0.2, block: {
-                self.backgroundLayers[1].addAnimation(fadeAnimation, forKey: "FadeAnimation")
-                Async.main(after: 0.2, block: {
-                    self.backgroundLayers[0].addAnimation(fadeAnimation, forKey: "FadeAnimation")
-                })
-            })
         case .Recording:
             currentState = .Idle
-            recordingLayer.removeFromSuperlayer()
-            layer.addSublayer(idleLayer)
-            for layer in backgroundLayers {
-                layer.removeAllAnimations()
-            }
         default:
-            return
+            break
         }
     }
 }
@@ -131,10 +158,4 @@ extension RecordButton {
 
 // MARK: - Private
 extension RecordButton {
-    private func setupLayers() {
-        for i in backgroundLayers {
-            layer.addSublayer(i)
-        }
-        layer.addSublayer(idleLayer)
-    }
 }

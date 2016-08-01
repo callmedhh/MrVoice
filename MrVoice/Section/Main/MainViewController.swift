@@ -25,7 +25,8 @@ class MainViewController: UIViewController, UINavigationControllerDelegate{
     @IBOutlet weak var recordView: UIView!
     @IBOutlet weak var emojiView: UIView!
     @IBOutlet weak var progressView: ProgressView!
-    @IBOutlet weak var completeBtn: UIButton!
+    @IBOutlet var moodButtons: [UIButton]!
+    @IBOutlet weak var finishButton: UIButton!
     @IBOutlet weak var calendarAspect: NSLayoutConstraint!
     
     override func viewDidLoad() {
@@ -52,30 +53,32 @@ class MainViewController: UIViewController, UINavigationControllerDelegate{
         emojiView.hidden = true
         progressView.hidden = true
         recordButton.delegate = self
-        
+
         calendarAspect.setMultiplier(CGFloat(calendarView.colNum) / CGFloat(calendarView.rowNum))
+        addShadow(finishButton, opacity: 1.0)
+        checkRecordButton()
     }
 
     @IBAction func happyMood(sender: UIButton) {
         mood = Mood.Happy
-        completeBtn.enabled = true
+        finishButton.enabled = true
         setButtonSelected(sender, selected: true)
     }
     
     @IBAction func flatMood(sender: UIButton) {
         mood = Mood.Flat
-        completeBtn.enabled = true
+        finishButton.enabled = true
         setButtonSelected(sender, selected: true)
     }
     
     @IBAction func badMood(sender: UIButton) {
         mood = Mood.Sad
-        completeBtn.enabled = true
+        finishButton.enabled = true
         setButtonSelected(sender, selected: true)
     }
     
     @IBAction func finishRecordButtonPressed(sender: UIButton) {
-        clearSubviewShadow(sender.superview!)
+        clearMoodButtonsShadow()
         guard let mood = mood else {
             log.error("异常")
             return
@@ -88,8 +91,7 @@ class MainViewController: UIViewController, UINavigationControllerDelegate{
         let day = date.getDay()
         calendarView.updateRoundedViewColor(day, mood: mood)
     }
-    
-    
+
     let animatedTransition = HistoryTransitionController()
     
     func navigationController(navigationController: UINavigationController, animationControllerForOperation operation: UINavigationControllerOperation, fromViewController fromVC: UIViewController, toViewController toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
@@ -99,18 +101,29 @@ class MainViewController: UIViewController, UINavigationControllerDelegate{
 
 // MARK: - Private
 extension MainViewController {
-    private func clearSubviewShadow(view: UIView) {
-        for subview in view.subviews {
+    private func checkRecordButton() {
+        let date = NSDate()
+        let records = DB.Record.selectRecords(year: date.getYear(), month: date.getMonth(), day: date.getDay())
+        if records.count > 0 {
+            recordButton.currentState = .Disabled
+        }
+    }
+    private func clearMoodButtonsShadow() {
+        for subview in moodButtons {
             subview.layer.shadowOpacity = 0
         }
     }
     
     private func setButtonSelected(button: UIButton, selected: Bool) {
-        clearSubviewShadow(button.superview!)
+        clearMoodButtonsShadow()
+        addShadow(button, opacity: selected ? 1 : 0)
+    }
+    
+    private func addShadow(button: UIView, opacity: Float) {
         button.layer.shadowColor = UIColor.General.mainColor.CGColor
         button.layer.shadowOffset = CGSizeMake(0.0, 0.0)
         button.layer.masksToBounds = false
-        button.layer.shadowOpacity = selected ? 1 : 0
+        button.layer.shadowOpacity = opacity
     }
 }
 

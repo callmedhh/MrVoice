@@ -336,13 +336,16 @@
                     <connections>
                         <outlet property="calendarAspect" destination="q9S-zV-oXm" id="Zc1-wg-zKo"/>
                         <outlet property="calendarView" destination="vIm-aX-Wr4" id="mM8-Jz-K2n"/>
-                        <outlet property="completeBtn" destination="geX-cT-gfH" id="uf1-J4-19t"/>
                         <outlet property="dayLabel" destination="E95-R8-KbK" id="ptr-L0-sSi"/>
                         <outlet property="emojiView" destination="FKK-D8-A9e" id="6tD-eZ-8Tz"/>
+                        <outlet property="finishButton" destination="geX-cT-gfH" id="a0n-id-c04"/>
                         <outlet property="monthLabel" destination="HWy-dq-47d" id="sWE-kC-BUb"/>
                         <outlet property="progressView" destination="ZJq-j2-4ao" id="TgL-6f-YDy"/>
                         <outlet property="recordButton" destination="HJF-pA-LXh" id="8q2-ir-EZ1"/>
                         <outlet property="recordView" destination="RiF-uo-jbs" id="gEW-bN-HDq"/>
+                        <outletCollection property="moodButtons" destination="0C8-z0-JsE" collectionClass="NSMutableArray" id="4sD-vy-RXJ"/>
+                        <outletCollection property="moodButtons" destination="biP-3f-tAI" collectionClass="NSMutableArray" id="sXE-rK-INc"/>
+                        <outletCollection property="moodButtons" destination="geX-cT-gfH" collectionClass="NSMutableArray" id="xxm-oz-sG8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="50a-rQ-o7O" userLabel="First Responder" sceneMemberID="firstResponder"/>
