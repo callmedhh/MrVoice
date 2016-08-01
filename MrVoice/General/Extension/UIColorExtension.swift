@@ -21,4 +21,7 @@ extension UIColor {
     struct ProgressView {
         static let backgroundColor = UIColor(white: 1, alpha: 0.2)
     }
+    struct RecordButton {
+        static let strokeColor = UIColor(hexString: "#7F5A05")!
+    }
 }

@@ -20,22 +20,20 @@ class RecordButton: UIButton {
         case Idle
         case Recording
         case Disabled
+        case Playing
+        case Paused
     }
     var currentState: State = .Idle {
         didSet {
+            for layer in mainLayers {
+                layer.1.removeFromSuperlayer()
+            }
+            for layer in backgroundLayers {
+                layer.removeAllAnimations()
+            }
+            layer.addSublayer(mainLayers[currentState]!)
             switch currentState {
-            case .Idle:
-                recordingLayer.removeFromSuperlayer()
-                disabledLayer.removeFromSuperlayer()
-                layer.addSublayer(idleLayer)
-                for layer in backgroundLayers {
-                    layer.removeAllAnimations()
-                }
             case .Recording:
-                idleLayer.removeFromSuperlayer()
-                disabledLayer.removeFromSuperlayer()
-                layer.addSublayer(recordingLayer)
-
                 let fadeAnimation = CABasicAnimation(keyPath: "opacity")
                 fadeAnimation.fromValue = 1.0
                 fadeAnimation.toValue = 0.0
@@ -49,13 +47,8 @@ class RecordButton: UIButton {
                         self.backgroundLayers[0].addAnimation(fadeAnimation, forKey: "FadeAnimation")
                     })
                 })
-            case .Disabled:
-                idleLayer.removeFromSuperlayer()
-                recordingLayer.removeFromSuperlayer()
-                layer.addSublayer(disabledLayer)
-                for layer in backgroundLayers {
-                    layer.removeAllAnimations()
-                }
+            default:
+                break
             }
             delegate?.stateChanged(currentState)
         }
@@ -72,35 +65,71 @@ class RecordButton: UIButton {
         }
     }
     
-    var idleLayer: CAShapeLayer = {
-        let layer = CAShapeLayer()
-        layer.fillColor = UIColor.General.mainColor.CGColor
-        layer.shadowColor = layer.fillColor
-        layer.shadowRadius = 5
-        layer.shadowOpacity = 0.4
-        layer.shadowOffset = CGSize(width: 0, height: 0)
-        return layer
-    }()
-    var recordingLayer: CAShapeLayer = {
-        let layer = CAShapeLayer()
-        layer.lineWidth = 1
-        layer.strokeColor = UIColor.General.mainColor.CGColor
-        layer.fillColor = UIColor.General.mainColor.colorWithAlphaComponent(0.2).CGColor
-        layer.shadowColor = layer.fillColor
-        layer.shadowRadius = 5
-        layer.shadowOpacity = 0.4
-        layer.shadowOffset = CGSize(width: 0, height: 0)
+    var mainLayers: [State: CAShapeLayer] = {
+        var layers = [State: CAShapeLayer]()
         
-        let subLayer = CAShapeLayer()
-        subLayer.fillColor = UIColor.General.mainColor.CGColor
-        layer.addSublayer(subLayer)
-        return layer
+        layers[State.Idle] = {
+            let layer = CAShapeLayer()
+            layer.fillColor = UIColor.General.mainColor.CGColor
+            layer.shadowColor = layer.fillColor
+            layer.shadowRadius = 5
+            layer.shadowOpacity = 0.4
+            layer.shadowOffset = CGSize(width: 0, height: 0)
+            return layer
+        }()
+        layers[State.Recording] = {
+            let layer = CAShapeLayer()
+            layer.lineWidth = 1
+            layer.strokeColor = UIColor.General.mainColor.CGColor
+            layer.fillColor = UIColor.General.mainColor.colorWithAlphaComponent(0.2).CGColor
+            layer.shadowColor = layer.fillColor
+            layer.shadowRadius = 5
+            layer.shadowOpacity = 0.4
+            layer.shadowOffset = CGSize(width: 0, height: 0)
+            
+            let subLayer = CAShapeLayer()
+            subLayer.fillColor = UIColor.General.mainColor.CGColor
+            layer.addSublayer(subLayer)
+            return layer
+        }()
+        layers[State.Disabled] = {
+            let layer = CAShapeLayer()
+            layer.fillColor = UIColor.General.mainColor.colorWithAlphaComponent(0.38).CGColor
+            return layer
+        }()
+        layers[State.Playing] = {
+            let layer = CAShapeLayer()
+            layer.fillColor = UIColor.General.mainColor.CGColor
+            layer.shadowColor = layer.fillColor
+            layer.shadowRadius = 5
+            layer.shadowOpacity = 0.4
+            layer.shadowOffset = CGSize(width: 0, height: 0)
+            
+            let subLayer = CAShapeLayer()
+            subLayer.lineWidth = 3
+            subLayer.strokeColor = UIColor.RecordButton.strokeColor.CGColor
+            subLayer.fillColor = UIColor.clearColor().CGColor
+            layer.addSublayer(subLayer)
+            return layer
+        }()
+        layers[State.Paused] = {
+            let layer = CAShapeLayer()
+            layer.fillColor = UIColor.General.mainColor.CGColor
+            layer.shadowColor = layer.fillColor
+            layer.shadowRadius = 5
+            layer.shadowOpacity = 0.4
+            layer.shadowOffset = CGSize(width: 0, height: 0)
+            
+            let subLayer = CAShapeLayer()
+            subLayer.lineWidth = 3
+            subLayer.strokeColor = UIColor.RecordButton.strokeColor.CGColor
+            subLayer.fillColor = UIColor.clearColor().CGColor
+            layer.addSublayer(subLayer)
+            return layer
+        }()
+        return layers
     }()
-    var disabledLayer: CAShapeLayer = {
-        let layer = CAShapeLayer()
-        layer.fillColor = UIColor.General.mainColor.colorWithAlphaComponent(0.38).CGColor
-        return layer
-    }()
+    
     var backgroundLayers: [CAShapeLayer] = {
         let layers = [CAShapeLayer(), CAShapeLayer(), CAShapeLayer()]
         let alphas:[CGFloat] = [0.02, 0.04, 0.08]
@@ -116,21 +145,57 @@ class RecordButton: UIButton {
         for i in backgroundLayers {
             layer.addSublayer(i)
         }
-        layer.addSublayer(idleLayer)
+        layer.addSublayer(mainLayers[State.Idle]!)
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
         let margin = bounds.width / 2 - self.radius
         let path = UIBezierPath(ovalInRect: CGRectMake(margin, margin, self.radius*2, self.radius*2)).CGPath
-        idleLayer.path = path
-        recordingLayer.path = path
-        disabledLayer.path = path
         
-        let subLayer = recordingLayer.sublayers![0] as! CAShapeLayer
-        let subSize = self.radius * 2 * 0.44
-        let subMargin = (self.bounds.width - subSize) / 2
-        subLayer.path = UIBezierPath(roundedRect: CGRect(x: subMargin, y: subMargin, width: subSize, height: subSize), cornerRadius: 3).CGPath
+        for kv in mainLayers {
+            let layer = kv.1
+            layer.path = path
+            switch kv.0 {
+            case .Recording:
+                let subLayer = layer.sublayers![0] as! CAShapeLayer
+                let subSize = radius * 2 * 0.44
+                let subMargin = (self.bounds.width - subSize) / 2
+                subLayer.path = UIBezierPath(roundedRect: CGRect(x: subMargin, y: subMargin, width: subSize, height: subSize), cornerRadius: 3).CGPath
+            case .Playing:
+                let subLayer = layer.sublayers![0] as! CAShapeLayer
+                let path = UIBezierPath()
+                let margin = bounds.width / 2 - radius
+                let lx = radius * 0.85
+                let rx = radius * 1.33
+                let ty = radius * 0.66
+                let by = radius * 2 - ty
+                path.moveToPoint(CGPoint(x: margin+lx, y: margin+ty))
+                path.addLineToPoint(CGPoint(x: margin+lx, y: margin+by))
+                path.addLineToPoint(CGPoint(x: margin+rx, y: margin+(ty+by)/2))
+                path.closePath()
+                subLayer.path = path.CGPath
+                
+            case .Paused:
+                let subLayer = layer.sublayers![0] as! CAShapeLayer
+                let path = UIBezierPath()
+                let margin = bounds.width / 2 - radius
+                let lx = radius * 0.80
+                let rx = radius * 2 - lx
+                let ty = radius * 0.66
+                let by = radius * 2 - ty
+                path.moveToPoint(CGPoint(x: margin+lx, y: margin+ty))
+                path.addLineToPoint(CGPoint(x: margin+lx, y: margin+by))
+                path.moveToPoint(CGPoint(x: margin+rx, y: margin+ty))
+                path.addLineToPoint(CGPoint(x: margin+rx, y: margin+by))
+                path.closePath()
+                subLayer.path = path.CGPath
+                
+            default:
+                break
+            }
+        }
+
         for (i, layer) in backgroundLayers.enumerate() {
             let radius = self.radius + self.spacing * CGFloat(backgroundLayers.count - i)
             let margin = bounds.width / 2 - radius

@@ -11,10 +11,11 @@ import AVFoundation
 import QuartzCore
 import Async
 
+// BUG: 如果已经到了第二天 必须要杀了应用才能录音
 class MainViewController: UIViewController, UINavigationControllerDelegate{
     let recordTool: RecordTool = RecordTool()
     var recordingSession: AVAudioSession!
-    var mood: Mood? = nil
+    var mood = Mood.Flat
     var startDate: NSDate? = nil
     
     @IBOutlet weak var calendarView: CalendarView!
@@ -53,6 +54,7 @@ class MainViewController: UIViewController, UINavigationControllerDelegate{
         emojiView.hidden = true
         progressView.hidden = true
         recordButton.delegate = self
+        recordButton.currentState = .Paused
 
         calendarAspect.setMultiplier(CGFloat(calendarView.colNum) / CGFloat(calendarView.rowNum))
         addShadow(finishButton, color: UIColor.General.mainColor)
@@ -79,10 +81,6 @@ class MainViewController: UIViewController, UINavigationControllerDelegate{
     
     @IBAction func finishRecordButtonPressed(sender: UIButton) {
         clearMoodButtonsShadow()
-        guard let mood = mood else {
-            log.error("异常")
-            return
-        }
         recordTool.saveRecordingWithMood(mood)
         recordView.hidden = false
         emojiView.hidden = true
@@ -135,7 +133,7 @@ extension MainViewController: RecordButtonHandler {
     func stateChanged(state: RecordButton.State) {
         if(state == .Recording) {
             startDate = NSDate()
-            mood = nil
+            mood = .Flat
             progressView.hidden = false
             recordTool.startRecording()
             
