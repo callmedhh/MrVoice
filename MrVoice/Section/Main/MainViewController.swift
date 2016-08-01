@@ -55,26 +55,26 @@ class MainViewController: UIViewController, UINavigationControllerDelegate{
         recordButton.delegate = self
 
         calendarAspect.setMultiplier(CGFloat(calendarView.colNum) / CGFloat(calendarView.rowNum))
-        addShadow(finishButton, opacity: 1.0)
+        addShadow(finishButton, color: UIColor.General.mainColor)
         checkRecordButton()
     }
-
-    @IBAction func happyMood(sender: UIButton) {
+// TODO: REFACTOR
+    @IBAction func happyMood(button: UIButton) {
         mood = Mood.Happy
-        finishButton.enabled = true
-        setButtonSelected(sender, selected: true)
+        clearMoodButtonsShadow()
+        addShadow(button, color: UIColor.Calendar.happy)
     }
     
-    @IBAction func flatMood(sender: UIButton) {
+    @IBAction func flatMood(button: UIButton) {
         mood = Mood.Flat
-        finishButton.enabled = true
-        setButtonSelected(sender, selected: true)
+        clearMoodButtonsShadow()
+        addShadow(button, color: UIColor.Calendar.flat)
     }
     
-    @IBAction func badMood(sender: UIButton) {
+    @IBAction func badMood(button: UIButton) {
         mood = Mood.Sad
-        finishButton.enabled = true
-        setButtonSelected(sender, selected: true)
+        clearMoodButtonsShadow()
+        addShadow(button, color: UIColor.Calendar.sad)
     }
     
     @IBAction func finishRecordButtonPressed(sender: UIButton) {
@@ -86,6 +86,7 @@ class MainViewController: UIViewController, UINavigationControllerDelegate{
         recordTool.saveRecordingWithMood(mood)
         recordView.hidden = false
         emojiView.hidden = true
+        recordButton.currentState = .Disabled
         
         let date = NSDate()
         let day = date.getDay()
@@ -109,21 +110,16 @@ extension MainViewController {
         }
     }
     private func clearMoodButtonsShadow() {
-        for subview in moodButtons {
-            subview.layer.shadowOpacity = 0
+        for view in moodButtons {
+            view.layer.shadowOpacity = 0
         }
     }
     
-    private func setButtonSelected(button: UIButton, selected: Bool) {
-        clearMoodButtonsShadow()
-        addShadow(button, opacity: selected ? 1 : 0)
-    }
-    
-    private func addShadow(button: UIView, opacity: Float) {
-        button.layer.shadowColor = UIColor.General.mainColor.CGColor
+    private func addShadow(button: UIView, color: UIColor) {
+        button.layer.shadowColor = color.CGColor
         button.layer.shadowOffset = CGSizeMake(0.0, 0.0)
         button.layer.masksToBounds = false
-        button.layer.shadowOpacity = opacity
+        button.layer.shadowOpacity = 1
     }
 }
 
@@ -155,6 +151,8 @@ extension MainViewController: RecordButtonHandler {
             updateProgressView(startDate!)
         }
         if(state == .Idle) {
+            recordButton.currentState = .Disabled
+            flatMood(moodButtons[1])
             startDate = nil
             recordTool.finishRecording(success: true)
             recordView.hidden = true

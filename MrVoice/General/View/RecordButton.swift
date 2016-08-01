@@ -99,8 +99,6 @@ class RecordButton: UIButton {
     var disabledLayer: CAShapeLayer = {
         let layer = CAShapeLayer()
         layer.fillColor = UIColor.General.mainColor.colorWithAlphaComponent(0.38).CGColor
-        layer.lineWidth = 1
-        layer.strokeColor = UIColor.General.mainColor.CGColor
         return layer
     }()
     var backgroundLayers: [CAShapeLayer] = {

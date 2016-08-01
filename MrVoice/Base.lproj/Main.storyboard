@@ -199,7 +199,7 @@
                                                     <action selector="happyMood:" destination="xuJ-KC-3cV" eventType="touchUpInside" id="WiV-tk-ERJ"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="biP-3f-tAI" userLabel="Ordinary">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="biP-3f-tAI" userLabel="Flat">
                                                 <rect key="frame" x="134" y="0.0" width="75" height="75"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="biP-3f-tAI" secondAttribute="height" multiplier="1:1" id="faD-BA-D2T"/>
@@ -226,7 +226,7 @@
                                                     <action selector="badMood:" destination="xuJ-KC-3cV" eventType="touchUpInside" id="RHT-qi-mwl"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="geX-cT-gfH" userLabel="Complete">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="geX-cT-gfH" userLabel="Complete">
                                                 <rect key="frame" x="96" y="95" width="150" height="51"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="geX-cT-gfH" secondAttribute="height" multiplier="130:44" id="GxF-3z-LfU"/>
@@ -345,7 +345,7 @@
                         <outlet property="recordView" destination="RiF-uo-jbs" id="gEW-bN-HDq"/>
                         <outletCollection property="moodButtons" destination="0C8-z0-JsE" collectionClass="NSMutableArray" id="4sD-vy-RXJ"/>
                         <outletCollection property="moodButtons" destination="biP-3f-tAI" collectionClass="NSMutableArray" id="sXE-rK-INc"/>
-                        <outletCollection property="moodButtons" destination="geX-cT-gfH" collectionClass="NSMutableArray" id="xxm-oz-sG8"/>
+                        <outletCollection property="moodButtons" destination="aWu-DY-5YR" collectionClass="NSMutableArray" id="kTe-Rt-vzo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="50a-rQ-o7O" userLabel="First Responder" sceneMemberID="firstResponder"/>
