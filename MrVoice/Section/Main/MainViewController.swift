@@ -54,7 +54,6 @@ class MainViewController: UIViewController, UINavigationControllerDelegate{
         emojiView.hidden = true
         progressView.hidden = true
         recordButton.delegate = self
-        recordButton.currentState = .Paused
 
         calendarAspect.setMultiplier(CGFloat(calendarView.colNum) / CGFloat(calendarView.rowNum))
         addShadow(finishButton, color: UIColor.General.mainColor)

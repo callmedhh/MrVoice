@@ -69,8 +69,8 @@ extension CalendarView {
             } else {
                 roundedView.backgroundColor = UIColor.Calendar.nothing
             }
+            roundedView.userInteractionEnabled = false
             roundedView.tag = Tags.RoundedView.rawValue
-            roundedView.layer.masksToBounds = true
             button.addSubview(roundedView)
             
             let label = UILabel()
@@ -177,5 +177,15 @@ extension CalendarView {
 extension CalendarView {
     func buttonClicked(sender: UIButton){
         selectedDay = sender.tag
+        for v in itemButtons {
+            let roundedView = v.viewWithTag(Tags.RoundedView.rawValue)!
+            roundedView.layer.shadowOpacity = 0
+        }
+        let roundedView = sender.viewWithTag(Tags.RoundedView.rawValue)!
+        roundedView.layer.masksToBounds = false
+        roundedView.layer.shadowColor = roundedView.backgroundColor!.CGColor
+        roundedView.layer.shadowRadius = 5
+        roundedView.layer.shadowOpacity = 0.8
+        roundedView.layer.shadowOffset = CGSize(width: 0, height: 0)
     }
 }
