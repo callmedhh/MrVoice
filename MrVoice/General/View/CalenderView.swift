@@ -27,6 +27,7 @@ class CalendarView: UIView {
     
     var selectedDay: Int? = nil
     var itemButtons: [UIButton] = []
+    var playButton: UIButton?
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -150,12 +151,9 @@ extension CalendarView {
     func updateRoundedViewColor(day: Int, mood: Mood){
         for (i, item) in itemButtons.enumerate() {
             if (i+1) == day {
-                for subview in item.subviews {
-                    if subview.tag == Tags.RoundedView.rawValue {
-                        subview.backgroundColor = mood.color()
-                        subview.setNeedsDisplay()
-                    }
-                }
+                let subview = item.viewWithTag(Tags.RoundedView.rawValue)!
+                subview.backgroundColor = mood.color()
+                subview.setNeedsDisplay()
             }
         }
     }
@@ -177,6 +175,13 @@ extension CalendarView {
 extension CalendarView {
     func buttonClicked(sender: UIButton){
         selectedDay = sender.tag
+        
+        // play button
+        let date = NSDate()
+        let records = DB.Record.selectRecords(year: date.getYear(), month: date.getMonth(), day: selectedDay)
+        playButton!.hidden = (records.count == 0)
+
+        // update layer style
         for v in itemButtons {
             let roundedView = v.viewWithTag(Tags.RoundedView.rawValue)!
             roundedView.layer.shadowOpacity = 0

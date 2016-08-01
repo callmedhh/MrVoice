@@ -33,7 +33,8 @@ class RecordButton: UIButton {
             }
             layer.addSublayer(mainLayers[currentState]!)
             switch currentState {
-            case .Recording:
+            case .Recording,
+                 .Playing:
                 let fadeAnimation = CABasicAnimation(keyPath: "opacity")
                 fadeAnimation.fromValue = 1.0
                 fadeAnimation.toValue = 0.0
@@ -50,10 +51,10 @@ class RecordButton: UIButton {
             default:
                 break
             }
-            delegate?.stateChanged(currentState)
+            delegate.stateChanged(currentState)
         }
     }
-    var delegate: RecordButtonHandler?
+    var delegate: RecordButtonHandler!
     var spacing: CGFloat {
         get {
             return CGFloat(self.bounds.width * 0.09)
@@ -166,20 +167,6 @@ class RecordButton: UIButton {
                 let subLayer = layer.sublayers![0] as! CAShapeLayer
                 let path = UIBezierPath()
                 let margin = bounds.width / 2 - radius
-                let lx = radius * 0.85
-                let rx = radius * 1.33
-                let ty = radius * 0.66
-                let by = radius * 2 - ty
-                path.moveToPoint(CGPoint(x: margin+lx, y: margin+ty))
-                path.addLineToPoint(CGPoint(x: margin+lx, y: margin+by))
-                path.addLineToPoint(CGPoint(x: margin+rx, y: margin+(ty+by)/2))
-                path.closePath()
-                subLayer.path = path.CGPath
-                
-            case .Paused:
-                let subLayer = layer.sublayers![0] as! CAShapeLayer
-                let path = UIBezierPath()
-                let margin = bounds.width / 2 - radius
                 let lx = radius * 0.80
                 let rx = radius * 2 - lx
                 let ty = radius * 0.66
@@ -190,7 +177,19 @@ class RecordButton: UIButton {
                 path.addLineToPoint(CGPoint(x: margin+rx, y: margin+by))
                 path.closePath()
                 subLayer.path = path.CGPath
-                
+            case .Paused:
+                let subLayer = layer.sublayers![0] as! CAShapeLayer
+                let path = UIBezierPath()
+                let margin = bounds.width / 2 - radius
+                let lx = radius * 0.85
+                let rx = radius * 1.33
+                let ty = radius * 0.66
+                let by = radius * 2 - ty
+                path.moveToPoint(CGPoint(x: margin+lx, y: margin+ty))
+                path.addLineToPoint(CGPoint(x: margin+lx, y: margin+by))
+                path.addLineToPoint(CGPoint(x: margin+rx, y: margin+(ty+by)/2))
+                path.closePath()
+                subLayer.path = path.CGPath
             default:
                 break
             }
@@ -212,6 +211,10 @@ extension RecordButton {
             currentState = .Recording
         case .Recording:
             currentState = .Idle
+        case .Playing:
+            currentState = .Paused
+        case .Paused:
+            currentState = .Playing
         default:
             break
         }
