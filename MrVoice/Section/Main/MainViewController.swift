@@ -13,7 +13,6 @@ import Async
 
 // BUG: 如果已经到了第二天 必须要杀了应用才能录音
 class MainViewController: UIViewController, UINavigationControllerDelegate{
-    let recordTool: RecordTool = RecordTool()
     var recordingSession: AVAudioSession!
     var mood = Mood.Flat
     var startDate: NSDate? = nil
@@ -80,7 +79,11 @@ class MainViewController: UIViewController, UINavigationControllerDelegate{
     
     @IBAction func finishRecordButtonPressed(sender: UIButton) {
         clearMoodButtonsShadow()
-        recordTool.saveRecordingWithMood(mood)
+        let name = recordTool.filePath!.componentsSeparatedByString("/").last!
+        recordTool.filePath = nil
+        let record = Record(filename: name, mood: mood)
+        DB.Record.addRecord(record)
+
         recordView.hidden = false
         emojiView.hidden = true
         recordButton.currentState = .Disabled

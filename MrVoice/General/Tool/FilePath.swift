@@ -7,8 +7,9 @@
 //
 
 import Foundation
-class FilePathTool{
-    class func getDocumentsDirectory() -> String{
+
+struct FilePath {
+    static func documentDirectory() -> String {
         let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
         let documentsDirectory = paths[0]
         return documentsDirectory

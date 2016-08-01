@@ -19,8 +19,9 @@ struct DB {
         static let filename = Expression<String>("filename")
         static let mood = Expression<Int>("mood")
     }
+    
 
-    static let db: Connection = try! Connection("\(FilePathTool.getDocumentsDirectory())/voice.sqlite3")
+    static let db: Connection = try! Connection("\(FilePath.documentDirectory())/voice.sqlite3")
 
     static func setup() {
         do {

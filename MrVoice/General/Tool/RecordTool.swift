@@ -1,4 +1,4 @@
-//
+
 //  RecordTool.swift
 //  VoiceDiary
 //
@@ -8,20 +8,25 @@
 
 import Foundation
 import AVFoundation
-class RecordTool: NSObject, AVAudioRecorderDelegate{
-    var audioRecorder: AVAudioRecorder!
-    var audioPlayer: AVAudioPlayer!
+
+typealias PlayCompletion = (NSError?) -> Void
+
+let recordTool = RecordTool()
+
+class RecordTool: NSObject {
+    var audioRecorder: AVAudioRecorder? = nil
+    var audioPlayer: AVAudioPlayer? = nil
     var filePath: String? = nil
-    var mood: Int? = nil
+    var completion: PlayCompletion? = nil
 }
 
 // MARK: - Private
 extension RecordTool {
-    private func buildFilePath() -> String {
+    private func buildFilePath(date: NSDate) -> String {
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd-HH:mm:ss:SSS"
-        let dateString = dateFormatter.stringFromDate(NSDate())
-        let folderPath = FilePathTool.getDocumentsDirectory()
+        let dateString = dateFormatter.stringFromDate(date)
+        let folderPath = FilePath.documentDirectory()
         return folderPath.stringByAppendingPathComponent("\(dateString).m4a")
     }
 }
@@ -29,7 +34,7 @@ extension RecordTool {
 // MARK: - Record
 extension RecordTool {
     func startRecording(){
-        let path = buildFilePath()
+        let path = buildFilePath(NSDate())
         self.filePath = path
         let fileURL = NSURL(fileURLWithPath: path)
         let settings = [
@@ -39,42 +44,36 @@ extension RecordTool {
             AVEncoderAudioQualityKey: AVAudioQuality.High.rawValue
         ]
         do {
-            audioRecorder = try AVAudioRecorder(URL: fileURL, settings: settings)
-            audioRecorder.delegate = self
-            audioRecorder.record()
+            let ar = try AVAudioRecorder(URL: fileURL, settings: settings)
+            // TODO: handle record event
+            ar.record()
+            audioRecorder = ar
         } catch {
             finishRecording(success: false)
         }
     }
     
-    func finishRecording(success success: Bool){
-        if audioRecorder == nil {
+    func finishRecording(success success: Bool) {
+        guard let ar = audioRecorder else {
             log.error("no audio recorder")
-        } else {
-            audioRecorder.stop()
-            audioRecorder = nil
+            return
         }
-    }
-    
-    func saveRecordingWithMood(mood: Mood) {
-        if let filePath = self.filePath {
-            let name = filePath.componentsSeparatedByString("/").last!
-            let record = Record(filename: name, mood: mood)
-            DB.Record.addRecord(record)
-        }
-        self.filePath = nil
+        ar.stop()
+        audioRecorder = nil
     }
 }
 
 // MARK: - Play
 extension RecordTool {
-    func startPlaying(filename: String){
-        let folderPath = FilePathTool.getDocumentsDirectory()
+    func startPlaying(filename: String, completion handler: (NSError?) -> Void){
+        completion = handler
+        let folderPath = FilePath.documentDirectory()
         let filepath = folderPath.stringByAppendingPathComponent(filename)
         let url = NSURL(fileURLWithPath: filepath)
         log.debug(url)
         do{
             let sound = try AVAudioPlayer(contentsOfURL: url)
+            sound.delegate = self
             audioPlayer = sound
             sound.play()
         } catch {
@@ -82,9 +81,22 @@ extension RecordTool {
         }
     }
     func stopPlaying(){
-        if audioPlayer != nil{
-            audioPlayer.stop()
-            audioPlayer = nil
+        if let ar = audioPlayer {
+            ar.stop()
         }
+        completion = nil
+        audioPlayer = nil
+    }
+}
+
+// MARK: - AVAudioPlayerDelegate
+extension RecordTool: AVAudioPlayerDelegate {
+    // TODO: USE AUDIO SESSION
+    func audioPlayerDidFinishPlaying(player: AVAudioPlayer, successfully flag: Bool) {
+        completion?(nil)
+    }
+    
+    func audioPlayerDecodeErrorDidOccur(player: AVAudioPlayer, error: NSError?) {
+        completion?(error)
     }
 }

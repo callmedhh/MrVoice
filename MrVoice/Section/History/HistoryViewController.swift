@@ -54,7 +54,12 @@ extension HistoryViewController: RecordButtonHandler {
             let date = NSDate()
             let record = DB.Record.selectRecords(year: date.getYear(), month: date.getMonth(), day: calendarView.selectedDay!)
             let filename = record[0].filename
-            recordTool.startPlaying(filename)
+            recordTool.startPlaying(filename) { err in
+                if let error = err {
+                    log.error(error)
+                }
+                self.playButton.currentState = .Paused
+            }
         default:
             break
         }
