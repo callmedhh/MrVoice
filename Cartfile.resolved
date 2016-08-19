@@ -1,4 +1,4 @@
 github "duemunk/Async" "1.7.3"
 github "stephencelis/SQLite.swift" "0.10.1"
 github "thii/SwiftHEXColors" "1.0.4"
-github "SwiftyBeaver/SwiftyBeaver" "0.6.3"
+github "SwiftyBeaver/SwiftyBeaver" "0.6.5"

@@ -13,7 +13,15 @@ public class ConsoleDestination: BaseDestination {
 
     public var useNSLog = false
 
-    override public var defaultHashValue: Int {return 1}
+    override public var defaultHashValue: Int { return 1 }
+
+    #if swift(>=2.3)
+        override public var colored: Bool {
+            // in Xcode 8 no color is possible so it is always false
+            get { return false }
+            set {}
+        }
+    #endif
 
     public override init() {
         super.init()

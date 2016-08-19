@@ -54,6 +54,7 @@ class RecordButton: UIButton {
             delegate.stateChanged(currentState)
         }
     }
+    
     var delegate: RecordButtonHandler!
     var spacing: CGFloat {
         get {

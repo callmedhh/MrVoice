@@ -63,6 +63,7 @@ public class SBPlatformDestination: BaseDestination {
     var points = 0
 
     public var serverURL = NSURL(string: "https://api.swiftybeaver.com/api/entries/")!
+    private let minAllowedThreshold = 1  // over-rules SendingPoints.Threshold
     private let maxAllowedThreshold = 1000  // over-rules SendingPoints.Threshold
     private var sendingInProgress = false
     private var initialSending = true
@@ -107,8 +108,14 @@ public class SBPlatformDestination: BaseDestination {
                 }
             }
         } else {
-            // iOS, watchOS, etc. are using the document directory of the app
-            if let url = fileManager.URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask).first {
+            // iOS, watchOS, etc. are using the app’s document directory, tvOS can just use the caches directory
+            #if os(tvOS)
+                let saveDir: NSSearchPathDirectory = .CachesDirectory
+            #else
+                let saveDir: NSSearchPathDirectory = .DocumentDirectory
+            #endif
+
+            if let url = fileManager.URLsForDirectory(saveDir, inDomains: .UserDomainMask).first {
                 baseURL = url
             }
         }
@@ -158,7 +165,7 @@ public class SBPlatformDestination: BaseDestination {
             points += newPoints
             toNSLog("current sending points: \(points)")
 
-            if points >= sendingPoints.Threshold || points > maxAllowedThreshold {
+            if (points >= sendingPoints.Threshold && points >= minAllowedThreshold) || points > maxAllowedThreshold {
                 toNSLog("\(points) points is >= threshold")
                 // above threshold, send to server
                 sendNow()

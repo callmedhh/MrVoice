@@ -37,6 +37,7 @@ class MainViewController: UIViewController, UINavigationControllerDelegate{
         recordingSession = AVAudioSession.sharedInstance()
         do {
             try recordingSession.setCategory(AVAudioSessionCategoryPlayAndRecord)
+            try recordingSession.overrideOutputAudioPort(.Speaker)
             try recordingSession.setActive(true)
             recordingSession.requestRecordPermission { result in
                 if (result) {
@@ -56,8 +57,10 @@ class MainViewController: UIViewController, UINavigationControllerDelegate{
 
         calendarAspect.setMultiplier(CGFloat(calendarView.colNum) / CGFloat(calendarView.rowNum))
         addShadow(finishButton, color: UIColor.General.mainColor)
+        
         checkRecordButton()
     }
+    
 // TODO: REFACTOR
     @IBAction func happyMood(button: UIButton) {
         mood = Mood.Happy

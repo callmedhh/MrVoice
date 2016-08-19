@@ -17,7 +17,7 @@ class ProgressView: UIView {
             updateLayers()
         }
     }
-    
+    //从 xib 加载 UIView 调用该方法
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         backgroundColor = UIColor.clearColor()

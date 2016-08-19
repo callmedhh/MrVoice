@@ -22,7 +22,7 @@ class CalendarView: UIView {
     var offset = NSDate().startOfMonth()!.getDayOfTheWeek() - 1
     let colNum = 7
     var rowNum: Int {
-        get { return (count + offset) / 7 + 1 }
+        return (count + offset) / 7 + 1
     }
     
     var selectedDay: Int? = nil

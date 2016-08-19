@@ -4,6 +4,32 @@ All notable changes to this project will be documented in this file following th
 This project adheres to [Semantic Versioning](http://semver.org/).
 
 ----
+## 0.6.5 (2016-07-29)
+
+##### Changed
+
+- On Xcode 8 colored console output is disabled by [@skreutzberger](https://github.com/skreutzberger)
+
+##### Fixed
+
+- Broken support for tvOS in platform destination by [@markj](https://github.com/markj)
+
+<br/>
+## 0.6.4 (2016-07-28)
+
+##### Added
+
+- Support for use in app extensions by [@madhavajay](https://github.com/madhavajay)
+
+##### Changed
+
+- Minimum target for OS X is 10.10 by [@DivineDominion](https://github.com/DivineDominion)
+
+##### Fixed
+
+- Potential issue when setting a platform sending threshold of lower than 1 by [@skreutzberger](https://github.com/skreutzberger)
+
+<br/>
 ## 0.6.3 (2016-06-29)
 
 ##### Added
@@ -16,7 +42,6 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - Dedicated log level filter by [@skreutzberger](https://github.com/skreutzberger)
 
 <br/>
-
 ## 0.6.2 (2016-06-21)
 
 ##### Added
